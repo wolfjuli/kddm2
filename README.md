@@ -1,4 +1,4 @@
-ud120-projects
-==============
+# KDDM2
+Project for KDDM2
 
-Starter project code for students taking Udacity ud120
+
