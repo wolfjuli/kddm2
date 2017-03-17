@@ -92,3 +92,9 @@ ENV/
 enron_mail_20150507.tgz
 maildir/
 final_project/emails_by_address/
+
+# intellij
+.idea/
+
+kddm2/authors.pkl
+kddm2/word_data.pkl
