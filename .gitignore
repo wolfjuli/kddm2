@@ -96,5 +96,5 @@ final_project/emails_by_address/
 # intellij
 .idea/
 
-kddm2/authors.pkl
-kddm2/word_data.pkl
+kddm2/data/authors.pkl
+kddm2/data/word_data.pkl

@@ -6,21 +6,21 @@ import os
 import pickle
 
 
-def parseEmail(f):
-    f.seek(0)
-    all_text = f.read()
+def parseEmail(path):
+    with open(os.path.join('..', path[:-1]), "r") as email:
+        email.seek(0)
+        all_text = email.read()
 
-    content = all_text.split("X-FileName:")
-    words = ""
-    if len(content) > 1:
-        text_string = content[1].translate(string.maketrans("", ""), string.punctuation)
-        stemmer = SnowballStemmer("english")
+        content = all_text.split("X-FileName:")
+        if len(content) > 1:
+            text_string = content[1].translate(string.maketrans("", ""), string.punctuation)
+            text_string = removeNames(text_string, ["sara", "shackleton", "chris", "germany"])
 
-        words = []
-        for word in text_string.split():
-            words.append(stemmer.stem(word))
-
-    return string.join(words)
+            stemmer = SnowballStemmer("english")
+            words = [stemmer.stem(word) for word in text_string.split()]
+            return string.join(words)
+        else:
+            return ""
 
 
 def removeNames(text, names):
@@ -41,16 +41,14 @@ def parseEmails():
     progress = 0
 
     print "\n### PARSING EMAILS ###"
-    with open("from_sara.txt", "r") as from_sara, open("from_chris.txt", "r") as from_chris:
+    with open("./data/from_sara.txt", "r") as from_sara, open("./data/from_chris.txt", "r") as from_chris:
         filecount = countLines(from_sara) + countLines(from_chris)
-        for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
+        for i, from_person in [(0, from_sara), (1, from_chris)]:
             for path in from_person:
                 cnt += 1
                 try:
-                    with open(os.path.join('..', path[:-1]), "r") as email:
-                        words = removeNames(parseEmail(email), ["sara", "shackleton", "chris", "germani"])
-                        emails.append(words)
-                        authors.append(0 if name == "sara" else 1)
+                    emails.append(parseEmail(path))
+                    authors.append(i)
                 except:
                     print "error parsing email " + path
 
@@ -60,11 +58,10 @@ def parseEmails():
                     print "-- {} / {} emails parsed ({} %)".format(cnt, filecount, progress)
 
     print "-- {} emails parsed".format(cnt)
-
     return emails, authors
 
 
 if __name__ == "__main__":
     emails, authors = parseEmails()
-    pickle.dump(emails, open("word_data.pkl", "w"))
-    pickle.dump(authors, open("authors.pkl", "w"))
+    pickle.dump(emails, open("./data/word_data.pkl", "w"))
+    pickle.dump(authors, open("./data/authors.pkl", "w"))
