@@ -98,3 +98,5 @@ final_project/emails_by_address/
 
 kddm2/data/authors.pkl
 kddm2/data/word_data.pkl
+tools/allFiles.pkl
+tools/parsedFiles.pkl
