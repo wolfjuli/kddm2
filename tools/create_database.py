@@ -56,10 +56,11 @@ def getParsedContent(filefullpath):
 
     return ret
 
-table = {}
+all_mails = {}
+names = []
 from_to_mail = {}
 def createStructure(filename):
-    mail = table[filename]
+    mail = all_mails[filename]
 
     try:
         frm = mail['From']
@@ -79,7 +80,18 @@ def createStructure(filename):
     for to in recipients:
         if to not in from_to_mail[frm]:
             from_to_mail[frm][to] = []
-            from_to_mail[frm][to] += mail['Subject'] + "\n\n" + mail['body']
+
+        from_to_mail[frm][to] += mail['Subject'] + "\n\n" + mail['body']
+
+    try:
+
+        name_parts = ''.join([i for i in mail['X-From'] if i.isalpha() or i == " "]).split(" ") + \
+                     ''.join([i for i in mail['X-To']   if i.isalpha() or i == " "]).split(" ")
+
+        add = [n.tolower() for n in name_parts if n not in names and len(n) > 2]
+
+    except:
+        print "Error while trying to strip out names of mail (maybe no X-from or X-To?)"
 
 
 print "gathering all file paths"
@@ -93,34 +105,45 @@ else:
 
 
 print "parsing files"
-table = {}
-if os.path.isfile('parsedFiles.pkl'):
-    with open("parsedFiles.pkl", "r") as f:
-        table = cPickle.load(f)
+all_mails = {}
+if os.path.isfile('all_mails.pkl'):
+    with open("all_mails.pkl", "r") as f:
+        all_mails = cPickle.load(f)
 
 count = -1
 for filename in listOfAllFiles:
     count += 1
-    if filename in table:
+    if filename in all_mails:
         print filename + " already in table"
         continue
 
-    table[filename] = getParsedContent(filename)
+    all_mails[filename] = getParsedContent(filename)
     createStructure(filename)
 
     if count % 10000 == 0:
         print "Writing out file. Please don't kill me now"
-        with open("parsedFiles.pkl", "w") as f:
-            cPickle.dump(table, f)
+        with open("all_mails.pkl", "w") as f:
+            cPickle.dump(all_mails, f)
         print "done, sleeping for 1 second"
         time.sleep(1)
         print "done sleeping"
 
-with open("parsedFiles.pkl", "w") as f:
-    cPickle.dump(table, f)
+with open("all_mails.pkl", "w") as f:
+    cPickle.dump(all_mails, f)
 
 with open('from_to_mails.pkl', "w") as f:
     cPickle.dump(from_to_mail, f)
+
+print "Striping mails"
+all_stripped_mails = all_mails.copy()
+
+for frm in all_stripped_mails:
+    for to in all_stripped_mails[frm]:
+        all_stripped_mails[frm][to] = " ".join(filter(lambda w: w.tolower() not in names, all_stripped_mails[frm][to].split()))
+
+with open('all_stripped_mails.pkl', "w") as f:
+    cPickle.dump(all_stripped_mails, f)
+
 
 print "DONE!!! MOFO"
 
