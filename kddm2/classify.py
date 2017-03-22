@@ -19,6 +19,7 @@ try:
 except:
     features_train, features_test, labels_train, labels_test = preprocess(*parseEmails())
 
+
 print "\n### CLASSIFICATION ###"
 clf = MultinomialNB()
 #clf = DecisionTreeClassifier(min_samples_split=40)

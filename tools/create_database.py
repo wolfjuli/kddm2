@@ -56,6 +56,32 @@ def getParsedContent(filefullpath):
 
     return ret
 
+table = {}
+from_to_mail = {}
+def createStructure(filename):
+    mail = table[filename]
+
+    try:
+        frm = mail['From']
+    except:
+        print "Error: this email has no sender ", mail['filepath']
+        return
+
+    if frm not in from_to_mail:
+        from_to_mail[frm] = {}
+
+    try:
+        recipients = mail['To'].replace("\n", "").replace("\r", "").split(",")
+    except:
+        print "Error: this email has no recipient ", mail['filepath']
+        return
+
+    for to in recipients:
+        if to not in from_to_mail[frm]:
+            from_to_mail[frm][to] = []
+            from_to_mail[frm][to] += mail['Subject'] + "\n\n" + mail['body']
+
+
 print "gathering all file paths"
 if os.path.isfile('allFiles.pkl'):
     with open("allFiles.pkl", "r") as f:
@@ -80,6 +106,7 @@ for filename in listOfAllFiles:
         continue
 
     table[filename] = getParsedContent(filename)
+    createStructure(filename)
 
     if count % 10000 == 0:
         print "Writing out file. Please don't kill me now"
@@ -91,4 +118,9 @@ for filename in listOfAllFiles:
 
 with open("parsedFiles.pkl", "w") as f:
     cPickle.dump(table, f)
+
+with open('from_to_mails.pkl', "w") as f:
+    cPickle.dump(from_to_mail, f)
+
+print "DONE!!! MOFO"
 

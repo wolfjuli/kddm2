@@ -58,10 +58,12 @@ def parseEmails():
                     print "-- {} / {} emails parsed ({} %)".format(cnt, filecount, progress)
 
     print "-- {} emails parsed".format(cnt)
+
+    pickle.dump(emails, open("./data/word_data.pkl", "w"))
+    pickle.dump(authors, open("./data/authors.pkl", "w"))
+
     return emails, authors
 
 
 if __name__ == "__main__":
-    emails, authors = parseEmails()
-    pickle.dump(emails, open("./data/word_data.pkl", "w"))
-    pickle.dump(authors, open("./data/authors.pkl", "w"))
+    parseEmails()
