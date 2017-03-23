@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 from nltk.stem.snowball import SnowballStemmer
-import string
+from string import maketrans, punctuation, digits, join
 import os
 import pickle
 
@@ -13,12 +13,12 @@ def parseEmail(path):
 
         content = all_text.split("X-FileName:")
         if len(content) > 1:
-            text_string = content[1].translate(string.maketrans("", ""), string.punctuation)
-            text_string = removeNames(text_string, ["sara", "shackleton", "chris", "germany"])
-
+            text_string = content[1].translate(maketrans("", ""), punctuation + digits)
+            text_string = removeNames(text_string.lower(), ["sara", "shackleton", "chris", "germany",
+                                                            "sshacklensf", "cgermannsf","sshackl", "cgermane"])
             stemmer = SnowballStemmer("english")
             words = [stemmer.stem(word) for word in text_string.split()]
-            return string.join(words)
+            return join(words)
         else:
             return ""
 
@@ -35,10 +35,7 @@ def countLines(file):
     return c
 
 def parseEmails():
-    authors = []
-    emails = []
-    cnt = 0
-    progress = 0
+    authors, emails, cnt, progress = [], [], 0, 0
 
     print "\n### PARSING EMAILS ###"
     with open("./data/from_sara.txt", "r") as from_sara, open("./data/from_chris.txt", "r") as from_chris:
@@ -58,10 +55,10 @@ def parseEmails():
                     print "-- {} / {} emails parsed ({} %)".format(cnt, filecount, progress)
 
     print "-- {} emails parsed".format(cnt)
+    pickle.dump(emails, open("./data/word_data.pkl", "w"))
+    pickle.dump(authors, open("./data/authors.pkl", "w"))
     return emails, authors
 
 
 if __name__ == "__main__":
     emails, authors = parseEmails()
-    pickle.dump(emails, open("./data/word_data.pkl", "w"))
-    pickle.dump(authors, open("./data/authors.pkl", "w"))

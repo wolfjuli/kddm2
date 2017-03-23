@@ -20,6 +20,8 @@ except:
     features_train, features_test, labels_train, labels_test = preprocess(*parseEmails())
 
 print "\n### CLASSIFICATION ###"
+
+#NB, DT, SVM, (HSVM?) ANN, KNN, RF,
 clf = MultinomialNB()
 #clf = DecisionTreeClassifier(min_samples_split=40)
 #clf = SVC(kernel="rbf", C=10500)
