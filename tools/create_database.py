@@ -1,69 +1,75 @@
 #!/usr/bin/env python2.7
-
+from string import maketrans, punctuation
 
 from mail_functions import *
 
 import os
 import cPickle
 import time
-
-print "gathering all file paths"
-listOfAllFiles = []
-if os.path.isfile('allFiles.pkl'):
-    with open("allFiles.pkl", "r") as f:
-        listOfAllFiles = cPickle.load(f)
-if len(listOfAllFiles) < 1000 :
-    listOfAllFiles = getListOfFiles("../maildir")
-    with open("allFiles.pkl", "w") as f:
-        cPickle.dump(listOfAllFiles, f)
+import MySQLdb
 
 
-print "parsing files"
-all_mails = {}
-if os.path.isfile('all_mails.pkl'):
-    with open("all_mails.pkl", "r") as f:
-        try:
-            all_mails = cPickle.load(f)
-        except:
-            print "error when reading all_mails - file corrupt"
+def mapToSQL(map, tablename):
+    map.pop('', None)
+    vals = [v.translate(maketrans("", ""), punctuation) for v in map.values()]
+    return "insert into " + tablename + '(`' + '`, `'.join(map.keys()) + "`) values ('" + "', '".join(vals) + "'); "
 
-count = -1
-for filename in listOfAllFiles:
+
+allFiles = getListOfFiles('../maildir')
+
+db = MySQLdb.connect("localhost","kddm2","kddm2","kddm2" )
+
+cursor = db.cursor()
+
+columnNames = []
+cursor.execute("select lower(column_name) from information_schema.columns where table_name = 'mails'")
+
+results = cursor.fetchall()
+for cols in results:
+    columnNames.append(cols[0])
+
+print "Following columns are already present: "
+print columnNames
+
+cursor = db.cursor()
+
+
+cursor.execute("select filepath from mails")
+parsedFiles = {}
+for c in cursor.fetchall():
+    parsedFiles[c[0]] = 1
+
+count = 0
+print str(len(parsedFiles)) + " already parsed files"
+for file in allFiles:
     count += 1
-    if filename in all_mails:
-        print filename + " already in table"
-        continue
-
-    all_mails[filename] = getParsedContent(filename)
-    createStructure(filename)
 
     if count % 10000 == 0:
-        print "Writing out file. Please don't kill me now"
-        with open("all_mails.pkl", "w") as f:
-            cPickle.dump(all_mails, f)
-        print "done, sleeping for 1 second"
-        time.sleep(1)
-        print "done sleeping"
+        print "checked " + str(count) + " files"
 
-with open("all_mails.pkl", "w") as f:
-    cPickle.dump(all_mails, f)
+    if file.translate(maketrans("", ""), punctuation) in parsedFiles:
+        #print "skip " + file
+        continue
 
-with open('from_to_mails.pkl', "w") as f:
-    cPickle.dump(from_to_mail, f)
+    #print "working on " + file
+    parsed = getParsedContent(file)
 
-with open('names.pkl', "w") as f:
-    cPickle.dump(names, f)
+    for key in [p.lower() for p in parsed.keys() if p.lower() not in columnNames and p != ""]:
+        print "adding " + key + " column to database"
+        cursor.execute("alter table mails add `" + key + "` longtext")
+        columnNames.append(key.lower())
 
-print "Striping mails"
-all_stripped_mails = all_mails.copy()
-
-for frm in all_stripped_mails:
-    for to in all_stripped_mails[frm]:
-        all_stripped_mails[frm][to] = " ".join(filter(lambda w: w.lower() not in names, all_stripped_mails[frm][to].split()))
-
-with open('all_stripped_mails.pkl', "w") as f:
-    cPickle.dump(all_stripped_mails, f)
+    sql = mapToSQL(parsed, 'mails')
+    try:
+        cursor.execute(sql)
+    except Exception, e:
+        print "This mail failed: " + str(e)
+        print sql
+        cursor.execute("insert into failed (filename, errortext) values ('" + file.translate(maketrans("", ""), punctuation) + "', '" + str(e).translate(maketrans("", ""), punctuation) + "')")
+        cursor.close()
+        cursor = db.cursor()
 
 
-print "DONE!!! MOFO"
 
+
+db.close()
