@@ -96,7 +96,8 @@ final_project/emails_by_address/
 # intellij
 .idea/
 
-kddm2/data/authors.pkl
-kddm2/data/word_data.pkl
-tools/allFiles.pkl
-tools/parsedFiles.pkl
+src/data/authors.pkl
+src/data/word_data.pkl
+src/allFiles.pkl
+src/parsedFiles.pkl
+local/
