@@ -1,94 +1,75 @@
 #!/usr/bin/env python2.7
+from string import maketrans, punctuation
+
+from mail_functions import *
 
 import os
 import cPickle
 import time
-
-def getListOfFiles(root):
-
-    ret = []
-    for path, subdirs, files in os.walk(root):
-        print path
-        for file in files:
-            ret += [os.path.join(path, file)]
-
-        for subdir in subdirs:
-            #print "calling for " + os.path.join(path, subdir)
-            ret += getListOfFiles(os.path.join(path, subdir))
-
-    return ret
+import MySQLdb
 
 
-def getParsedContent(filefullpath):
-    ret = {}
-    with open(filefullpath, 'r') as f:
-        content = f.read()
-
-    lines = content.split("\n")
-    isBody = 0
-    mailBody = ""
-    lastKey = ""
-    for line in lines:
-        line = line.replace("\r", "")
-        if isBody:
-            mailBody += line + "\n"
-            continue
-        elif ":" not in line:
-            isBody = 1
-            continue
-
-        parts = line.split(": ")
-
-        if len(parts) < 2:
-            print "corrupt line in header in '" + filefullpath + "', last key: " + lastKey + ", line: " + line
-            key = lastKey
-            ret[lastKey] += "\n" + ": ".join(parts)
-            print "value now: " + ret[lastKey]
-        else:
-            key = parts[0]
-            del parts[0]
-            ret[key] = ": ".join(parts)
-
-        lastKey = key
-
-    ret['body'] = mailBody
-    ret['filepath'] = filefullpath
-
-    return ret
-
-print "gathering all file paths"
-if os.path.isfile('allFiles.pkl'):
-    with open("allFiles.pkl", "r") as f:
-        listOfAllFiles = cPickle.load(f)
-else:
-    listOfAllFiles = getListOfFiles("../maildir")
-    with open("allFiles.pkl", "w") as f:
-        cPickle.dump(listOfAllFiles, f)
+def mapToSQL(map, tablename):
+    map.pop('', None)
+    vals = [v.translate(maketrans("", ""), punctuation) for v in map.values()]
+    return "insert into " + tablename + '(`' + '`, `'.join(map.keys()) + "`) values ('" + "', '".join(vals) + "'); "
 
 
-print "parsing files"
-table = {}
-if os.path.isfile('parsedFiles.pkl'):
-    with open("parsedFiles.pkl", "r") as f:
-        table = cPickle.load(f)
+allFiles = getListOfFiles('../maildir')
 
-count = -1
-for filename in listOfAllFiles:
+db = MySQLdb.connect("localhost","kddm2","kddm2","kddm2" )
+
+cursor = db.cursor()
+
+columnNames = []
+cursor.execute("select lower(column_name) from information_schema.columns where table_name = 'mails'")
+
+results = cursor.fetchall()
+for cols in results:
+    columnNames.append(cols[0])
+
+print "Following columns are already present: "
+print columnNames
+
+cursor = db.cursor()
+
+
+cursor.execute("select filepath from mails")
+parsedFiles = {}
+for c in cursor.fetchall():
+    parsedFiles[c[0]] = 1
+
+count = 0
+print str(len(parsedFiles)) + " already parsed files"
+for file in allFiles:
     count += 1
-    if filename in table:
-        print filename + " already in table"
-        continue
-
-    table[filename] = getParsedContent(filename)
 
     if count % 10000 == 0:
-        print "Writing out file. Please don't kill me now"
-        with open("parsedFiles.pkl", "w") as f:
-            cPickle.dump(table, f)
-        print "done, sleeping for 1 second"
-        time.sleep(1)
-        print "done sleeping"
+        print "checked " + str(count) + " files"
 
-with open("parsedFiles.pkl", "w") as f:
-    cPickle.dump(table, f)
+    if file.translate(maketrans("", ""), punctuation) in parsedFiles:
+        #print "skip " + file
+        continue
 
+    #print "working on " + file
+    parsed = getParsedContent(file)
+
+    for key in [p.lower() for p in parsed.keys() if p.lower() not in columnNames and p != ""]:
+        print "adding " + key + " column to database"
+        cursor.execute("alter table mails add `" + key + "` longtext")
+        columnNames.append(key.lower())
+
+    sql = mapToSQL(parsed, 'mails')
+    try:
+        cursor.execute(sql)
+    except Exception, e:
+        print "This mail failed: " + str(e)
+        print sql
+        cursor.execute("insert into failed (filename, errortext) values ('" + file.translate(maketrans("", ""), punctuation) + "', '" + str(e).translate(maketrans("", ""), punctuation) + "')")
+        cursor.close()
+        cursor = db.cursor()
+
+
+
+
+db.close()

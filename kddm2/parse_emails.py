@@ -61,4 +61,4 @@ def parseEmails():
 
 
 if __name__ == "__main__":
-    emails, authors = parseEmails()
+    parseEmails()
