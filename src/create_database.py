@@ -3,9 +3,7 @@ from string import maketrans, punctuation
 
 from mail_functions import *
 
-import os
-import cPickle
-import time
+import hashlib
 import MySQLdb
 
 
@@ -18,6 +16,12 @@ def mapToSQL(map, tablename):
 allFiles = getListOfFiles('../maildir')
 
 db = MySQLdb.connect("localhost","kddm2","kddm2","kddm2" )
+
+def flush(cursor):
+    cursor.fetchall()
+    cursor.close()
+    return db.cursor()
+
 
 cursor = db.cursor()
 
@@ -66,10 +70,25 @@ for file in allFiles:
         print "This mail failed: " + str(e)
         print sql
         cursor.execute("insert into failed (filename, errortext) values ('" + file.translate(maketrans("", ""), punctuation) + "', '" + str(e).translate(maketrans("", ""), punctuation) + "')")
-        cursor.close()
-        cursor = db.cursor()
+        cursor = flush(cursor)
 
 
+cursor = flush(cursor)
+print "Creating SHA values for paragraphs"
+cursor.execute("select id, body from mails")
 
+count = 0
+for line in cursor.fetchall():
+    count += 1
+    paragraphs = line[1].split("\n\n")
 
+    for p in paragraphs:
+        cursor.execute("insert into mail_paragraphs (mailId, sha) values (" + str(line[0]) + ", sha('" + p + "'))")
+        cursor.execute("insert into sha_paragraphs (sha, paragraph) values ('" + hashlib.sha256(p) + "', '" + p + "')")
+
+    if count % 10000 == 0:
+        print str(count) + " mails handled"
+
+    cursor = flush(cursor)
 db.close()
+
