@@ -60,3 +60,5 @@ def getParsedContent(filefullpath):
     return ret
 
 
+
+def getParsedName(parts):
