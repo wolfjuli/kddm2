@@ -1,7 +1,7 @@
 # !/usr/bin/env python2.7
 
 import os
-
+import re
 
 def getListOfFiles(root):
 
@@ -61,4 +61,40 @@ def getParsedContent(filefullpath):
 
 
 
-def getParsedName(parts):
+def getParsedName(xAddress):
+    """
+    Returns an object with the fields firstName,middleNames, lastName,fullName,eMail of the given sender line as presented in the X-From or X-To line of mails. If multiple addresses are provided, please split them up beforehand, this function just works on a single user
+    :param xAddress: the address line of a single person as presented in the x-from field
+    :return: {firstName: string, lastName: string, fullName: string, eMail: string}
+    """
+
+    """
+    Corner Cases:
+
+    Andrea.P.Williams
+        No Spaces. regex is eager - no meaningfull lastname. Better replace all dots with space in names before regexing
+
+
+    """
+
+    #Cases (ln = Last name, fn0 = first name, mn1..n = middle names 1..n):
+    #Baughman Jr., Don </O=ENRON/OU=NA/CN=RECIPIENTS/CN=DBAUGHM> = ln mn1..n, fn0 <AD crap>
+    #Baughman Jr., Don <don.baughman@enron.com> = ln mn1..n, fn0 <eMail>
+    #ENL Member Services <ecenter@energynewslive.com> = fn0 mn1..n ln <eMail>
+    #confirm@paypal.com = eMail
+    #Richard Hrabal = fn0..n ln
+    #"support@edgar-online.com" <support@edgar-online.com>@ENRON = "eMail" <eMail>@crap
+
+
+
+    regex_email = "([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)"
+    regex_murica_name = "([A-Za-z]+)([\ A-Za-z.]*),([\ A-Za-z]+)"
+    regex_normal_name = "([A-Za-z]+)([\ A-Za-z.]*)([A-Za-z]+)"
+
+
+
+
+
+    parts = xAddress.split(" <")
+
+
