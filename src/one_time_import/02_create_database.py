@@ -68,6 +68,8 @@ allFiles = getListOfFiles('../../maildir')
 for file in allFiles:
     count += 1
 
+    if count % 10000 == 0:
+        print "checked " + str(count) + " files"
 
     if file.translate(maketrans("", ""), punctuation) in parsedFiles:
         #print "skip " + file
@@ -89,6 +91,7 @@ for file in allFiles:
         print "This mail failed: " + str(e)
         print sql
         cursor.execute("insert into failed (filename, errortext) values ('" + file.translate(maketrans("", ""), punctuation) + "', '" + str(e).translate(maketrans("", ""), punctuation) + "')")
+        cursor = flush(cursor)
 
     paragraphs = parsed['body'].translate(maketrans("", ""), punctuation).split("\n\n")
 
