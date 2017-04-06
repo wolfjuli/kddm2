@@ -2,6 +2,7 @@
 
 import os
 import re
+import nltk
 
 def getListOfFiles(root):
 
@@ -59,6 +60,20 @@ def getParsedContent(filefullpath):
 
     return ret
 
+def stripNames(text):
+    """
+    Strips all names of text, so "Hello Julian Wolf" becomes "Hello " (just works for english language)
+    :param text: The text wich will be transformed
+    :return: guess what? text without names
+    """
+
+    tokens = nltk.word_tokenize(text)
+    ret = text
+    for name in [n[0] for n in nltk.pos_tag(tokens) if (n[1] == "NNP" or n[1] == "NNPS") and len(n[0]) > 1]:
+        ret = ret.replace(name, "")
+
+    return ret
+
 
 
 def getParsedName(xAddress):
@@ -77,6 +92,8 @@ def getParsedName(xAddress):
 
     """
 
+
+
     #Cases (ln = Last name, fn0 = first name, mn1..n = middle names 1..n):
     #Baughman Jr., Don </O=ENRON/OU=NA/CN=RECIPIENTS/CN=DBAUGHM> = ln mn1..n, fn0 <AD crap>
     #Baughman Jr., Don <don.baughman@enron.com> = ln mn1..n, fn0 <eMail>
@@ -85,15 +102,9 @@ def getParsedName(xAddress):
     #Richard Hrabal = fn0..n ln
     #"support@edgar-online.com" <support@edgar-online.com>@ENRON = "eMail" <eMail>@crap
 
-
-
     regex_email = "([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)"
     regex_murica_name = "([A-Za-z]+)([\ A-Za-z.]*),([\ A-Za-z]+)"
     regex_normal_name = "([A-Za-z]+)([\ A-Za-z.]*)([A-Za-z]+)"
-
-
-
-
 
     parts = xAddress.split(" <")
 
