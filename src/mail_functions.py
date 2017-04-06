@@ -63,7 +63,7 @@ def getParsedContent(filefullpath):
 def stripNames(text):
     """
     Strips all names of text, so "Hello Julian Wolf" becomes "Hello " (just works for english language)
-    :param text: The text wich will be transformed
+    :param text: The text which will be transformed
     :return: guess what? text without names
     """
 
@@ -73,7 +73,6 @@ def stripNames(text):
         ret = ret.replace(name, "")
 
     return ret
-
 
 
 def getParsedName(xAddress):
