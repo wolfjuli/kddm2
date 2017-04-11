@@ -13,7 +13,7 @@ def flush(cursor):
     cursor.close()
     return db.cursor()
 
-print "Creating SHA values for paragraphs"
+print("Creating SHA values for paragraphs")
 cursor.execute("select id, body from mails")
 
 count = 0
@@ -26,6 +26,6 @@ for line in cursor.fetchall():
         cursor.execute("insert into sha_paragraphs (sha, paragraph) values ('" + hashlib.sha256(p) + "', '" + p + "')")
 
     if count % 10000 == 0:
-        print str(count) + " mails handled"
+        print(str(count) + " mails handled")
 
     cursor = flush(cursor)

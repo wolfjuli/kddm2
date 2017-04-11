@@ -20,7 +20,7 @@ except:
     features_train, features_test, labels_train, labels_test = preprocess(*parseEmails())
 
 
-print "\n### CLASSIFICATION ###"
+print("\n### CLASSIFICATION ###")
 
 #NB, DT, SVM, (HSVM?) ANN, KNN, RF,
 clf = MultinomialNB()
@@ -29,12 +29,12 @@ clf = MultinomialNB()
 
 t0 = time()
 clf.fit(features_train, labels_train)
-print "Training time:", round(time()-t0, 3), "s"
+print("Training time:", round(time()-t0, 3), "s")
 
 t1 = time()
 prediction = clf.predict(features_test)
-print "Prediction time:", round(time()-t1, 3), "s\n"
+print("Prediction time:", round(time()-t1, 3), "s\n")
 
-print classification_report(labels_test, prediction, target_names=["sara", "chris"])
-print "Accuracy:", accuracy_score(prediction, labels_test)
-print "Confusion Matrix: \n" , confusion_matrix(labels_test, prediction)
+print(classification_report(labels_test, prediction, target_names=["sara", "chris"]))
+print("Accuracy:", accuracy_score(prediction, labels_test))
+print("Confusion Matrix: \n" , confusion_matrix(labels_test, prediction))

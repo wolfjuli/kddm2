@@ -38,7 +38,7 @@ def countLines(file):
 def parseEmails():
     authors, emails, cnt, progress = [], [], 0, 0
 
-    print "\n### PARSING EMAILS ###"
+    print("\n### PARSING EMAILS ###")
     with open("./data/from_sara.txt", "r") as from_sara, open("./data/from_chris.txt", "r") as from_chris:
         filecount = countLines(from_sara) + countLines(from_chris)
         for i, from_person in [(0, from_sara), (1, from_chris)]:
@@ -48,14 +48,14 @@ def parseEmails():
                     emails.append(parseEmail(path))
                     authors.append(i)
                 except:
-                    print "error parsing email " + path
+                    print("error parsing email " + path)
 
                 tmp_progress = int(cnt*100 / filecount)
                 if (tmp_progress % 10 == 0 and progress != tmp_progress):
                     progress = tmp_progress
-                    print "-- {} / {} emails parsed ({} %)".format(cnt, filecount, progress)
+                    print("-- {} / {} emails parsed ({} %)".format(cnt, filecount, progress))
 
-    print "-- {} emails parsed".format(cnt)
+    print("-- {} emails parsed".format(cnt))
     pickle.dump(emails, open("./data/word_data.pkl", "w"))
     pickle.dump(authors, open("./data/authors.pkl", "w"))
     return emails, authors
