@@ -166,8 +166,8 @@ CREATE TABLE `sha_paragraphs` (
 """
 
 try:
-    import MySQLdb
-    db = MySQLdb.connect("localhost","kddm2","kddm2","kddm2" )
+    import pymysql
+    db = pymysql.connect("localhost","kddm2","kddm2","kddm2")
 except:
     try:
         import pymysql

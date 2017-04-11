@@ -6,8 +6,8 @@ from src.mail_functions import *
 import hashlib
 
 try:
-    import MySQLdb
-    db = MySQLdb.connect("localhost","kddm2","kddm2","kddm2" )
+    import pymysql
+    db = pymysql.connect("localhost","kddm2","kddm2","kddm2" )
 except:
     try:
         import pymysql
@@ -44,8 +44,8 @@ results = cursor.fetchall()
 for cols in results:
     columnNames.append(cols[0])
 
-print "Following columns are already present: "
-print columnNames
+print("Following columns are already present: ")
+print(columnNames)
 
 cursor.execute('select sha from sha_paragraphs')
 
@@ -54,7 +54,7 @@ for line in cursor.fetchall():
     sha_vals[line[0]] = 1
 
 
-print str(len(sha_vals.keys())) + ' sha values already in database'
+print(str(len(sha_vals.keys())) + ' sha values already in database')
 
 cursor.execute("select id, body from mails")
 
@@ -69,7 +69,7 @@ for c in cursor.fetchall():
 
 count = 0
 sumparagraphs = 0
-print str(len(parsedFiles)) + " already parsed files"
+print(str(len(parsedFiles)) + " already parsed files")
 
 
 allFiles = getListOfFiles('../../maildir')
@@ -78,7 +78,7 @@ for file in allFiles:
     count += 1
 
     if count % 10000 == 0:
-        print "checked " + str(count) + " files"
+        print("checked " + str(count) + " files")
 
     if file.translate(maketrans("", ""), punctuation) in parsedFiles:
         #print "skip " + file
@@ -88,7 +88,7 @@ for file in allFiles:
     parsed = getParsedContent(file)
 
     for key in [p.lower() for p in parsed.keys() if p.lower() not in columnNames and p != ""]:
-        print "adding " + key + " column to database"
+        print("adding " + key + " column to database")
         cursor.execute("alter table mails add `" + key + "` longtext")
         columnNames.append(key.lower())
 
@@ -96,9 +96,9 @@ for file in allFiles:
     sql = mapToSQL(parsed, 'mails')
     try:
         cursor.execute(sql)
-    except Exception, e:
-        print "This mail failed: " + str(e)
-        print sql
+    except Exception as e:
+        print("This mail failed: " + str(e))
+        print(sql)
         cursor.execute("insert into failed (filename, errortext) values ('" + file.translate(maketrans("", ""), punctuation) + "', '" + str(e).translate(maketrans("", ""), punctuation) + "')")
         cursor = flush(cursor)
 
@@ -123,9 +123,9 @@ for file in allFiles:
 
 
     if count % 10000 == 0:
-        print "checked " + str(count) + " files"
-        print "sum paragraphs: " + str(sumparagraphs) + ", distinct paragraphs: " + str(len(sha_vals.keys())) + \
-              " = ~" + str(int(len(sha_vals.keys()) / (sumparagraphs + 0.) * 100 + 0.5)) + "%)"
+        print("checked " + str(count) + " files")
+        print("sum paragraphs: " + str(sumparagraphs) + ", distinct paragraphs: " + str(len(sha_vals.keys())) + \
+              " = ~" + str(int(len(sha_vals.keys()) / (sumparagraphs + 0.) * 100 + 0.5)) + "%)")
 
         cursor = flush(cursor)
 
