@@ -169,10 +169,12 @@ try:
     import MySQLdb
     db = MySQLdb.connect("localhost","kddm2","kddm2","kddm2" )
 except:
-    import pymssql
-    db = pymssql.connect("localhost", "kddm2", "kddm2", "kddm2")
-
-
+    try:
+        import pymysql
+        db = pymysql.connect("localhost","kddm2","kddm2","kddm2" )
+    except:
+        import pymssql
+        db = pymssql.connect("localhost", "kddm2", "kddm2", "kddm2")
 
 
 def flush(cursor):

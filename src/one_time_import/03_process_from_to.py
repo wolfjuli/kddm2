@@ -4,10 +4,18 @@ from string import maketrans, punctuation
 from src.mail_functions import *
 
 import hashlib
-import MySQLdb
 
 
-db = MySQLdb.connect("localhost","kddm2","kddm2","kddm2" )
+try:
+    import MySQLdb
+    db = MySQLdb.connect("localhost","kddm2","kddm2","kddm2" )
+except:
+    try:
+        import pymysql
+        db = pymysql.connect("localhost","kddm2","kddm2","kddm2" )
+    except:
+        import pymssql
+        db = pymssql.connect("localhost", "kddm2", "kddm2", "kddm2")
 
 def flush(cursor):
     db.commit()
