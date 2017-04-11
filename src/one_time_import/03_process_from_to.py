@@ -20,23 +20,17 @@ cursor = db.cursor()
 
 names = {}
 from_to_mails = {}
-cursor.execute("select n.name from names n")
-for line in cursor.fetchall():
-    names[line[0]] = 1
 
 count = 0
 needFlush = 0
-cursor.execute("select m.`from`, m.`to`, m.`x-from`, m.`x-to` from mails m")
+cursor.execute("select m.`from`, m.`to`, m.`x-from`, m.`x-to`, m.id from mails m")
 for line in cursor.fetchall():
-    words = line[0].split(' ') + line[1].split(' ')
 
-    for name in [w.translate(maketrans("", ""), "\t\n\r") for w in words if w not in names]:
-        cursor.execute("insert into names (name) values ('" + name + "')")
-        needFlush = 1
-        names[name] = 1
+    count += 1
+    for t in str(line[1]).split(","):
+        cursor.execute("insert into from_to_mail (`from`, `to`, mailId) values (%s, %s, %s)", (line[0], str(t).strip(), line[4]))
 
-
-
+    cursor = flush(cursor)
 
     if count % 1000 == 0:
-        print "processed 1000 mails, " + str(len(names.keys())) + ' distinct names found'
+        print "processed " + str(count) + " mails"
