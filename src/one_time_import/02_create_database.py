@@ -26,8 +26,6 @@ def mapToSQL(map, tablename):
     return "insert into " + tablename + '(`' + '`, `'.join(imp.keys()) + "`) values ('" + "', '".join(vals) + "'); "
 
 
-
-
 def flush(cursor):
     db.commit()
     cursor.fetchall()
@@ -53,15 +51,9 @@ sha_vals = {}
 for line in cursor.fetchall():
     sha_vals[line[0]] = 1
 
-
 print(str(len(sha_vals.keys())) + ' sha values already in database')
 
-cursor.execute("select id, body from mails")
-
-
 cursor = db.cursor()
-
-
 cursor.execute("select filepath from mails")
 parsedFiles = {}
 for c in cursor.fetchall():
@@ -70,7 +62,6 @@ for c in cursor.fetchall():
 count = 0
 sumparagraphs = 0
 print(str(len(parsedFiles)) + " already parsed files")
-
 
 allFiles = getListOfFiles('../../maildir')
 
@@ -87,6 +78,8 @@ for file in allFiles:
 
     try:
         cursor.execute(sql)
+        for t in parsed['to'].split(","):
+            cursor.execute("insert into from_to_mail (`from`, `to`, mailId) values (%s, %s, %s)", (parsed['from'], t.strip(), parsed['id']))
     except Exception as e:
         print("This mail failed: " + str(e))
         print(sql)
@@ -99,17 +92,15 @@ for file in allFiles:
 
     for p in [p.strip() for p in paragraphs if p.strip() != ""]:
         sortorder += 1
-
-        if str(hashlib.sha256(p).hexdigest()) not in sha_vals:
-            cursor.execute("insert into sha_paragraphs (sha, paragraph) values ('" + str(
-                hashlib.sha256(p).hexdigest()) + "', '" + p + "')")
-            # print "insert into sha_paragraphs (sha, paragraph) values ('" + str(hashlib.sha256(p).hexdigest()) + "', '" + p + "')"
-            sha_vals[str(hashlib.sha256(p).hexdigest())] = 1
+        hash = str(hashlib.sha256(p.encode('UTF-8')).hexdigest())
+        if hash not in sha_vals:
+            cursor.execute("insert into sha_paragraphs (sha, paragraph) values ('" + hash + "', '" + p + "')")
+            sha_vals[hash] = 1
             needflush = 1
 
         cursor.execute("insert into mail_paragraphs (mailId, sha, sortorder) values " +
                        "(" + str(parsed['id']) +
-                       ", '" + str(hashlib.sha256(p).hexdigest()) + "', " +
+                       ", '" + hash + "', " +
                        str(sortorder) + ")")
 
     if count % 10000 == 0:

@@ -89,8 +89,6 @@ def getParsedName(xAddress):
 
     """
 
-
-
     #Cases (ln = Last name, fn0 = first name, mn1..n = middle names 1..n):
     #Baughman Jr., Don </O=ENRON/OU=NA/CN=RECIPIENTS/CN=DBAUGHM> = ln mn1..n, fn0 <AD crap>
     #Baughman Jr., Don <don.baughman@enron.com> = ln mn1..n, fn0 <eMail>
@@ -109,3 +107,4 @@ def getParsedName(xAddress):
 def stripChars(text, chars):
     for c in chars:
         text = text.replace(c, "")
+    return text

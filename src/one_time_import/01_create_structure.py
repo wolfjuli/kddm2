@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from string import maketrans, punctuation
+from string import punctuation
 
 from src.mail_functions import *
 
@@ -108,38 +108,6 @@ CREATE TABLE `mails` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `names`
---
-
-DROP TABLE IF EXISTS `names`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `names` (
-  `id` int(11) NOT NULL,
-  `firstname` varchar(200) DEFAULT NULL,
-  `lastname` varchar(200) DEFAULT NULL,
-  `fullname` varchar(600) DEFAULT NULL,
-  `email` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `sender_receiver_mail`
---
-
-DROP TABLE IF EXISTS `sender_receiver_mail`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `sender_receiver_mail` (
-  `sender` text,
-  `receiver` text,
-  `mail` int(11) DEFAULT NULL,
-  KEY `mail` (`mail`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Table structure for table `sha_paragraphs`
 --
 
@@ -201,12 +169,12 @@ parsedFiles = {}
 for file in allFiles:
     count += 1
 
-
-    if file.translate(maketrans("", ""), punctuation) in parsedFiles:
+    stripedFile = stripChars(file, punctuation)
+    if stripedFile in parsedFiles:
         #print "skip " + file
         continue
 
-    parsedFiles[file.translate(maketrans("", ""), punctuation)] = 1
+    parsedFiles[stripedFile] = 1
 
     #print "working on " + file
     parsed = getParsedContent(file)
