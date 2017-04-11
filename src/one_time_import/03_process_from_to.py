@@ -1,10 +1,4 @@
 #!/usr/bin/env python3
-from string import maketrans, punctuation
-
-from src.mail_functions import *
-
-import hashlib
-
 
 try:
     import MySQLdb
@@ -41,4 +35,4 @@ for line in cursor.fetchall():
     cursor = flush(cursor)
 
     if count % 1000 == 0:
-        print "processed " + str(count) + " mails"
+        print("processed " + str(count) + " mails")

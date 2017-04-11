@@ -1,9 +1,7 @@
 # !/usr/bin/env python2.7
 
 import os
-import re
 import nltk
-
 def getListOfFiles(root):
 
     ret = []
@@ -108,3 +106,6 @@ def getParsedName(xAddress):
     parts = xAddress.split(" <")
 
 
+def stripChars(text, chars):
+    for c in chars:
+        text = text.replace(c, "")
