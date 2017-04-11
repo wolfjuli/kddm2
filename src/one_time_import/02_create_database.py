@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from string import maketrans, punctuation
+from string import punctuation
 
 from src.mail_functions import *
 
@@ -77,36 +77,26 @@ allFiles = getListOfFiles('../../maildir')
 for file in allFiles:
     count += 1
 
-    if count % 10000 == 0:
-        print("checked " + str(count) + " files")
-
     if file in parsedFiles:
-        #print "skip " + file
         continue
 
-    #print "working on " + file
     parsed = getParsedContent(file)
-
-    # not needed anymore
-    #for key in [p.lower() for p in parsed.keys() if p.lower() not in columnNames and p != ""]:
-    #    print("adding " + key + " column to database")
-    #    cursor.execute("alter table mails add `" + key + "` longtext")
-    #    columnNames.append(key.lower())
-
     parsed['id'] = count
+    parsedFiles[file] = 1
     sql = mapToSQL(parsed, 'mails')
+
     try:
         cursor.execute(sql)
     except Exception as e:
         print("This mail failed: " + str(e))
         print(sql)
-        cursor.execute("insert into failed (filename, errortext) values ('" + file.translate(maketrans("", ""), punctuation) + "', '" + str(e).translate(maketrans("", ""), punctuation) + "')")
+        cursor.execute("insert into failed (filename, errortext) values ('" + stripChars(file, punctuation) + "', '" + stripChars(str(e), punctuation) + "')")
         cursor = flush(cursor)
 
-    paragraphs = parsed['body'].translate(maketrans("", ""), punctuation).split("\n\n")
-
+    paragraphs = stripChars(parsed['body'], punctuation).split("\n\n")
     sumparagraphs += len(paragraphs)
     sortorder = 0
+
     for p in [p.strip() for p in paragraphs if p.strip() != ""]:
         sortorder += 1
 
@@ -121,7 +111,6 @@ for file in allFiles:
                        "(" + str(parsed['id']) +
                        ", '" + str(hashlib.sha256(p).hexdigest()) + "', " +
                        str(sortorder) + ")")
-
 
     if count % 10000 == 0:
         print("checked " + str(count) + " files")

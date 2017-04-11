@@ -212,14 +212,14 @@ for file in allFiles:
     parsed = getParsedContent(file)
 
     for key in [p.lower() for p in parsed.keys() if p.lower() not in columnNames and p != ""]:
-        print "found new key " + key
+        print("found new key " + key)
         columnNames[key.lower()] = parsed['filepath']
 
     if count % 10000 == 0:
-        print "checked " + str(count) + " files"
+        print("checked " + str(count) + " files")
 
 
 with open('columnNames.pkl', 'w') as f:
     pickle.dump(columnNames, f)
 
-print columnNames
+print(columnNames)
