@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 from string import maketrans, punctuation
 
 from src.mail_functions import *
@@ -166,8 +166,8 @@ CREATE TABLE `sha_paragraphs` (
 """
 
 try:
-    import pymysql
-    db = pymysql.connect("localhost","kddm2","kddm2","kddm2")
+    import MySQLdb
+    db = MySQLdb.connect("localhost","kddm2","kddm2","kddm2")
 except:
     try:
         import pymysql

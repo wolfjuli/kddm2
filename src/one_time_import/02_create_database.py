@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 from string import maketrans, punctuation
 
 from src.mail_functions import *
@@ -6,8 +6,8 @@ from src.mail_functions import *
 import hashlib
 
 try:
-    import pymysql
-    db = pymysql.connect("localhost","kddm2","kddm2","kddm2" )
+    import MySQLdb
+    db = MySQLdb.connect("localhost","kddm2","kddm2","kddm2" )
 except:
     try:
         import pymysql
@@ -65,7 +65,7 @@ cursor = db.cursor()
 cursor.execute("select filepath from mails")
 parsedFiles = {}
 for c in cursor.fetchall():
-    parsedFiles[c[0]] = 1
+    parsedFiles[c[0].strip()] = 1
 
 count = 0
 sumparagraphs = 0
@@ -80,17 +80,18 @@ for file in allFiles:
     if count % 10000 == 0:
         print("checked " + str(count) + " files")
 
-    if file.translate(maketrans("", ""), punctuation) in parsedFiles:
+    if file in parsedFiles:
         #print "skip " + file
         continue
 
     #print "working on " + file
     parsed = getParsedContent(file)
 
-    for key in [p.lower() for p in parsed.keys() if p.lower() not in columnNames and p != ""]:
-        print("adding " + key + " column to database")
-        cursor.execute("alter table mails add `" + key + "` longtext")
-        columnNames.append(key.lower())
+    # not needed anymore
+    #for key in [p.lower() for p in parsed.keys() if p.lower() not in columnNames and p != ""]:
+    #    print("adding " + key + " column to database")
+    #    cursor.execute("alter table mails add `" + key + "` longtext")
+    #    columnNames.append(key.lower())
 
     parsed['id'] = count
     sql = mapToSQL(parsed, 'mails')
@@ -124,7 +125,7 @@ for file in allFiles:
 
     if count % 10000 == 0:
         print("checked " + str(count) + " files")
-        print("sum paragraphs: " + str(sumparagraphs) + ", distinct paragraphs: " + str(len(sha_vals.keys())) + \
+        print("sum paragraphs: " + str(sumparagraphs) + ", distinct paragraphs: " + str(len(sha_vals.keys())) +
               " = ~" + str(int(len(sha_vals.keys()) / (sumparagraphs + 0.) * 100 + 0.5)) + "%)")
 
         cursor = flush(cursor)

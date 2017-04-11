@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 from string import maketrans, punctuation
 
 from src.mail_functions import *
