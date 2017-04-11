@@ -4,7 +4,15 @@ from string import maketrans, punctuation
 from src.mail_functions import *
 
 import hashlib
-import MySQLdb
+
+try:
+    import MySQLdb
+    db = MySQLdb.connect("localhost","kddm2","kddm2","kddm2" )
+except:
+    import pymssql
+    db = pymssql.connect("localhost", "kddm2", "kddm2", "kddm2")
+
+allFiles = getListOfFiles('../maildir')
 
 
 def mapToSQL(map, tablename):
@@ -15,9 +23,7 @@ def mapToSQL(map, tablename):
     return "insert into " + tablename + '(`' + '`, `'.join(imp.keys()) + "`) values ('" + "', '".join(vals) + "'); "
 
 
-allFiles = getListOfFiles('../maildir')
 
-db = MySQLdb.connect("localhost","kddm2","kddm2","kddm2" )
 
 def flush(cursor):
     db.commit()
