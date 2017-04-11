@@ -66,6 +66,7 @@ CREATE TABLE `mail_paragraphs` (
   `mailId` int(11) DEFAULT NULL,
   `sha` varchar(200) DEFAULT NULL,
   `sortorder` int(11) DEFAULT NULL,
+  pid int DEFAULT NULL,
   KEY `iddx_mail_paragraph_mailId` (`mailId`),
   KEY `mail_paragraphs_sha_index` (`sha`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -117,6 +118,7 @@ DROP TABLE IF EXISTS `sha_paragraphs`;
 CREATE TABLE `sha_paragraphs` (
   `sha` varchar(200) NOT NULL,
   `paragraph` longtext,
+  id int,
   PRIMARY KEY (`sha`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;

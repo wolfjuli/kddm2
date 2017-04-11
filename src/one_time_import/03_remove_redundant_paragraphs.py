@@ -30,16 +30,15 @@ and column_name = 'deleted'
 """)
 
 if len(cursor.fetchall()) == 0:
-    print("Table does not have the deleted column - creating it. This takes log - go fetch a coffee")
+    print("Table does not have the deleted column - creating it. This takes long - go fetch a coffee")
     cursor.execute("alter table mail_paragraphs add deleted int DEFAULT 0")
     cursor = flush(cursor)
 
 print("Fetching all mails")
 cursor.execute("""
-select mailid, sha
+SELECT mailId, GROUP_CONCAT(sha SEPARATOR '') as sha, count(*)
 from mail_paragraphs
-where deleted = 0
-order by mailid, sortorder
+group by mailId;
 """)
 
 
@@ -52,23 +51,23 @@ for mail_para in cursor.fetchall():
         allMails[mail_para[0]] = []
 
     #create count set
-    if oldMailId != mail_para and oldMailId != "":
-        count = len(allMails[oldMailId])
-        if count not in mailCount:
-            mailCount[count] = []
+    if oldMailId != mail_para:
+        if oldMailId != "":
+            count = len(allMails[oldMailId])
+            if count not in mailCount:
+                mailCount[count] = []
+            mailCount[count].append(oldMailId)
 
-        mailCount[count] += oldMailId
         oldMailId = mail_para[0]
 
-    allMails[mail_para[0]] += mail_para[1]
-
+    allMails[mail_para[0]].append(mail_para[1])
 
 cursor = flush(cursor)
-for i in range(1, max(mailCount)):
+for i in mailCount.keys():
     #run through all mails in this paragraph count list
     for smallMailId in mailCount[i]:
         #check with all other mails which have more paragraphs
-        for j in range(i + 1, max(mailCount)):
+        for j in [k for k in mailCount.keys() if k > i]:
             for largeMailId in mailCount[j]:
                 if set(allMails[smallMailId]).issubset(allMails[largeMailId]):
                     #the smaller mail was a subset of the bigger mail - delete it from the bigger mail
@@ -76,6 +75,6 @@ for i in range(1, max(mailCount)):
                         cursor.execute("""update mail_paragraphs set deleted = 1 where mailId = %s and sha = %s""", (largeMailId, sha))
 
                     cursor = flush(cursor)
-                    print("Mail %s was in mail %s", (smallMailId, largeMailId))
+                    print("Mail {} was in mail {}".format(smallMailId, largeMailId))
 
 

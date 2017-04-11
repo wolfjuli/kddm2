@@ -78,8 +78,8 @@ for file in allFiles:
 
     try:
         cursor.execute(sql)
-        for t in parsed['to'].split(","):
-            cursor.execute("insert into from_to_mail (`from`, `to`, mailId) values (%s, %s, %s)", (parsed['from'], t.strip(), parsed['id']))
+        for t in parsed['To'].split(","):
+            cursor.execute("insert into from_to_mail (`from`, `to`, mailId) values ('{}','{}',{})".format(parsed['From'], t.strip(), parsed['id']))
     except Exception as e:
         print("This mail failed: " + str(e))
         print(sql)
@@ -87,21 +87,21 @@ for file in allFiles:
         cursor = flush(cursor)
 
     paragraphs = stripChars(parsed['body'], punctuation).split("\n\n")
-    sumparagraphs += len(paragraphs)
     sortorder = 0
 
     for p in [p.strip() for p in paragraphs if p.strip() != ""]:
         sortorder += 1
+        sumparagraphs += 1
         hash = str(hashlib.sha256(p.encode('UTF-8')).hexdigest())
         if hash not in sha_vals:
-            cursor.execute("insert into sha_paragraphs (sha, paragraph) values ('" + hash + "', '" + p + "')")
+            cursor.execute("insert into sha_paragraphs (sha, paragraph, id) values ('" + hash + "', '" + p + "'," + str(sumparagraphs) + ")")
             sha_vals[hash] = 1
             needflush = 1
 
-        cursor.execute("insert into mail_paragraphs (mailId, sha, sortorder) values " +
+        cursor.execute("insert into mail_paragraphs (mailId, sha, sortorder, pid) values " +
                        "(" + str(parsed['id']) +
                        ", '" + hash + "', " +
-                       str(sortorder) + ")")
+                       str(sortorder) + "," + str(sumparagraphs) +")")
 
     if count % 10000 == 0:
         print("checked " + str(count) + " files")
