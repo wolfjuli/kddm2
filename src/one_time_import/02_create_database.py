@@ -125,4 +125,4 @@ values ('{}', '{}', {})"""
 
         cursor = flush(cursor)
 
-
+cursor = flush(cursor)
