@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from string import punctuation
 
-from src.mail_functions import *
+from mail_functions import *
 
 import hashlib
 
@@ -45,11 +45,11 @@ for cols in results:
 print("Following columns are already present: ")
 print(columnNames)
 
-cursor.execute('select sha from sha_paragraphs')
+cursor.execute('select sha, id from sha_paragraphs')
 
 sha_vals = {}
 for line in cursor.fetchall():
-    sha_vals[line[0]] = 1
+    sha_vals[line[0]] = line[1]
 
 print(str(len(sha_vals.keys())) + ' sha values already in database')
 
@@ -61,6 +61,7 @@ for c in cursor.fetchall():
 
 count = 0
 sumparagraphs = 0
+sumdistinctparagraphs = len(sha_vals.keys())
 print(str(len(parsedFiles)) + " already parsed files")
 
 allFiles = getListOfFiles('../../maildir')
@@ -72,19 +73,29 @@ for file in allFiles:
         continue
 
     parsed = getParsedContent(file)
+
+    if 'To' not in parsed:
+        parsed['To'] = ''
+
     parsed['id'] = count
     parsedFiles[file] = 1
     sql = mapToSQL(parsed, 'mails')
 
     try:
         cursor.execute(sql)
-        for t in parsed['To'].split(","):
-            cursor.execute("insert into from_to_mail (`from`, `to`, mailId) values ('{}','{}',{})".format(parsed['From'], t.strip(), parsed['id']))
     except Exception as e:
         print("This mail failed: " + str(e))
         print(sql)
         cursor.execute("insert into failed (filename, errortext) values ('" + stripChars(file, punctuation) + "', '" + stripChars(str(e), punctuation) + "')")
         cursor = flush(cursor)
+
+    for t in parsed['To'].split(","):
+        try:
+            sql = "insert into from_to_mail (`from`, `to`, mailId) values ('{}','{}',{})".format(parsed['From'].replace("'", ""), t.strip().replace("'", ""), parsed['id'])
+            cursor.execute(sql)
+        except Exception as e:
+            print("something went wrong with this statement:")
+            print(sql)
 
     paragraphs = stripChars(parsed['body'], punctuation).split("\n\n")
     sortorder = 0
@@ -94,14 +105,18 @@ for file in allFiles:
         sumparagraphs += 1
         hash = str(hashlib.sha256(p.encode('UTF-8')).hexdigest())
         if hash not in sha_vals:
-            cursor.execute("insert into sha_paragraphs (sha, paragraph, id) values ('" + hash + "', '" + p + "'," + str(sumparagraphs) + ")")
-            sha_vals[hash] = 1
+            sumdistinctparagraphs +=1
+            cursor.execute("""
+insert into sha_paragraphs (sha, paragraph, id)
+values ('{}', '{}', {})"""
+               .format(hash, p, sumdistinctparagraphs))
+            sha_vals[hash] = sumdistinctparagraphs
             needflush = 1
 
-        cursor.execute("insert into mail_paragraphs (mailId, sha, sortorder, pid) values " +
-                       "(" + str(parsed['id']) +
-                       ", '" + hash + "', " +
-                       str(sortorder) + "," + str(sumparagraphs) +")")
+        cursor.execute("""
+        insert into mail_paragraphs (mailId, sha, sortorder, pid)
+        values ({}, '{}', {}, {})"""
+                       .format(str(parsed['id']), hash, sortorder, sha_vals[hash]))
 
     if count % 10000 == 0:
         print("checked " + str(count) + " files")

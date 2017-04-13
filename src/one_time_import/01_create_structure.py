@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from string import punctuation
 
-from src.mail_functions import *
+from mail_functions import *
 
 import pickle
 
@@ -66,7 +66,7 @@ CREATE TABLE `mail_paragraphs` (
   `mailId` int(11) DEFAULT NULL,
   `sha` varchar(200) DEFAULT NULL,
   `sortorder` int(11) DEFAULT NULL,
-  pid int DEFAULT NULL,
+  pid int,
   KEY `iddx_mail_paragraph_mailId` (`mailId`),
   KEY `mail_paragraphs_sha_index` (`sha`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -138,13 +138,16 @@ CREATE TABLE `sha_paragraphs` (
 try:
     import MySQLdb
     db = MySQLdb.connect("localhost","kddm2","kddm2","kddm2")
+    print("Using MySQLdb")
 except:
     try:
         import pymysql
         db = pymysql.connect("localhost","kddm2","kddm2","kddm2" )
+        print("Using pyMySQL")
     except:
         import pymssql
         db = pymssql.connect("localhost", "kddm2", "kddm2", "kddm2")
+        print("Using pymssql")
 
 
 def flush(cursor):

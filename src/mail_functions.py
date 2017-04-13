@@ -8,7 +8,7 @@ def getListOfFiles(root):
     for path, subdirs, files in os.walk(root):
         #print path
 
-        for file in files:
+        for file in [f for f in files if not f.startswith(".")]:
             ret += [os.path.join(path, file)]
 
         for subdir in subdirs:
@@ -21,8 +21,8 @@ def getListOfFiles(root):
 def getParsedContent(filefullpath):
     ret = {}
 
-    with open(filefullpath, 'r') as f:
-        mailcontent = f.read()
+    with open(filefullpath, 'rb') as f:
+        mailcontent = f.read().decode('utf8', 'ignore')
 
 
     lines = mailcontent.replace("\r", "").split("\n")
@@ -43,6 +43,8 @@ def getParsedContent(filefullpath):
         if len(parts) < 2 or line.startswith('	') or line.startswith(' '):
             #print "corrupt line in header in '" + filefullpath + "', last key: " + lastKey + ", line: " + line
             key = lastKey
+            if lastKey == "":
+                print("This file has a corrupt header: {}".format(filefullpath))
             ret[lastKey] += "\n" + ": ".join(parts)
             #print "value now: " + ret[lastKey]
         else:
