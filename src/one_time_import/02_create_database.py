@@ -2,19 +2,10 @@
 from string import punctuation
 
 from mail_functions import *
+from db_helper import *
 
 import hashlib
 
-try:
-    import MySQLdb
-    db = MySQLdb.connect("localhost","kddm2","kddm2","kddm2" )
-except:
-    try:
-        import pymysql
-        db = pymysql.connect("localhost","kddm2","kddm2","kddm2" )
-    except:
-        import pymssql
-        db = pymssql.connect("localhost", "kddm2", "kddm2", "kddm2")
 allFiles = getListOfFiles('../maildir')
 
 
@@ -25,14 +16,7 @@ def mapToSQL(map, tablename):
     vals = [str(v).replace("'", "") for v in imp.values()]
     return "insert into " + tablename + '(`' + '`, `'.join(imp.keys()) + "`) values ('" + "', '".join(vals) + "'); "
 
-
-def flush(cursor):
-    db.commit()
-    cursor.fetchall()
-    cursor.close()
-    return db.cursor()
-
-
+db = getDB()
 cursor = db.cursor()
 
 columnNames = []
@@ -72,7 +56,10 @@ for file in allFiles:
     if file in parsedFiles:
         continue
 
-    parsed = getParsedContent(file)
+    try:
+        parsed = getParsedContent(file)
+    except:
+        continue
 
     if 'To' not in parsed:
         parsed['To'] = ''

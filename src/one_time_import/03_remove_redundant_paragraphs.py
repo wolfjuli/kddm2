@@ -1,46 +1,19 @@
 #!/usr/bin/env python3
+from db_helper import *
 
-
-try:
-    import MySQLdb
-    db = MySQLdb.connect("localhost","kddm2","kddm2","kddm2" )
-except:
-    try:
-        import pymysql
-        db = pymysql.connect("localhost","kddm2","kddm2","kddm2" )
-    except:
-        import pymssql
-        db = pymssql.connect("localhost", "kddm2", "kddm2", "kddm2")
-
-def flush(cursor):
-    db.commit()
-    cursor.fetchall()
-    cursor.close()
-    return db.cursor()
-
-
+db = getDB()
 cursor = db.cursor()
 
-#check if column exists
-cursor.execute("""
-select column_name
-from information_schema.COLUMNS
-where TABLE_NAME = 'mail_paragraphs'
-and column_name = 'deleted'
-""")
-
-if len(cursor.fetchall()) == 0:
-    print("Table does not have the deleted column - creating it. This takes long - go fetch a coffee")
-    cursor.execute("alter table mail_paragraphs add deleted int DEFAULT 0")
-    cursor = flush(cursor)
+cursor.execute('''
+SET group_concat_max_len = 18446744073709547520
+''')
 
 print("Fetching all mails")
 cursor.execute("""
-SELECT mailId, GROUP_CONCAT(sha SEPARATOR '') as sha, count(*)
+SELECT mailId, GROUP_CONCAT(pid SEPARATOR '-') as sha, count(*)
 from mail_paragraphs
 group by mailId;
 """)
-
 
 print("building set")
 allMails = {}
