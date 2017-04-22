@@ -1,4 +1,4 @@
-from db_helper import *
+from DBHelper import DBHelper
 
 sql = """
 DROP TABLE IF EXISTS `failed`;
@@ -65,6 +65,5 @@ CREATE TABLE `sha_paragraphs` (
   PRIMARY KEY (`sha`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 """
-
-cursor = getCursor()
-execute(cursor, sql, True)
+db = DBHelper()
+db.execute(sql, True)
