@@ -1,23 +1,21 @@
 #!/usr/bin/env python3
-from db_helper import *
+from DBHelper import DBHelper
 import numpy as np
 import time
 from datetime import timedelta, datetime
 
-cursor = getCursor()
-
-cursor.execute('''
-SET group_concat_max_len = 18446744073709547520
-''')
+db = DBHelper()
+db.execute("SET group_concat_max_len = 18446744073709547520")
 
 print("Fetching codes")
-cursor, results, totalemails = execute(cursor, """
+results = db.execute("""
     SELECT mailId, GROUP_CONCAT(pid SEPARATOR ',') as sha, count(*) c
     from kddm2.mail_paragraphs
     where deleted = 0
     group by mailId
     having c > 1
     """)
+totalemails = db.rowcount
 
 cnt, sum, dt, mails = 0, 0, 0, []
 base = [r[1] for r in results]
@@ -35,7 +33,7 @@ for i, row in enumerate(results):
 
     if not i%10000 and i > 0:
         if mails != []:
-            cursor, _, _ = execute(cursor, "update mail_paragraphs set deleted = 1 where mailId in ({})"
+            db.execute("update mail_paragraphs set deleted = 1 where mailId in ({})"
                            .format(','.join(np.array(mails).astype(str))), True)
         mails = []
         dt = time.perf_counter() - t
@@ -45,6 +43,7 @@ for i, row in enumerate(results):
               .format(i, int(100*i/totalemails), cnt, sum, dt/60, etc.strftime('%H:%M:%S')))
 
 if mails != []:
-    execute(cursor, "update mail_paragraphs set deleted = 1 where mailId in ({})"
+    db.execute("update mail_paragraphs set deleted = 1 where mailId in ({})"
             .format(','.join(np.array(mails).astype(str))), True)
+
 print("{} redundant mails in {} other mails found. Elapsed time: {:3.1f} min".format(cnt, sum, dt/60))
