@@ -65,7 +65,7 @@ for file in allFiles:
     sql = mapToSQL(parsed, 'mails')
 
     try:
-        execute(cursor, sql, True)
+        cursor, _, _ = execute(cursor, sql, True)
     except Exception as e:
         print("This mail failed: " + str(e))
         print(sql)
