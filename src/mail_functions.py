@@ -2,6 +2,8 @@
 
 import os
 import nltk
+import hashlib
+
 def getListOfFiles(root):
 
     ret = []
@@ -56,6 +58,7 @@ def getParsedContent(filefullpath):
 
 
     ret['body'] = mailBody
+    ret['SHABody'] = str(hashlib.sha256(mailBody.encode('UTF-8')).hexdigest())
     ret['filepath'] = filefullpath
 
     return ret

@@ -9,6 +9,7 @@ def mapToSQL(map, tablename):
     imp = map.copy()
     imp.pop('', None)
     imp.pop('body', None)
+    imp.pop('SHABody', None)
     vals = [str(v).replace("'", "") for v in imp.values()]
     return "insert into " + tablename + '(`' + '`, `'.join(imp.keys()) + "`) values ('" + "', '".join(vals) + "'); "
 
