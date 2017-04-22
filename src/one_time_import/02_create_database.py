@@ -65,16 +65,18 @@ for file in allFiles:
     sql = mapToSQL(parsed, 'mails')
 
     try:
-        execute(cursor, sql, True)
+        cursor, _, _ = execute(cursor, sql, True)
     except Exception as e:
         print("This mail failed: " + str(e))
         print(sql)
-        execute(cursor, "insert into failed (filename, errortext) " +
-                        "values ('" + stripChars(file, punctuation) + "', '" + stripChars(str(e), punctuation) + "')")
+        execute(cursor,
+                """insert into failed (filename, errortext)
+                           values ('" + stripChars(file, punctuation) + "', '" + stripChars(str(e), punctuation) + "')"""
+                )
 
     for t in parsed['To'].split(","):
         try:
-            sql = "insert into from_to_mail (`from`, `to`, mailId) values ('{}','{}',{})".format(parsed['From'].replace("'", ""), t.strip().replace("'", ""), parsed['id'])
+            sql = """insert into from_to_mail (`from`, `to`, mailId) values ('{}','{}',{})""".format(parsed['From'].replace("'", ""), t.strip().replace("'", ""), parsed['id'])
             execute(cursor, sql)
         except Exception as e:
             print("something went wrong with this statement:")
@@ -89,11 +91,11 @@ for file in allFiles:
         hash = str(hashlib.sha256(p.encode('UTF-8')).hexdigest())
         if hash not in sha_vals:
             sumdistinctparagraphs +=1
-            execute(cursor, "insert into sha_paragraphs (sha, paragraph, id) values ('{}', '{}', {})"
+            execute(cursor, """insert into sha_paragraphs (sha, paragraph, id) values ('{}', '{}', {})"""
                            .format(hash, p, sumdistinctparagraphs))
             sha_vals[hash] = sumdistinctparagraphs
 
-        execute(cursor, "insert into mail_paragraphs (mailId, sha, sortorder, pid) values ({}, '{}', {}, {})"
+        execute(cursor, """insert into mail_paragraphs (mailId, sha, sortorder, pid) values ({}, '{}', {}, {})"""
                        .format(str(parsed['id']), hash, sortorder, sha_vals[hash]))
 
     if count % 10000 == 0:

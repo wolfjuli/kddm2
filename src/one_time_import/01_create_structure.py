@@ -22,7 +22,7 @@ CREATE TABLE `mail_paragraphs` (
   `mailId` int(11) DEFAULT NULL,
   `sha` varchar(200) DEFAULT NULL,
   `sortorder` int(11) DEFAULT NULL,
-  deleted int DEFAULT 0
+  deleted int DEFAULT 0,
   pid int,
   KEY `iddx_mail_paragraph_mailId` (`mailId`),
   KEY `mail_paragraphs_sha_index` (`sha`)

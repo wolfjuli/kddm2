@@ -1,11 +1,11 @@
 def getCursor():
     try:
         import MySQLdb
-        db = MySQLdb.connect("localhost","kddm2","kddm2","kddm2" )
+        db = MySQLdb.connect("localhost","kddm2","kddm2","kddm2")
     except:
         try:
             import pymysql
-            db = pymysql.connect("localhost","kddm2","kddm2","kddm2" )
+            db = pymysql.connect("localhost","kddm2","kddm2","kddm2")
         except:
             import pymssql
             db = pymssql.connect("localhost", "kddm2", "kddm2", "kddm2")
@@ -25,13 +25,12 @@ def execute(cursor, sql, commit=False):
         cursor.execute(sql)
         results = cursor.fetchall()
         c = cursor.rowcount
-    except:
+        if commit:
+            cursor = flush(cursor)
+
+    except Exception as e:
         results = None
         c = 0
-        print("Error executing script: '{}'".format(sql))
-    if commit:
-        cursor.connection.commit()
-        newCursor = cursor.connection.cursor()
-        cursor.close()
-        cursor = newCursor
+        print("Error executing script: '{}' because '{}'".format(sql, str(e)))
+
     return cursor, results, c
