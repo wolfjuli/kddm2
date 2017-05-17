@@ -16,9 +16,9 @@ results = db.execute("""
     order by mailid, sortorder 
     """)
 
-ms = {}
-ps = {}
-mailParas = {}
+ms = {} #all paragraphs per mail
+ps = {} #all mails per paragraph
+mailParas = {} #the string representation of all paragrpahs per mail
 for res in results:
     if res[0] not in ms:
         ms[res[0]] = []
@@ -43,9 +43,13 @@ i, cnt, sum = 0, 0, 0
 
 db.flush()
 
+#idea here: per mail (m in ms) check its paragraphs (p in ms[m]) in which mails he occure, which arenot the current mail (tm in ps[p]). If we find a mail tm, which has the same amount of paragraphs, as the current mail does, it is a match mail, but the order of paragraphs is still ignored.
+#thus we check, if the current mail string occures in the match mail string. For all mails left, we delete the paragraph <-> mail connection.
+#for every mail...
 for i, m in enumerate(ms):
     #find smallest paragraph and build list of mails
-
+    
+    
     tms = {}
     matchmails = []
     smallestP, small = -1, 1000
@@ -73,12 +77,20 @@ for i, m in enumerate(ms):
         )
         try:
             db.execute(sql)
+
+            for mail in matchmails:  # now delete this stuff in the local cache
+                for para in ms[m]:
+                    if mail in ps[para]:
+                        ps[para].remove(mail)
+                    mailParas[mail] = mailParas[mail].replace(str(para) + ",", "")
+
+                ms[mail] = [p for p in ms[mail] if p not in ms[m]]
+
         except Exception as e:
-            print("Error in query: {}".format(str(e)))
+            print("{}: {}".format(type(e), str(e)))
             print(sql)
 
     if not i % 10000 and i > 0:
-
         db.flush()
 
         dt = time.perf_counter() - t
@@ -89,4 +101,14 @@ for i, m in enumerate(ms):
                 .format(i, int(100 * i / totalemails), cnt, sum, dt / 60, etc.strftime('%H:%M:%S')))
 
 
+db.flush()
+
+print("Cleaning 'Original message' paragraphs")
+sql = """
+update mail_paragraphs set deleted = 1 where sha in (
+  SELECT sha FROM sha_paragraphs WHERE paragraph LIKE 'Original Message%'
+);"""
+
+
+db.execute(sql)
 db.flush()
