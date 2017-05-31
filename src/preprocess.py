@@ -7,35 +7,36 @@ import numpy as np
 import pandas as pd
 
 
-def preprocess(word_data, authors):
-    print("\n### PREPROCESSING DATA ###\n")
-
+def preprocess(word_data, targets):
+    print("\n### PREPROCESSING DATA ###")
     # train and test split
-    features_train, features_test, labels_train, labels_test = \
-        cross_validation.train_test_split(word_data, authors, test_size=0.2, random_state=42)
+    try:
+        features_train, features_test, labels_train, labels_test = \
+            cross_validation.train_test_split(word_data, targets, test_size=0.2, stratify=targets)
+    except:
+        features_train, features_test, labels_train, labels_test = \
+            cross_validation.train_test_split(word_data, targets, test_size=0.2)
 
     # vectorize
+    print("-- Vectorization")
     vectorizer = TfidfVectorizer(sublinear_tf=True)  # , stop_words='english'
     features_train_transformed = vectorizer.fit_transform(features_train)
     features_test_transformed = vectorizer.transform(features_test)
 
     # feature selection
-    selector = SelectPercentile(percentile=10)
+    print("-- Feature Selection")
+    selector = SelectPercentile(percentile=30)
     #selector = SelectKBest(k=100)
     features_train_selected = selector.fit_transform(features_train_transformed, labels_train)
     features_test_selected = selector.transform(features_test_transformed)
 
-    # print(top features
-    nr_features = 10
+    # print top features
+    nr_features = 30
     i = selector.scores_.argsort()[::-1][:nr_features]
     top_features = np.column_stack((np.asarray(vectorizer.get_feature_names())[i],
                                     selector.scores_[i],
                                     selector.pvalues_[i]))
-    print("Top %i Features:" % nr_features)
+    print("\nTop %i Features:" % nr_features)
     print(pd.DataFrame(top_features, columns=["token", "score", "p-val"]), "\n")
-
-    # info on the data
-    print("no. of Chris training emails:", sum(labels_train))
-    print("no. of Sara training emails:", len(labels_train)-sum(labels_train))
     
     return features_train_selected, features_test_selected, labels_train, labels_test

@@ -48,13 +48,13 @@ for file in getListOfFiles('../../maildir'):
         db.execute(mapToSQL(parsed, 'mails'), True)
     except Exception as e:
         db.execute("insert into failed (filename, errortext) values ('{}','{}')"
-                   .format(stripChars(file, punctuation), stripChars(str(e), punctuation)))
+                   .format(strip(file, punctuation), strip(str(e), punctuation)))
 
     for t in parsed['To'].split(","):
         db.execute("insert into from_to_mail (`from`, `to`, mailId) values ('{}','{}',{})"
                    .format(parsed['From'].replace("'", ""), t.strip().replace("'", ""), parsed['id']))
 
-    paragraphs = stripChars(parsed['body'], punctuation).split("\n\n")
+    paragraphs = strip(parsed['body'], punctuation).split("\n\n")
     sortorder = 0
 
     for p in [p.strip() for p in paragraphs if p.strip() != ""]:

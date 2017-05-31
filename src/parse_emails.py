@@ -1,65 +1,69 @@
 #!/usr/bin/python
 
 from nltk.stem.snowball import SnowballStemmer
-from string import maketrans, punctuation, digits, join
-import os
+from sklearn import preprocessing
 import pickle
 
-
-def parseEmail(path):
-    with open(os.path.join('..', path[:-1]), "r") as email:
-        email.seek(0)
-        all_text = email.read()
-
-        content = all_text.split("X-FileName:")
-        if len(content) > 1:
-            text_string = content[1].translate(maketrans("", ""), punctuation + digits)
-            text_string = removeNames(text_string.lower(), ["sara", "shackleton", "chris", "germany",
-                                                            "sshacklensf", "cgermannsf","sshackl", "cgermane"])
-            text_string = text_string.lower()
-            stemmer = SnowballStemmer("english")
-            words = [stemmer.stem(word) for word in text_string.split()]
-            return join(words)
-        else:
-            return ""
+from DBHelper import DBHelper
+from mail_functions import *
 
 
-def removeNames(text, names):
-    for name in names:
-        text = text.replace(name, "")
-    return text
+def parseEmailFromDB(row):
+    stemmer = SnowballStemmer("english")
+    names = row[0].lower().split("@")[0].split(".") + row[1].lower().split("@")[0].split(".")
+    text = strip(row[2].lower(), names)
+    words = [stemmer.stem(word) for word in text.split()]
+    return " ".join(words)
 
 
-def countLines(file):
-    c = sum(1 for _ in file)
-    file.seek(0)
-    return c
+def parseEmailsFromDB(minFromMails = 1000):
+    db = DBHelper()
+    db.execute("SET group_concat_max_len = 18446744073709547520")
+    results = db.execute("""
+        select x.from, x.to, m.txt from
+        (select z.mailId id, GROUP_CONCAT(y.paragraph separator ' ') txt
+        from mail_paragraphs z
+        join sha_paragraphs y
+        on z.pid = y.id
+        where z.deleted = 0
+        group by z.mailId) m
+        join
+        (select a.mailId as id, a.from, a.to
+        from from_to_mail a
+        where a.from in
+            (select aut.from
+            from from_to_mail aut
+            where aut.from rlike "^[A-Za-z0-9.-]+@enron.com$"
+            group by aut.from
+            having count(aut.from) > 1000)) x
+        on m.id = x.id""".format(minFromMails))
 
-def parseEmails():
-    authors, emails, cnt, progress = [], [], 0, 0
+    authors, recipients, emails, cnt, progress = [], [], [], 0, 0
 
     print("\n### PARSING EMAILS ###")
-    with open("./data/from_sara.txt", "r") as from_sara, open("./data/from_chris.txt", "r") as from_chris:
-        filecount = countLines(from_sara) + countLines(from_chris)
-        for i, from_person in [(0, from_sara), (1, from_chris)]:
-            for path in from_person:
-                cnt += 1
-                try:
-                    emails.append(parseEmail(path))
-                    authors.append(i)
-                except:
-                    print("error parsing email " + path)
+    filecount = db.rowcount
+    for row in results:
+        cnt += 1
+        emails.append(parseEmailFromDB(row))
+        authors.append(row[0])
+        recipients.append(row[1])
 
-                tmp_progress = int(cnt*100 / filecount)
-                if (tmp_progress % 10 == 0 and progress != tmp_progress):
-                    progress = tmp_progress
-                    print("-- {} / {} emails parsed ({} %)".format(cnt, filecount, progress))
+        tmp_progress = int(cnt*100 / filecount)
+        if (tmp_progress % 10 == 0 and progress != tmp_progress):
+            progress = tmp_progress
+            print("-- {} / {} emails parsed ({} %)".format(cnt, filecount, progress))
+
+    le = preprocessing.LabelEncoder()
+    le.fit(authors+recipients)
+    encAuthors = le.transform(authors)
+    encRecipients = le.transform(recipients)
 
     print("-- {} emails parsed".format(cnt))
-    pickle.dump(emails, open("./data/word_data.pkl", "w"))
-    pickle.dump(authors, open("./data/authors.pkl", "w"))
-    return emails, authors
-
+    pickle.dump(emails, open("./data/word_data.pkl", "wb"))
+    pickle.dump(encAuthors, open("./data/authors.pkl", "wb"))
+    pickle.dump(encRecipients, open("./data/recipients.pkl", "wb"))
+    pickle.dump(le.classes_, open("./data/classes.pkl", "wb"))
+    return emails, encAuthors, encRecipients, le.classes_
 
 if __name__ == "__main__":
-    parseEmails()
+    parseEmailsFromDB()

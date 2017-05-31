@@ -109,7 +109,12 @@ def getParsedName(xAddress):
     parts = xAddress.split(" <")
 
 
-def stripChars(text, chars):
+def strip(text, chars):
     for c in chars:
         text = text.replace(c, "")
     return text
+
+def countLines(file):
+    c = sum(1 for _ in file)
+    file.seek(0)
+    return c
