@@ -111,4 +111,14 @@ update mail_paragraphs set deleted = 1 where sha in (
 
 
 db.execute(sql)
+
+
+print("Cleaning 'Forwarded  by' paragraphs")
+sql = """
+update mail_paragraphs set deleted = 1 where sha in (
+  SELECT sha FROM sha_paragraphs WHERE paragraph LIKE 'Forwarded by % on %'
+);"""
+
+db.execute(sql)
+
 db.flush()
