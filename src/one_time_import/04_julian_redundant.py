@@ -49,7 +49,6 @@ db.flush()
 for i, m in enumerate(ms):
     #find smallest paragraph and build list of mails
     
-    
     tms = {}
     matchmails = []
     smallestP, small = -1, 1000
@@ -103,12 +102,10 @@ for i, m in enumerate(ms):
 
 db.flush()
 
-print("Cleaning 'Original message' paragraphs")
-sql = """
+print("Cleaning 'Original message' and 'Forwarded  by' paragraphs")
+db.execute("""
 update mail_paragraphs set deleted = 1 where sha in (
-  SELECT sha FROM sha_paragraphs WHERE paragraph LIKE 'Original Message%'
-);"""
-
-
-db.execute(sql)
-db.flush()
+  SELECT sha FROM sha_paragraphs
+  WHERE paragraph LIKE 'Original Message%'
+  OR paragraph LIKE 'Forwarded by % on %'
+);""", commit=True)
