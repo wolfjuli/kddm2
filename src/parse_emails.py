@@ -8,7 +8,7 @@ from DBHelper import DBHelper
 from mail_functions import *
 
 
-def parseEmailFromDB(row):
+def stem(row):
     stemmer = SnowballStemmer("english")
     names = row[0].lower().split("@")[0].split(".") + row[1].lower().split("@")[0].split(".")
     text = strip(row[2].lower(), names)
@@ -16,7 +16,7 @@ def parseEmailFromDB(row):
     return " ".join(words)
 
 
-def parseEmailsFromDB(minFromMails = 1000):
+def parse_mails(minFromMails = 1000):
     db = DBHelper()
     db.execute("SET group_concat_max_len = 18446744073709547520")
     results = db.execute("""
@@ -35,7 +35,7 @@ def parseEmailsFromDB(minFromMails = 1000):
             from from_to_mail aut
             where aut.from rlike "^[A-Za-z0-9.-]+@enron.com$"
             group by aut.from
-            having count(aut.from) > 1000)) x
+            having count(aut.from) > {})) x
         on m.id = x.id""".format(minFromMails))
 
     authors, recipients, emails, cnt, progress = [], [], [], 0, 0
@@ -44,26 +44,26 @@ def parseEmailsFromDB(minFromMails = 1000):
     filecount = db.rowcount
     for row in results:
         cnt += 1
-        emails.append(parseEmailFromDB(row))
+        emails.append(stem(row))
         authors.append(row[0])
         recipients.append(row[1])
 
         tmp_progress = int(cnt*100 / filecount)
-        if (tmp_progress % 10 == 0 and progress != tmp_progress):
+        if tmp_progress % 10 == 0 and progress != tmp_progress:
             progress = tmp_progress
             print("-- {} / {} emails parsed ({} %)".format(cnt, filecount, progress))
 
     le = preprocessing.LabelEncoder()
     le.fit(authors+recipients)
-    encAuthors = le.transform(authors)
-    encRecipients = le.transform(recipients)
+    enc_authors = le.transform(authors)
+    enc_recipients = le.transform(recipients)
 
     print("-- {} emails parsed".format(cnt))
     pickle.dump(emails, open("./data/word_data.pkl", "wb"))
-    pickle.dump(encAuthors, open("./data/authors.pkl", "wb"))
-    pickle.dump(encRecipients, open("./data/recipients.pkl", "wb"))
+    pickle.dump(enc_authors, open("./data/authors.pkl", "wb"))
+    pickle.dump(enc_recipients, open("./data/recipients.pkl", "wb"))
     pickle.dump(le.classes_, open("./data/classes.pkl", "wb"))
-    return emails, encAuthors, encRecipients, le.classes_
+    return emails, enc_authors, enc_recipients, le.classes_
 
 if __name__ == "__main__":
-    parseEmailsFromDB()
+    parse_mails()

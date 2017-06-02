@@ -100,3 +100,4 @@ src/data/*
 src/allFiles.pkl
 src/parsedFiles.pkl
 local/
+*.DS_Store

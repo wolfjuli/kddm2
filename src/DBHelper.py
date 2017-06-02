@@ -1,10 +1,10 @@
-
 class DBHelper:
     def __init__(self):
-        self.cursor = self.getCursor()
+        self.cursor = self._get_cursor()
         self.rowcount = 0
 
-    def getCursor(self):
+    @staticmethod
+    def _get_cursor():
         try:
             import MySQLdb
             db = MySQLdb.connect("localhost","kddm2","kddm2","kddm2")
@@ -20,9 +20,9 @@ class DBHelper:
 
     def flush(self):
         self.cursor.connection.commit()
-        newCursor = self.cursor.connection.cursor()
+        new_cursor = self.cursor.connection.cursor()
         self.cursor.close()
-        self.cursor = newCursor
+        self.cursor = new_cursor
 
     def execute(self, sql, commit=False):
         try:

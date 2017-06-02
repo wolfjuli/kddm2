@@ -1,8 +1,8 @@
 #!/usr/bin/python
 
-from sklearn import cross_validation
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_selection import SelectPercentile, f_classif, SelectKBest
+from sklearn.model_selection import train_test_split
 import numpy as np
 import pandas as pd
 
@@ -12,10 +12,10 @@ def preprocess(word_data, targets):
     # train and test split
     try:
         features_train, features_test, labels_train, labels_test = \
-            cross_validation.train_test_split(word_data, targets, test_size=0.2, stratify=targets)
+            train_test_split(word_data, targets, test_size=0.2, stratify=targets)
     except:
         features_train, features_test, labels_train, labels_test = \
-            cross_validation.train_test_split(word_data, targets, test_size=0.2)
+            train_test_split(word_data, targets, test_size=0.2)
 
     # vectorize
     print("-- Vectorization")
@@ -25,9 +25,10 @@ def preprocess(word_data, targets):
 
     # feature selection
     print("-- Feature Selection")
-    selector = SelectPercentile(percentile=30)
-    #selector = SelectKBest(k=100)
+    selector = SelectPercentile(percentile=10)
+    # selector = SelectKBest(k=100)
     features_train_selected = selector.fit_transform(features_train_transformed, labels_train)
+    print(features_train_selected.shape)
     features_test_selected = selector.transform(features_test_transformed)
 
     # print top features

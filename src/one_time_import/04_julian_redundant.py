@@ -6,8 +6,6 @@ import time
 from datetime import timedelta, datetime
 
 db = DBHelper()
-db.execute("SET group_concat_max_len = 18446744073709547520")
-
 print("Fetching codes")
 results = db.execute("""
     SELECT mailId, pid
@@ -35,14 +33,12 @@ for res in results:
 
 
 totalemails = len(ms.keys())
-now = datetime.now()
-t = time.perf_counter()
-
 print("Start parsing mails ({} mails and {} paragraphs)".format(len(ms.keys()), len(ps.keys())))
 i, cnt, sum = 0, 0, 0
-
 db.flush()
 
+now = datetime.now()
+t = time.perf_counter()
 #idea here: per mail (m in ms) check its paragraphs (p in ms[m]) in which mails he occure, which arenot the current mail (tm in ps[p]). If we find a mail tm, which has the same amount of paragraphs, as the current mail does, it is a match mail, but the order of paragraphs is still ignored.
 #thus we check, if the current mail string occures in the match mail string. For all mails left, we delete the paragraph <-> mail connection.
 #for every mail...
@@ -66,14 +62,11 @@ for i, m in enumerate(ms):
     matchmails = [mail for mail in matchmails if mailParas[m] in mailParas[mail]]
 
     if len(matchmails):
-
-
         cnt += 1
         sum += len(matchmails)
 
         sql = "update mail_paragraphs set deleted = 1 where mailId in ({}) and pid in ({})".format(
-            ','.join(np.array(matchmails).astype(str)), ",".join(np.array(ms[m]).astype(str))
-        )
+            ','.join(np.array(matchmails).astype(str)), ",".join(np.array(ms[m]).astype(str)))
         try:
             db.execute(sql)
 
@@ -91,21 +84,18 @@ for i, m in enumerate(ms):
 
     if not i % 10000 and i > 0:
         db.flush()
-
         dt = time.perf_counter() - t
-        etc = now + timedelta(seconds=(dt * totalemails / i))
+        etc = now + timedelta(seconds=(dt*(totalemails-i) / i))
 
-        print(
-            "{:>6} ({:>2}%) email checked, {:>6} redundant mails in {:>6} other mails found. Elapsed time: {:3.1f} min, ETC: {}"
-                .format(i, int(100 * i / totalemails), cnt, sum, dt / 60, etc.strftime('%H:%M:%S')))
-
-
+        print("{:>6} ({:>2}%) email checked, {:>6} redundant mails in {:>6} other mails found. "
+              "Elapsed time: {:3.1f} min, ETC: {}".format(i, int(100 * i / totalemails), cnt, sum, dt / 60, etc.strftime('%H:%M:%S')))
 db.flush()
 
-print("Cleaning 'Original message' and 'Forwarded  by' paragraphs")
+print("\nCleaning 'Original message' and 'Forwarded  by' paragraphs")
 db.execute("""
-update mail_paragraphs set deleted = 1 where sha in (
+update mail_paragraphs set deleted = 1
+where deleted = 0
+and sha in (
   SELECT sha FROM sha_paragraphs
   WHERE paragraph LIKE 'Original Message%'
-  OR paragraph LIKE 'Forwarded by % on %'
-);""", commit=True)
+  OR paragraph LIKE 'Forwarded by % on %');""", commit=True)
