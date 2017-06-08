@@ -1,42 +1,37 @@
 #!/usr/bin/python
 
-from nltk.stem.snowball import SnowballStemmer
 from sklearn import preprocessing
 import pickle
 
 from DBHelper import DBHelper
-from mail_functions import *
+from helper_functions import *
 
-
-def stem(row):
-    stemmer = SnowballStemmer("english")
-    names = row[0].lower().split("@")[0].split(".") + row[1].lower().split("@")[0].split(".")
-    text = strip(row[2].lower(), names)
-    words = [stemmer.stem(word) for word in text.split()]
-    return " ".join(words)
-
-
-def parse_mails(minFromMails = 1000):
+def parse_mails(min_mails = 300):
     db = DBHelper()
+    print("\n### RETRIEVING DATA FROM DATABASE ###")
     db.execute("SET group_concat_max_len = 18446744073709547520")
     results = db.execute("""
-        select x.from, x.to, m.txt from
-        (select z.mailId id, GROUP_CONCAT(y.paragraph separator ' ') txt
-        from mail_paragraphs z
-        join sha_paragraphs y
-        on z.pid = y.id
-        where z.deleted = 0
-        group by z.mailId) m
-        join
+    select x.from, x.to, m.txt
+    from
+      (select z.mailId id, GROUP_CONCAT(y.paragraph separator ' ') txt
+       from mail_paragraphs z
+         join sha_paragraphs y
+           on z.pid = y.id
+       where z.deleted = 0
+       group by z.mailId) m
+      join
         (select a.mailId as id, a.from, a.to
-        from from_to_mail a
-        where a.from in
-            (select aut.from
-            from from_to_mail aut
-            where aut.from rlike "^[A-Za-z0-9.-]+@enron.com$"
-            group by aut.from
-            having count(aut.from) > {})) x
-        on m.id = x.id""".format(minFromMails))
+         from from_to_mail a
+         join (select aut.from f, aut.to t
+                from from_to_mail aut
+                where aut.from rlike "^[A-Za-z0-9.-]+@enron.com$"
+                and aut.to rlike "^[A-Za-z0-9.-]+@enron.com$"
+                group by f, t
+                having count(*) > {0}) b
+        on a.from = b.f
+        and a.to = b.t) x
+    on m.id = x.id;
+    """.format(min_mails))
 
     authors, recipients, emails, cnt, progress = [], [], [], 0, 0
 
@@ -58,11 +53,11 @@ def parse_mails(minFromMails = 1000):
     enc_authors = le.transform(authors)
     enc_recipients = le.transform(recipients)
 
-    print("-- {} emails parsed".format(cnt))
+    print("-- {} emails from/to {} addresses parsed".format(cnt, len(le.classes_)))
     pickle.dump(emails, open("./data/word_data.pkl", "wb"))
-    pickle.dump(enc_authors, open("./data/authors.pkl", "wb"))
-    pickle.dump(enc_recipients, open("./data/recipients.pkl", "wb"))
-    pickle.dump(le.classes_, open("./data/classes.pkl", "wb"))
+    pickle.dump(np.array(enc_authors), open("./data/authors.pkl", "wb"))
+    pickle.dump(np.array(enc_recipients), open("./data/recipients.pkl", "wb"))
+    pickle.dump(np.array(le.classes_), open("./data/classes.pkl", "wb"))
     return emails, enc_authors, enc_recipients, le.classes_
 
 if __name__ == "__main__":

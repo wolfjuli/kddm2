@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from string import punctuation
-import hashlib
+from hashlib import sha256
 from mail_functions import *
 from DBHelper import DBHelper
 
@@ -60,7 +60,7 @@ for file in getListOfFiles('../../maildir'):
     for p in [p.strip() for p in paragraphs if p.strip() != ""]:
         sortorder += 1
         sumparagraphs += 1
-        hash = str(hashlib.sha256(p.encode('UTF-8')).hexdigest())
+        hash = str(sha256(p.encode('UTF-8')).hexdigest())
         if hash not in sha_vals:
             sumdistinctparagraphs += 1
             db.execute("insert into sha_paragraphs (sha, paragraph, id) values ('{}', '{}', {})"

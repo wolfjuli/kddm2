@@ -5,7 +5,6 @@ from sklearn.feature_selection import SelectPercentile, f_classif, SelectKBest
 from sklearn.model_selection import train_test_split
 import numpy as np
 import pandas as pd
-import pickle
 
 def preprocess(word_data, targets):
     print("\n### PREPROCESSING DATA ###")
@@ -18,7 +17,6 @@ def preprocess(word_data, targets):
     # feature selection
     print("-- Feature Selection")
     selector = SelectPercentile(percentile=5)
-    # selector = SelectKBest(k=100)
     data_selected = selector.fit_transform(data_transformed, targets)
     print("Top {} features were selected".format(data_selected.shape[1]))
 
@@ -31,14 +29,7 @@ def preprocess(word_data, targets):
     print("\nTop %i Features:" % nr_features)
     print(pd.DataFrame(top_features, columns=["token", "score", "p-val"]), "\n")
 
-    # train and test split
-    try:
-        features_train, features_test, labels_train, labels_test = \
-            train_test_split(data_selected, targets, test_size=0.2, stratify=targets)
-    except:
-        features_train, features_test, labels_train, labels_test = \
-            train_test_split(data_selected, targets, test_size=0.2)
+    features_train, features_test, labels_train, labels_test = \
+        train_test_split(data_selected, targets, test_size=0.2, stratify=targets)
 
-    pickle.dump((features_train, features_test, labels_train, labels_test),
-                open("./data/preprocessed data.pkl", "wb"))
     return features_train, features_test, labels_train, labels_test
