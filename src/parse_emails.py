@@ -6,7 +6,8 @@ import pickle
 from DBHelper import DBHelper
 from helper_functions import *
 
-def parse_mails(min_mails = 300):
+
+def parse_mails(min_mails = 100):
     db = DBHelper()
     print("\n### RETRIEVING DATA FROM DATABASE ###")
     db.execute("SET group_concat_max_len = 18446744073709547520")
@@ -26,6 +27,8 @@ def parse_mails(min_mails = 300):
                 from from_to_mail aut
                 where aut.from rlike "^[A-Za-z0-9.-]+@enron.com$"
                 and aut.to rlike "^[A-Za-z0-9.-]+@enron.com$"
+                and mailId in
+                  (select mailId from mail_paragraphs where deleted = 0)
                 group by f, t
                 having count(*) > {0}) b
         on a.from = b.f

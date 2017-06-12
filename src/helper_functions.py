@@ -1,6 +1,7 @@
 # !/usr/bin/env python2.7
 
 import os
+import sys
 import hashlib
 import numpy as np
 import matplotlib.pyplot as plt
@@ -79,22 +80,43 @@ def stem(row):
     return " ".join(words)
 
 
-def plot_confusion_matrix(cm, targets, normalize=False):
+def plot_confusion_matrix(cm, targets, name, normalize=True, show=True):
     if normalize:
-        title = "Normalized confusion matrix"
+        title = "Normalized confusion matrix of {}".format(name)
         np.set_printoptions(precision=2)
         cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
     else:
-        title = "Confusion matrix"
+        title = "Confusion matrix of {}".format(name)
 
     plt.figure(figsize=(13, 13))
     plt.imshow(cm, interpolation='none')
     plt.title(title)
     plt.colorbar()
     tick_marks = np.arange(len(targets))
-    plt.xticks(tick_marks, targets, rotation=90, fontsize=8)
-    plt.yticks(tick_marks, targets, fontsize=8)
+    plt.xticks(tick_marks, targets, rotation=90, fontsize=int(500/len(targets)))
+    plt.yticks(tick_marks, targets, fontsize=int(500/len(targets)))
     plt.tight_layout()
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
-    plt.show()
+    plt.savefig("../results/{} CM.png".format(name))
+    if show:
+        plt.show()
+
+
+class Logger(object):
+    def __init__(self, name):
+        if isinstance(sys.stdout, Logger):
+            sys.stdout.log.close()
+            self.terminal = sys.stdout.terminal
+        else:
+            self.terminal = sys.stdout
+
+        self.log = open("../results/{}.log".format(name), "w")
+
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)
+
+    def flush(self):
+        self.log.close()
+        pass

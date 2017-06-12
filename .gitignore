@@ -101,3 +101,5 @@ src/allFiles.pkl
 src/parsedFiles.pkl
 local/
 *.DS_Store
+results/SVM.pdf
+pip-selfcheck.json
