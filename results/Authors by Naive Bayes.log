@@ -1,0 +1,127 @@
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 5591 features were selected
+
+Top 30 Features:
+                          token               score p-val
+0                        x57095    77206.5740399187   0.0
+1                        x66002  12738.738010083212   0.0
+2                       diamond  10327.509512228042   0.0
+3                        sparki   7303.388288067678   0.0
+4                          rgds   3852.953888511898   0.0
+5                     pdxectect  3706.5594321982785   0.0
+6                 schedulingiso  3704.0859681797147   0.0
+7   oportlandwestdeskcalifornia  3704.0859681797147   0.0
+8                        x39890   3638.430614767506   0.0
+9                          pars  3629.6774609916283   0.0
+10                    hourahead  3493.7917921661897   0.0
+11                      varianc  3488.9275154431925   0.0
+12                       detect  3348.8571294629573   0.0
+13                          log   2768.280901539654   0.0
+14                           df   2670.979741429346   0.0
+15                    ancillari  2543.2948207810086   0.0
+16          8779260615skytelcom  2492.9860010461334   0.0
+17                        pmail  2492.9860010461334   0.0
+18                   8779260615  2492.9860010461334   0.0
+19                   7133453200  2492.9860010461334   0.0
+20                         hour    2423.94499142408   0.0
+21                       russel  2412.9937721202255   0.0
+22                        award  2136.1910462059473   0.0
+23                    personnel  1974.9292794609403   0.0
+24                        start  1749.9752018104193   0.0
+25                          eei  1705.9258554703017   0.0
+26               violationnotif  1697.7549926535173   0.0
+27                       x33831  1510.5646163521196   0.0
+28                       x39897  1510.5646163521196   0.0
+29                        insur  1410.8080656327209   0.0 
+
+
+### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+Training time: 0.01 m
+Prediction time: 0.01 m
+                               precision    recall  f1-score   support
+
+        alan.comnes@enron.com       0.25      0.02      0.05       121
+    amanda.rybarski@enron.com       0.00      0.00      0.00        27
+        ami.chokshi@enron.com       0.00      0.00      0.00        33
+   audrey.robertson@enron.com       1.00      0.29      0.45       114
+         ben.jacoby@enron.com       0.00      0.00      0.00        26
+           bill.iii@enron.com       0.00      0.00      0.00        24
+      bill.williams@enron.com       0.81      0.43      0.56       237
+        carol.clair@enron.com       0.00      0.00      0.00        45
+     cheryl.johnson@enron.com       0.98      0.95      0.97       864
+      cheryl.nelson@enron.com       0.00      0.00      0.00        26
+      chris.dorland@enron.com       0.00      0.00      0.00        20
+      chris.germany@enron.com       0.94      0.53      0.68       333
+         d..steffes@enron.com       1.00      0.40      0.58        84
+darrell.schoolcraft@enron.com       1.00      0.12      0.21        26
+      david.forster@enron.com       0.00      0.00      0.00        51
+  debra.perlingiere@enron.com       0.00      0.00      0.00        60
+         don.miller@enron.com       0.00      0.00      0.00        21
+        drew.fossum@enron.com       1.00      0.27      0.42        60
+    elizabeth.sager@enron.com       0.00      0.00      0.00        27
+enron.announcements@enron.com       0.00      0.00      0.00        69
+          eric.bass@enron.com       0.90      0.16      0.28       262
+     evelyn.metoyer@enron.com       1.00      0.24      0.38        55
+       gerald.nemec@enron.com       0.00      0.00      0.00        21
+     ginger.dernehl@enron.com       0.55      0.91      0.69      2085
+      james.derrick@enron.com       1.00      0.31      0.47        29
+      james.steffes@enron.com       0.00      0.00      0.00       118
+      jeff.dasovich@enron.com       0.66      0.95      0.78      5202
+   jeffrey.shankman@enron.com       1.00      0.07      0.12        46
+        john.arnold@enron.com       0.00      0.00      0.00        23
+       joseph.alamo@enron.com       0.00      0.00      0.00        35
+        karen.denne@enron.com       0.00      0.00      0.00        38
+         kate.symes@enron.com       0.67      0.48      0.56       134
+           kay.mann@enron.com       0.65      0.38      0.48       408
+      kayne.coulter@enron.com       0.00      0.00      0.00        20
+ kenneth.thibodeaux@enron.com       1.00      0.71      0.83        84
+     kerri.thompson@enron.com       0.00      0.00      0.00        46
+    kimberly.watson@enron.com       0.00      0.00      0.00        20
+      kristin.walsh@enron.com       0.00      0.00      0.00        20
+      leslie.hansen@enron.com       1.00      0.09      0.17        54
+      lorna.brennan@enron.com       0.78      0.98      0.86      2244
+     louise.kitchen@enron.com       0.00      0.00      0.00        21
+         lynn.blair@enron.com       1.00      0.03      0.05       119
+          m..presto@enron.com       0.00      0.00      0.00        22
+      mark.haedicke@enron.com       0.00      0.00      0.00        21
+        mark.taylor@enron.com       1.00      0.04      0.08        48
+          mary.cook@enron.com       0.00      0.00      0.00        55
+          mary.hain@enron.com       0.00      0.00      0.00        98
+    matthew.lenhart@enron.com       1.00      0.01      0.02       118
+    michael.frazier@enron.com       1.00      0.70      0.82        20
+      michelle.cash@enron.com       0.00      0.00      0.00        34
+    michelle.nelson@enron.com       0.00      0.00      0.00        95
+         mike.maggi@enron.com       0.00      0.00      0.00       111
+      miyung.buster@enron.com       0.00      0.00      0.00        27
+   monika.causholli@enron.com       1.00      0.57      0.73       169
+         pete.davis@enron.com       1.00      1.00      1.00       610
+   reagan.rorschach@enron.com       0.00      0.00      0.00        21
+      rhonda.denton@enron.com       0.00      0.00      0.00        20
+    richard.sanders@enron.com       0.00      0.00      0.00        23
+    richard.shapiro@enron.com       0.00      0.00      0.00        21
+     robin.rodrigue@enron.com       0.00      0.00      0.00        46
+       rod.hayslett@enron.com       0.00      0.00      0.00        50
+         sally.beck@enron.com       0.00      0.00      0.00        25
+      samuel.schott@enron.com       1.00      0.27      0.42        41
+    sara.shackleton@enron.com       0.48      0.36      0.41       414
+      sarah.novosel@enron.com       0.00      0.00      0.00        21
+       sharen.cason@enron.com       0.00      0.00      0.00        21
+      sheila.glover@enron.com       0.00      0.00      0.00        36
+   shirley.crenshaw@enron.com       0.00      0.00      0.00        26
+    stephanie.panus@enron.com       0.64      0.37      0.47        99
+   stephanie.piwetz@enron.com       0.00      0.00      0.00        24
+        steven.kean@enron.com       1.00      0.12      0.22        40
+         susan.mara@enron.com       0.94      0.37      0.53       849
+      suzanne.adams@enron.com       0.00      0.00      0.00        21
+     taffy.milligan@enron.com       1.00      0.14      0.25        97
+         tana.jones@enron.com       0.86      0.74      0.80      1218
+  veronica.espinoza@enron.com       0.98      1.00      0.99        46
+     vince.kaminski@enron.com       0.50      0.03      0.06        95
+           w..white@enron.com       0.00      0.00      0.00        21
+
+                  avg / total       0.68      0.71      0.65     18055
+
+Accuracy: 0.709443367488

@@ -1,0 +1,465 @@
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 5591 features were selected
+
+Top 30 Features:
+                          token               score p-val
+0                        x57095  14625.401583510442   0.0
+1                        x66002   2413.483136001117   0.0
+2                       diamond  1957.9012640338399   0.0
+3                        sparki  1383.4960035666038   0.0
+4                     pdxectect   733.2282576900748   0.0
+5                 schedulingiso   701.6726937846581   0.0
+6   oportlandwestdeskcalifornia   701.6726937846581   0.0
+7                          pars   687.5704119595641   0.0
+8                     hourahead    661.845910701514   0.0
+9                       varianc   660.9411250186104   0.0
+10                       detect   634.3857932456237   0.0
+11                       samuel   582.5185386692814   0.0
+12              schotthouectect   528.6752749761374   0.0
+13                          log   519.0773094393022   0.0
+14             lamberthouectect   512.9544108657964   0.0
+15                           df   510.6154626355066   0.0
+16                    ancillari  481.60640927387425   0.0
+17                        debbi   480.1220413090751   0.0
+18                        brant   474.7883071119541   0.0
+19                   7133453200   472.2515130449619   0.0
+20                   8779260615   472.2515130449619   0.0
+21                        pmail   472.2515130449619   0.0
+22          8779260615skytelcom   472.2515130449619   0.0
+23              taylorhouectect   459.0091602394224   0.0
+24                       russel   458.9986906499091   0.0
+25                         hour  458.29854753520954   0.0
+26               hardylonectect   457.4520114250669   0.0
+27            bracketthouectect   422.7329228340482   0.0
+28                        award   404.7422320212501   0.0
+29                          eol  387.98939719774455   0.0 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 3.36 m
+Prediction time: 0.02 m
+                                   precision    recall  f1-score   support
+
+         alan.aronowitz@enron.com       0.00      0.00      0.00        76
+            alan.comnes@enron.com       0.14      0.12      0.13       154
+           alberto.levy@enron.com       0.00      0.00      0.00        20
+           aleck.dadson@enron.com       0.00      0.00      0.00        23
+            all.houston@enron.com       0.43      0.78      0.56        32
+          all.worldwide@enron.com       0.46      0.70      0.55        37
+            allen.cohrs@enron.com       0.00      0.00      0.00        30
+        amanda.rybarski@enron.com       0.00      0.00      0.00        25
+            andrea.calo@enron.com       0.00      0.00      0.00        31
+         angela.schwarz@enron.com       0.02      0.02      0.02        42
+         anthony.campos@enron.com       0.00      0.00      0.00        21
+             ava.garcia@enron.com       0.07      0.14      0.09        22
+         barbara.hueter@enron.com       0.00      0.00      0.00        20
+             ben.jacoby@enron.com       0.14      0.23      0.17        57
+        benjamin.rogers@enron.com       0.22      0.38      0.28        21
+     bernadette.hawkins@enron.com       0.00      0.00      0.00        29
+      bernice.rodriguez@enron.com       0.00      0.00      0.00        23
+            bert.meyers@enron.com       0.00      0.00      0.00        20
+           beverly.aden@enron.com       0.07      0.05      0.06        41
+          beverly.beaty@enron.com       0.05      0.04      0.04        24
+            bill.fowler@enron.com       0.00      0.00      0.00        32
+           bill.mangels@enron.com       0.00      0.00      0.00        21
+             bill.moore@enron.com       0.00      0.00      0.00        25
+             bill.votaw@enron.com       0.49      0.44      0.46        41
+          bill.williams@enron.com       0.00      0.00      0.00        31
+              bob.bowen@enron.com       0.05      0.09      0.06        46
+           bob.burleson@enron.com       0.00      0.00      0.00        33
+            bob.stevens@enron.com       0.00      0.00      0.00        32
+            brant.reves@enron.com       0.00      0.00      0.00        24
+         brenda.barreda@enron.com       0.00      0.00      0.00        41
+        brenda.fletcher@enron.com       0.08      0.10      0.09        30
+       brenda.whitehead@enron.com       0.15      0.22      0.18        27
+           brent.hendry@enron.com       0.04      0.03      0.04        90
+          brian.hoskins@enron.com       0.05      0.05      0.05        21
+     bridgette.anderson@enron.com       0.00      0.00      0.00        20
+            bruce.mills@enron.com       0.00      0.00      0.00        21
+             bryan.hull@enron.com       0.12      0.15      0.13        75
+            carlos.sole@enron.com       0.12      0.11      0.11        47
+           carmen.perez@enron.com       0.00      0.00      0.00        20
+            carol.clair@enron.com       0.05      0.06      0.06        70
+          carol.moffett@enron.com       0.35      0.29      0.32        41
+         carolyn.cooney@enron.com       0.00      0.00      0.00        30
+      cassandra.schultz@enron.com       0.00      0.00      0.00        20
+           cathy.corbin@enron.com       0.00      0.00      0.00        41
+            chad.landry@enron.com       0.11      0.14      0.12        29
+          charles.yeung@enron.com       0.00      0.00      0.00        31
+           cheryl.dawes@enron.com       0.00      0.00      0.00        21
+             chris.abel@enron.com       0.22      0.25      0.23        20
+           chris.foster@enron.com       0.00      0.00      0.00        48
+             chris.long@enron.com       0.08      0.04      0.05        24
+          chris.sebesta@enron.com       0.00      0.00      0.00        31
+        christa.winfrey@enron.com       0.00      0.00      0.00        20
+        christi.nicolay@enron.com       0.00      0.00      0.00        21
+        christian.yoder@enron.com       0.00      0.00      0.00        22
+      christina.liscano@enron.com       0.00      0.00      0.00        41
+       christine.stokes@enron.com       0.00      0.00      0.00        29
+     christopher.calger@enron.com       0.08      0.03      0.04        34
+        chuck.wilkinson@enron.com       0.00      0.00      0.00        33
+             cindy.horn@enron.com       0.00      0.00      0.00        21
+     controllers.dl-ets@enron.com       0.64      0.54      0.58        26
+        courtney.barker@enron.com       0.00      0.00      0.00        24
+          craig.buehler@enron.com       0.00      0.00      0.00        32
+             craig.dean@enron.com       0.00      0.00      0.00        22
+          craig.rickard@enron.com       0.00      0.00      0.00        21
+           craig.sutter@enron.com       0.06      0.05      0.05        41
+cyndie.balfour-flanagan@enron.com       0.00      0.00      0.00        21
+             d..steffes@enron.com       0.43      0.45      0.44        47
+            dan.dorland@enron.com       0.06      0.05      0.06        20
+              dan.junek@enron.com       0.10      0.09      0.09        23
+               dan.leff@enron.com       0.00      0.00      0.00        70
+            dan.staines@enron.com       0.00      0.00      0.00        30
+             dana.jones@enron.com       0.00      0.00      0.00        30
+      daniel.allegretti@enron.com       0.00      0.00      0.00        33
+           daren.farmer@enron.com       0.86      0.58      0.69        33
+          dave.neubauer@enron.com       0.00      0.00      0.00        34
+            david.allan@enron.com       0.04      0.04      0.04        28
+           david.badura@enron.com       0.00      0.00      0.00        20
+         david.baumbach@enron.com       0.04      0.06      0.05        31
+            david.hardy@enron.com       0.00      0.00      0.00        22
+            david.minns@enron.com       0.31      0.29      0.30        59
+             david.port@enron.com       0.43      0.45      0.44        22
+            david.portz@enron.com       0.16      0.09      0.12        32
+        debbie.brackett@enron.com       0.00      0.00      0.00        21
+       debora.whitehead@enron.com       0.05      0.05      0.05        41
+      debra.perlingiere@enron.com       0.00      0.00      0.00        21
+       dennis.benevides@enron.com       0.00      0.00      0.00        72
+            dianne.seib@enron.com       0.00      0.00      0.00        20
+           dick.jenkins@enron.com       0.00      0.00      0.00        25
+           dirk.dimitry@enron.com       0.00      0.00      0.00        23
+          dirk.vanulden@enron.com       0.00      0.00      0.00        35
+              don.black@enron.com       0.05      0.04      0.05        70
+             don.powell@enron.com       0.00      0.00      0.00        30
+         donald.lassere@enron.com       0.00      0.00      0.00        31
+           donna.fulton@enron.com       0.00      0.00      0.00        24
+     dorothy.youngblood@enron.com       0.00      0.00      0.00        41
+         douglas.condon@enron.com       0.00      0.00      0.00        31
+           douglas.huth@enron.com       0.02      0.02      0.02        42
+              e..carter@enron.com       0.91      0.94      0.93        33
+           edward.sacks@enron.com       0.06      0.02      0.03        42
+         eileen.peebles@enron.com       0.00      0.00      0.00        25
+      elizabeth.linnell@enron.com       0.01      0.03      0.01        33
+        elizabeth.sager@enron.com       0.00      0.00      0.00        33
+              elsie.lew@enron.com       0.00      0.00      0.00        21
+         eric.gillaspie@enron.com       0.23      0.14      0.18        21
+             eric.letke@enron.com       0.12      0.04      0.06        26
+            eric.melvin@enron.com       0.39      0.17      0.24        41
+            erika.dupre@enron.com       0.00      0.00      0.00        41
+            evan.hughes@enron.com       0.00      0.00      0.00        43
+         evelyn.metoyer@enron.com       0.52      0.55      0.54        47
+           fran.deltoro@enron.com       0.21      0.17      0.19        41
+            frank.davis@enron.com       0.21      0.22      0.22        49
+        frank.oldenhuis@enron.com       0.00      0.00      0.00        33
+            frank.rishe@enron.com       0.00      0.00      0.00        30
+            frank.semin@enron.com       0.00      0.00      0.00        32
+         gabriel.monroy@enron.com       0.20      0.17      0.19        46
+           gayle.muench@enron.com       0.00      0.00      0.00        41
+           geir.solberg@enron.com       0.00      0.00      0.00        23
+       genia.fitzgerald@enron.com       0.00      0.00      0.00        20
+           geoff.storey@enron.com       0.00      0.00      0.00        21
+         geriann.warner@enron.com       0.00      0.00      0.00        30
+         germain.palmer@enron.com       0.00      0.00      0.00        20
+         ginger.dernehl@enron.com       0.00      0.00      0.00        82
+          gloria.ogenyi@enron.com       0.00      0.00      0.00        30
+          gordon.savage@enron.com       0.09      0.07      0.08        42
+             greg.wolfe@enron.com       0.05      0.06      0.05        35
+      guillermo.canovas@enron.com       0.00      0.00      0.00        20
+        harold.buchanan@enron.com       0.00      0.00      0.00        41
+          harry.collins@enron.com       0.09      0.08      0.09        85
+        harry.kingerski@enron.com       0.02      0.02      0.02       179
+          heather.kroll@enron.com       0.05      0.03      0.04        29
+          howard.fromer@enron.com       0.00      0.00      0.00        33
+             iris.waser@enron.com       0.00      0.00      0.00        41
+               j.harris@enron.com       0.88      0.76      0.81        29
+            james.bryja@enron.com       0.00      0.00      0.00        21
+            james.lewis@enron.com       0.00      0.00      0.00        42
+         james.saunders@enron.com       0.00      0.00      0.00        23
+          james.steffes@enron.com       0.04      0.05      0.05       263
+           james.wright@enron.com       0.01      0.08      0.02       108
+           jane.mcbride@enron.com       0.00      0.00      0.00        37
+         janel.guerrero@enron.com       0.04      0.02      0.03        87
+           janet.bowers@enron.com       0.00      0.00      0.00        33
+      janette.elbertson@enron.com       0.55      0.52      0.54        21
+          janine.migden@enron.com       0.00      0.00      0.00        32
+          jean.dressler@enron.com       0.00      0.00      0.00        29
+             jean.ryall@enron.com       0.00      0.00      0.00        27
+          jeff.dasovich@enron.com       0.21      0.22      0.21       313
+           jeff.messina@enron.com       0.00      0.00      0.00        41
+           jeff.nielsen@enron.com       0.00      0.00      0.00        27
+        jeffery.fawcett@enron.com       0.00      0.00      0.00        38
+          jeffrey.hodge@enron.com       0.00      0.00      0.00        74
+         jennifer.burns@enron.com       0.57      0.61      0.59        46
+        jennifer.fraser@enron.com       0.41      0.32      0.36        22
+       jennifer.rudolph@enron.com       0.00      0.00      0.00        39
+        jeremy.blachman@enron.com       0.00      0.00      0.00        80
+            jeremy.wong@enron.com       0.00      0.00      0.00        20
+            jess.hewitt@enron.com       0.00      0.00      0.00        41
+              jim.homco@enron.com       0.00      0.00      0.00        21
+           jim.wiltfong@enron.com       0.00      0.00      0.00        24
+            jo.williams@enron.com       0.02      0.03      0.03        35
+             joan.quick@enron.com       0.00      0.00      0.00        21
+          joann.collins@enron.com       0.18      0.23      0.20        30
+              joe.allen@enron.com       0.00      0.00      0.00        30
+             joe.connor@enron.com       0.00      0.00      0.00        29
+            joe.hartsoe@enron.com       0.17      0.17      0.17       112
+          john.buchanan@enron.com       0.13      0.15      0.14        40
+         john.dushinske@enron.com       0.00      0.00      0.00        35
+            john.fiscus@enron.com       0.00      0.00      0.00        30
+          john.lavorato@enron.com       0.79      0.55      0.65        20
+           john.neslage@enron.com       0.39      0.27      0.32        26
+     john.postlethwaite@enron.com       0.94      0.81      0.87        21
+          john.viverito@enron.com       0.00      0.00      0.00        40
+         joni.bollinger@enron.com       0.00      0.00      0.00        31
+           joseph.alamo@enron.com       0.31      0.16      0.21        87
+         juan.hernandez@enron.com       0.83      0.25      0.38        20
+          jubran.whalan@enron.com       0.01      0.02      0.01        60
+          judy.townsend@enron.com       0.08      0.11      0.10        27
+            karen.denne@enron.com       0.06      0.06      0.06       181
+       karen.lagerstrom@enron.com       0.00      0.00      0.00        32
+          karen.lambert@enron.com       0.00      0.00      0.00        21
+             kate.symes@enron.com       0.55      0.70      0.62       183
+      kathleen.carnahan@enron.com       0.33      0.27      0.29        56
+      kathleen.sullivan@enron.com       0.00      0.00      0.00        29
+       kathryn.corbally@enron.com       0.00      0.00      0.00        42
+             kathy.bass@enron.com       0.00      0.00      0.00        41
+           kathy.dodgen@enron.com       0.00      0.00      0.00        42
+               kay.mann@enron.com       0.39      0.21      0.27        68
+             kay.threet@enron.com       0.00      0.00      0.00        32
+             kaye.ellis@enron.com       0.17      0.24      0.20        42
+          ken.gustafson@enron.com       0.47      0.19      0.27        42
+             ken.powers@enron.com       0.00      0.00      0.00        30
+            kent.miller@enron.com       0.00      0.00      0.00        34
+         kerri.thompson@enron.com       0.57      0.64      0.60        45
+           kerry.stroup@enron.com       0.00      0.00      0.00        30
+           kevin.hughes@enron.com       0.03      0.02      0.03        41
+            kevin.hyatt@enron.com       0.00      0.00      0.00        51
+        kimberly.watson@enron.com       0.00      0.00      0.00        38
+         kirsten.bellas@enron.com       0.00      0.00      0.00        28
+             kori.loibl@enron.com       0.00      0.00      0.00        24
+             l..nicolay@enron.com       0.80      0.82      0.81        34
+           lara.leibman@enron.com       0.00      0.00      0.00        30
+           larry.pavlou@enron.com       0.00      0.00      0.00        34
+            larry.swett@enron.com       0.00      0.00      0.00        30
+       laura.lantefield@enron.com       0.00      0.00      0.00        31
+           laurel.adams@enron.com       0.00      0.00      0.00        21
+          laurie.knight@enron.com       0.00      0.00      0.00        29
+           leaf.harasin@enron.com       0.00      0.00      0.00        20
+            leasa.lopez@enron.com       0.00      0.00      0.00        41
+            lee.ferrell@enron.com       0.00      0.00      0.00        24
+              lee.huber@enron.com       0.00      0.00      0.00        24
+          leslie.hansen@enron.com       0.02      0.01      0.02        69
+          leslie.lawner@enron.com       0.00      0.00      0.00        31
+        leticia.botello@enron.com       0.00      0.00      0.00        41
+            linda.guinn@enron.com       0.78      0.30      0.44        23
+        linda.robertson@enron.com       0.00      0.00      0.00        96
+           lindy.donoho@enron.com       0.00      0.00      0.00        72
+             lisa.bills@enron.com       0.17      0.13      0.15        23
+          lisa.gillette@enron.com       0.30      0.25      0.27        36
+              lisa.lees@enron.com       0.09      0.12      0.10        24
+            lisa.valley@enron.com       0.00      0.00      0.00        31
+              lisa.yoho@enron.com       0.00      0.00      0.00        32
+            liz.hillman@enron.com       0.00      0.00      0.00        21
+            lon.stanton@enron.com       0.00      0.00      0.00        24
+          lora.sullivan@enron.com       0.00      0.00      0.00        30
+          loren.penkava@enron.com       0.00      0.00      0.00        31
+      lorraine.lindberg@enron.com       0.03      0.01      0.02        73
+         louise.kitchen@enron.com       0.19      0.12      0.14        26
+              luis.mena@enron.com       0.12      0.09      0.11        22
+             lynn.blair@enron.com       0.00      0.00      0.00        21
+           lynn.shivers@enron.com       0.00      0.00      0.00        21
+      marchris.robinson@enron.com       0.00      0.00      0.00        30
+            marie.heard@enron.com       0.06      0.06      0.06       107
+        marilyn.colbert@enron.com       0.02      0.05      0.03        22
+            mark.guzman@enron.com       0.48      0.35      0.41        43
+            mark.muller@enron.com       0.16      0.07      0.10        41
+            mark.taylor@enron.com       0.10      0.12      0.11       173
+           marsha.suggs@enron.com       0.00      0.00      0.00        41
+          martha.benner@enron.com       0.74      0.81      0.77        36
+        martha.janousek@enron.com       0.00      0.00      0.00        32
+          martin.wenzel@enron.com       0.00      0.00      0.00        30
+            marty.sunde@enron.com       0.26      0.23      0.25        43
+              mary.cook@enron.com       0.06      0.04      0.05        24
+              mary.hain@enron.com       0.00      0.00      0.00        45
+        matthew.lenhart@enron.com       0.06      0.05      0.05        39
+       maureen.mcvicker@enron.com       0.45      0.29      0.35        70
+         melinda.pharms@enron.com       0.00      0.00      0.00        24
+     meredith.eggleston@enron.com       0.00      0.00      0.00        41
+         michael.bodnar@enron.com       0.00      0.00      0.00        20
+          michael.eiben@enron.com       0.00      0.00      0.00        21
+       michael.etringer@enron.com       0.00      0.00      0.00        50
+           michael.mann@enron.com       0.00      0.00      0.00        42
+         michael.ratner@enron.com       0.00      0.00      0.00        31
+          michael.stage@enron.com       0.00      0.00      0.00        24
+       michael.tribolet@enron.com       0.01      0.01      0.01        78
+      michelle.cisneros@enron.com       0.00      0.00      0.00        42
+         michelle.lokay@enron.com       0.00      0.00      0.00        75
+        michelle.nelson@enron.com       0.12      0.36      0.18        86
+             mike.barry@enron.com       0.00      0.00      0.00        31
+          mike.croucher@enron.com       0.00      0.00      0.00        21
+             mike.maggi@enron.com       0.28      0.47      0.35       122
+           mike.mcgowan@enron.com       0.04      0.05      0.04        22
+             mike.smith@enron.com       0.07      0.06      0.06        69
+             mike.ullom@enron.com       0.00      0.00      0.00        21
+        miriam.martinez@enron.com       0.00      0.00      0.00        20
+         mona.petrochko@enron.com       0.00      0.00      0.00        47
+      morgan.gottsponer@enron.com       0.00      0.00      0.00        24
+                mpalmer@enron.com       0.00      0.00      0.00        89
+          nancy.hetrick@enron.com       0.00      0.00      0.00        30
+         nathan.hlavaty@enron.com       0.00      0.00      0.00        21
+              neal.shaw@enron.com       0.00      0.00      0.00        20
+           neil.bresnan@enron.com       0.00      0.00      0.00        43
+              neil.hong@enron.com       0.00      0.00      0.00        41
+          nicholas.oday@enron.com       0.76      0.59      0.67        27
+          oneal.winfree@enron.com       0.06      0.04      0.05        23
+          patrick.keene@enron.com       0.00      0.00      0.00        31
+         patti.thompson@enron.com       0.20      0.08      0.11        25
+           paul.kaufman@enron.com       0.10      0.09      0.10       255
+           paula.warren@enron.com       0.17      0.22      0.19        41
+         peggy.hedstrom@enron.com       0.00      0.00      0.00        21
+         penny.mccarran@enron.com       0.00      0.00      0.00        33
+             pete.davis@enron.com       1.00      1.00      1.00       610
+          peter.keohane@enron.com       0.03      0.03      0.03        38
+           phillip.love@enron.com       0.21      0.17      0.19        23
+         portland.shift@enron.com       0.65      0.46      0.54        24
+              r..conner@enron.com       1.00      0.71      0.83        21
+            rahil.jafry@enron.com       0.00      0.00      0.00        21
+            ray.alvarez@enron.com       0.22      0.25      0.24        24
+       reagan.rorschach@enron.com       0.17      0.08      0.11        26
+             recipients@enron.com       1.00      1.00      1.00        46
+          reyna.cabrera@enron.com       0.00      0.00      0.00        29
+      richard.ingersoll@enron.com       0.00      0.00      0.00        22
+        richard.leibert@enron.com       0.00      0.00      0.00        41
+         richard.mckeel@enron.com       0.00      0.00      0.00        21
+        richard.sanders@enron.com       0.05      0.24      0.08       120
+        richard.shapiro@enron.com       0.09      0.09      0.09       346
+     richard.zdunkewicz@enron.com       0.00      0.00      0.00        41
+               rick.buy@enron.com       0.17      0.19      0.18        21
+             rick.dietz@enron.com       0.00      0.00      0.00        21
+          rita.hennessy@enron.com       0.00      0.00      0.00        41
+             rita.wynne@enron.com       0.00      0.00      0.00        20
+             rob.wilson@enron.com       0.00      0.00      0.00        24
+            robbi.rossi@enron.com       0.00      0.00      0.00        57
+         robert.allwein@enron.com       0.06      0.03      0.04        34
+          robert.badeer@enron.com       0.00      0.00      0.00        49
+           robert.frank@enron.com       0.27      0.06      0.10        52
+        robert.hemstock@enron.com       0.00      0.00      0.00        32
+           robert.mason@enron.com       0.00      0.00      0.00        28
+     robert.neustaedter@enron.com       0.00      0.00      0.00        31
+        robert.williams@enron.com       0.27      0.23      0.25        44
+            robin.barbe@enron.com       0.10      0.07      0.09        27
+          rockey.storie@enron.com       0.00      0.00      0.00        21
+             roger.yang@enron.com       0.46      0.22      0.30        50
+         rogers.herndon@enron.com       0.79      0.50      0.61        22
+           romeo.dsouza@enron.com       0.00      0.00      0.00        21
+     rosalinda.tijerina@enron.com       0.00      0.00      0.00        41
+      roseann.engeldorf@enron.com       0.11      0.11      0.11        35
+             roy.boston@enron.com       1.00      0.03      0.06        30
+         rubena.buerger@enron.com       0.00      0.00      0.00        30
+        russell.diamond@enron.com       0.04      0.02      0.03        49
+           ryan.slinger@enron.com       0.00      0.00      0.00        22
+          samantha.boyd@enron.com       0.13      0.16      0.14        31
+        sandra.mccubbin@enron.com       0.15      0.17      0.16       156
+        sara.shackleton@enron.com       0.17      0.19      0.18       233
+         sarabeth.smith@enron.com       0.00      0.00      0.00        22
+          sarah.novosel@enron.com       0.03      0.02      0.03       168
+           scott.bolton@enron.com       0.03      0.03      0.03        30
+             scott.gahn@enron.com       0.03      0.02      0.02        48
+          scott.goodell@enron.com       0.22      0.17      0.19        36
+      scott.hendrickson@enron.com       0.16      0.14      0.15        21
+          scott.stoness@enron.com       0.00      0.00      0.00        49
+         scotty.gilbert@enron.com       0.00      0.00      0.00        21
+             sean.bolks@enron.com       0.00      0.00      0.00        32
+        settlements.ees@enron.com       0.95      0.95      0.95        20
+          shanna.husser@enron.com       0.33      0.20      0.25        41
+           sharen.cason@enron.com       0.61      0.67      0.64        21
+            shari.stack@enron.com       0.00      0.00      0.00        41
+            sharon.dick@enron.com       0.00      0.00      0.00        42
+           sheila.nacey@enron.com       0.00      0.00      0.00        21
+           sheila.tweed@enron.com       0.13      0.10      0.11        41
+         shelley.corman@enron.com       0.17      0.04      0.07        23
+           sheri.thomas@enron.com       0.05      0.05      0.05        22
+       shirley.crenshaw@enron.com       0.45      0.49      0.47        67
+                  skean@enron.com       0.03      0.03      0.03       105
+      stacey.richardson@enron.com       0.00      0.00      0.00        23
+          stacy.dickson@enron.com       0.00      0.00      0.00        54
+     stephanie.korbelik@enron.com       0.00      0.00      0.00        30
+        stephanie.panus@enron.com       0.13      0.11      0.12        36
+       stephanie.piwetz@enron.com       0.42      0.23      0.29        22
+        stephanie.sever@enron.com       0.07      0.05      0.06        37
+          stephen.burns@enron.com       0.00      0.00      0.00        29
+         stephen.herber@enron.com       0.00      0.00      0.00        33
+          steve.gilbert@enron.com       0.00      0.00      0.00        30
+        steve.montovano@enron.com       0.00      0.00      0.00        33
+           steve.walker@enron.com       0.53      0.26      0.35        35
+           steve.walton@enron.com       0.00      0.00      0.00        31
+           steve.weller@enron.com       0.00      0.00      0.00        33
+          steven.harris@enron.com       0.10      0.07      0.08        90
+         steven.january@enron.com       0.00      0.00      0.00        21
+            steven.kean@enron.com       0.03      0.02      0.02        46
+         stinson.gibner@enron.com       0.30      0.25      0.27        28
+            sue.neville@enron.com       0.00      0.00      0.00        33
+               sue.nord@enron.com       0.00      0.00      0.00        33
+           susan.bailey@enron.com       0.02      0.02      0.02       132
+            susan.flynn@enron.com       0.00      0.00      0.00        27
+         susan.landwehr@enron.com       0.00      0.00      0.00        23
+             susan.mara@enron.com       0.09      0.10      0.10       300
+            susan.scott@enron.com       0.79      0.46      0.58        24
+          susan.trevino@enron.com       0.00      0.00      0.00        20
+          suzanne.adams@enron.com       0.51      0.49      0.50        93
+            t..robinson@enron.com       0.95      0.95      0.95        22
+         tammie.schoppe@enron.com       0.00      0.00      0.00        21
+             tana.jones@enron.com       0.25      0.25      0.25       228
+           tanya.leslie@enron.com       0.00      0.00      0.00        41
+          tanya.rohauer@enron.com       0.17      0.11      0.14        63
+             tasha.lair@enron.com       0.00      0.00      0.00        41
+             ted.murphy@enron.com       0.25      0.05      0.08        41
+         terri.greenlee@enron.com       0.00      0.00      0.00        41
+           terri.miller@enron.com       0.00      0.00      0.00        29
+          terry.kowalke@enron.com       0.00      0.00      0.00        35
+           thane.twiggs@enron.com       0.00      0.00      0.00        29
+        theresa.branney@enron.com       0.00      0.00      0.00        27
+             tim.belden@enron.com       0.29      0.16      0.21       131
+           tim.johanson@enron.com       0.12      0.03      0.05        33
+      timothy.blanchard@enron.com       0.16      0.15      0.16        40
+              tk.lohman@enron.com       0.00      0.00      0.00        73
+             todd.bland@enron.com       0.00      0.00      0.00        20
+             tom.briggs@enron.com       0.03      0.04      0.03        26
+            tom.hoatson@enron.com       0.00      0.00      0.00        27
+              tom.moran@enron.com       0.47      0.37      0.41        46
+             tony.perry@enron.com       0.00      0.00      0.00        20
+          tony.spruiell@enron.com       0.02      0.02      0.02        41
+         tracy.geaccone@enron.com       0.00      0.00      0.00        27
+                 triley@enron.com       0.00      0.00      0.00        38
+         troy.klussmann@enron.com       0.00      0.00      0.00        21
+           twanda.sweet@enron.com       0.65      0.38      0.48        34
+              v..porter@enron.com       0.45      0.25      0.32        20
+        vernon.mercaldo@enron.com       0.00      0.00      0.00        34
+      veronica.espinoza@enron.com       0.21      0.16      0.18        32
+            vicki.sharp@enron.com       0.01      0.01      0.01        84
+        victor.lamadrid@enron.com       0.00      0.00      0.00        55
+        victoria.versen@enron.com       0.07      0.05      0.06        21
+         vince.kaminski@enron.com       0.60      0.23      0.33        26
+           vinio.floris@enron.com       0.00      0.00      0.00        30
+         vladimir.gorny@enron.com       0.00      0.00      0.00        41
+            wanda.curry@enron.com       0.12      0.03      0.04        79
+                  wgang@enron.com       0.00      0.00      0.00        30
+       william.bradford@enron.com       0.77      0.24      0.37        41
+
+                      avg / total       0.15      0.14      0.14     18055
+
+Accuracy: 0.135087233453
