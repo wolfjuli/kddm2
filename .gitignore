@@ -50,8 +50,7 @@ coverage.xml
 *.mo
 *.pot
 
-# Django stuff:
-*.log
+# Django stuff:s
 local_settings.py
 
 # Flask stuff:
@@ -101,5 +100,4 @@ src/allFiles.pkl
 src/parsedFiles.pkl
 local/
 *.DS_Store
-results/SVM.pdf
 pip-selfcheck.json

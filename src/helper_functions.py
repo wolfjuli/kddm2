@@ -93,9 +93,13 @@ def plot_confusion_matrix(cm, targets, name, normalize=True, show=True):
     plt.title(title)
     plt.colorbar()
     tick_marks = np.arange(len(targets))
-    plt.xticks(tick_marks, targets, rotation=90, fontsize=int(500/len(targets)))
-    plt.yticks(tick_marks, targets, fontsize=int(500/len(targets)))
-    plt.tight_layout()
+    fontsize = max(12, int(500/len(targets)))
+    plt.xticks(tick_marks, targets, rotation=90, fontsize=fontsize)
+    plt.yticks(tick_marks, targets, fontsize=fontsize)
+    try:
+        plt.tight_layout()
+    except:
+        pass
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
     plt.savefig("../results/{} CM.png".format(name))

@@ -18,16 +18,19 @@ def preprocess(word_data, targets):
     print("-- Feature Selection")
     selector = SelectPercentile(percentile=5)
     data_selected = selector.fit_transform(data_transformed, targets)
-    print("Top {} features were selected".format(data_selected.shape[1]))
+    if data_selected.shape[1] == 0:
+        data_selected = data_transformed
+    else:
+        print("Top {} features were selected".format(data_selected.shape[1]))
 
-    # print top features
-    nr_features = 30
-    i = selector.scores_.argsort()[::-1][:nr_features]
-    top_features = np.column_stack((np.asarray(vectorizer.get_feature_names())[i],
-                                    selector.scores_[i],
-                                    selector.pvalues_[i]))
-    print("\nTop %i Features:" % nr_features)
-    print(pd.DataFrame(top_features, columns=["token", "score", "p-val"]), "\n")
+        # print top features
+        nr_features = 30
+        i = selector.scores_.argsort()[::-1][:nr_features]
+        top_features = np.column_stack((np.asarray(vectorizer.get_feature_names())[i],
+                                        selector.scores_[i],
+                                        selector.pvalues_[i]))
+        print("\nTop %i Features:" % nr_features)
+        print(pd.DataFrame(top_features, columns=["token", "score", "p-val"]), "\n")
 
     features_train, features_test, labels_train, labels_test = \
         train_test_split(data_selected, targets, test_size=0.2, stratify=targets)
