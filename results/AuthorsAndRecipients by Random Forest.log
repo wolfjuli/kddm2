@@ -1,0 +1,2509 @@
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 459 features were selected
+
+Top 30 Features:
+                 token               score                   p-val
+0                   es   21.05386384405912   5.600911711649683e-13
+1                 time  20.452747797838747  1.2516293935218806e-12
+2                 jeff  7.7939943736474895   4.124017927893807e-05
+3                 esat   5.839757218615404   0.0006182613613806556
+4                 gray  5.6151512993349595    0.000843295045639679
+5               edward   5.066131122816002   0.0017985593405407693
+6                 ulat   5.012822752287925    0.001935584790519674
+7                paula   4.675847389091057   0.0030769360464053203
+8                tomeo   4.617067284391386   0.0033356634026606613
+9                 toni   4.603694080918661    0.003397483498811253
+10              nelsen   4.581175768724576    0.003504162424540399
+11                ross   4.536805269399696    0.003724203805501366
+12                 tim   4.483696636395927    0.004005698913458508
+13  dnelsengwfpowercom   4.384085474475506    0.004591890553634829
+14               susan   4.378770835849677     0.00462545640893981
+15               carol   4.231415542822536   0.0056596535158178335
+16               charl   4.209486489954027    0.005832038907105592
+17                 ken   4.094331034895248    0.006826489596404403
+18                alex   4.085268106202364   0.0069115449884685045
+19              pdxect   4.080255969259935    0.006959034255458186
+20                 ray  4.0351750169832385    0.007400976620647061
+21                 hap   4.011357862275882    0.007645584020508631
+22             weisgal  3.8963324957793852    0.008944457811067202
+23            jonathan  3.8963324957793852    0.008944457811067202
+24                duan  3.8963324957793852    0.008944457811067202
+25              pigott  3.8963324957793852    0.008944457811067202
+26               lloyd  3.8963324957793852    0.008944457811067202
+27                 soo  3.8963324957793852    0.008944457811067202
+28                 ain  3.8963324957793852    0.008944457811067202
+29                esct  3.8963324957793852    0.008944457811067202 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                         precision    recall  f1-score   support
+
+jeff.dasovich@enron.com       0.17      0.13      0.15        38
+  ray.alvarez@enron.com       0.17      0.17      0.17        24
+   susan.mara@enron.com       0.06      0.09      0.08        32
+   tim.belden@enron.com       0.40      0.30      0.34        27
+
+            avg / total       0.19      0.17      0.18       121
+
+Accuracy: 0.165289256198
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 115 features were selected
+
+Top 30 Features:
+       token               score                p-val
+0    michell   2.092475574807646  0.08042633010872213
+1      harri  1.9612201842712293  0.09899531038829809
+2         lp  1.8011896639945422  0.12707469247664607
+3     energi  1.8011896639945422  0.12707469247664607
+4     electr  1.8011896639945422  0.12707469247664607
+5   merchang  1.8011896639945422  0.12707469247664607
+6      diego  1.8011896639945422  0.12707469247664607
+7    coastal  1.8011896639945422  0.12707469247664607
+8   occident  1.8011896639945422  0.12707469247664607
+9        inc  1.8011896639945422  0.12707469247664607
+10       eog  1.8011896639945422  0.12707469247664607
+11       300  1.7958070883180852   0.1281369026116991
+12      good  1.7685507618934069  0.13364305420154418
+13   project  1.6402865212479687  0.16260098385042232
+14   lorrain  1.6211579653636183   0.1673805040930594
+15        he  1.6136648536881486  0.16928731452641876
+16     guess  1.5497655222345912   0.1863651014240331
+17   resourc  1.5144131212258096  0.19646623665019902
+18  nutcrack   1.459111413889398   0.2132511377650754
+19        tk  1.4267633969286426  0.22364859356493566
+20      330p  1.4246954065543123  0.22432825992779062
+21       bob  1.3924312407134074  0.23516991394588976
+22       ive  1.3524545095559637  0.24923680369257473
+23      idea  1.3016370797996046   0.2681665558368838
+24  lindberg  1.2892186710974538  0.27297589186508914
+25     lindi  1.2738213569059276  0.27904092788569057
+26    submit  1.2294391602100638   0.2971662799307119
+27      200p  1.1995234267983326   0.3099332950586773
+28     lokay  1.1393412977794088   0.3369943648274333
+29     pleas  1.0979389894870664  0.35670339769049686 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                             precision    recall  f1-score   support
+
+     lindy.donoho@enron.com       0.03      0.05      0.04        22
+lorraine.lindberg@enron.com       0.13      0.09      0.11        23
+   michelle.lokay@enron.com       0.00      0.00      0.00        25
+    steven.harris@enron.com       0.23      0.23      0.23        22
+        tk.lohman@enron.com       0.04      0.04      0.04        23
+
+                avg / total       0.08      0.08      0.08       115
+
+Accuracy: 0.0782608695652
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 170 features were selected
+
+Top 30 Features:
+               token               score                    p-val
+0                hae  126.77824704632481  2.4067796471352467e-166
+1              proid   15.90334386774874    8.888560086197207e-25
+2              seric  15.699752575027649   1.9346327407014508e-24
+3                oer  15.216024666994468   1.2305903218158629e-23
+4                gie  12.982380111961138    6.551669725815844e-20
+5               have  11.824693535453516    5.696971361839484e-18
+6                een   9.494466403901374    4.623040785369892e-14
+7             preent   7.244562282454208    2.644346379109303e-10
+8                eri   7.117604729781564    4.294388490682887e-10
+9                moe   6.974477924837293    7.413499577347735e-10
+10           support   6.344540850140584    8.119545113354073e-09
+11              eeri   6.282537967105993   1.0266698488666416e-08
+12           aailabl     5.7120425046981    8.804725791407234e-08
+13                et   5.700377784704825    9.198322055369252e-08
+14             group   5.461332027229201   2.2491859874437242e-07
+15             meant    4.72612165376193   3.4165495128257943e-06
+16               dae  4.7253301903035565    3.426474654655445e-06
+17     fax5034647996   4.686957240163482   3.9435895643228505e-06
+18    cell5038192181   4.686957240163482   3.9435895643228505e-06
+19  office5034647744   4.686957240163482   3.9435895643228505e-06
+20             recei   4.507288751304265   7.5988279775065614e-06
+21            eeryth   4.347972848642202   1.3549224332313808e-05
+22             reiew   4.298640596457705    1.619568471043147e-05
+23              coer   4.199647538036711    2.314457903687363e-05
+24               iii   4.041225666254481   4.0860298148123166e-05
+25             later   3.973244432462444   5.2085563379785484e-05
+26               ete  3.8053980411173445    9.453080101245883e-05
+27           address   3.684298778593351   0.00014487561941561362
+28            howeer  3.6362925455712602   0.00017146245480207623
+29           delieri  3.6339423639904695   0.00017288062360906463 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                         precision    recall  f1-score   support
+
+  bert.meyers@enron.com       0.00      0.00      0.00        20
+bill.williams@enron.com       0.19      0.23      0.21        31
+   craig.dean@enron.com       0.00      0.00      0.00        22
+ geir.solberg@enron.com       0.00      0.00      0.00        23
+   kate.symes@enron.com       0.32      0.33      0.32        36
+ leaf.harasin@enron.com       0.00      0.00      0.00        21
+  mark.guzman@enron.com       0.00      0.00      0.00        22
+ ryan.slinger@enron.com       0.00      0.00      0.00        23
+   todd.bland@enron.com       0.00      0.00      0.00        20
+    v..porter@enron.com       1.00      0.65      0.79        20
+
+            avg / total       0.16      0.13      0.14       238
+
+Accuracy: 0.134453781513
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 150 features were selected
+
+Top 30 Features:
+                  token               score                   p-val
+0                  mark  27.008037257287377  4.5398626295806356e-07
+1                  sara  12.094608155635651   0.0006068962414436253
+2                    be   7.463461472405063    0.006796059610413644
+3   mercedengouscibccom   5.756831767720022    0.017239501419907727
+4               further   5.299947104469947    0.022240343529115532
+5       taylorhouectect   5.183648822572531     0.02374059239768103
+6               forster   5.027025375321057     0.02593008717672925
+7                 alloc   4.985781660313702    0.026541094729845185
+8                perhap   4.984459682754353    0.026560926787124364
+9                   bob   4.809402282740817     0.02932933468922892
+10                 team   4.690633592828717    0.031378731310646876
+11                  eta  4.6798765004941405      0.0315716343366307
+12             password  4.6298202475118035     0.03248581110261487
+13                 talk  4.4974508581839165     0.03504002729445051
+14                manag   4.459888369165296    0.035802737177935764
+15              januari   4.324821371298467     0.03869317132856638
+16              product   4.256863329539927    0.040239696223553716
+17               includ   4.179185610288484    0.042087805500415264
+18                 bill   4.162342821462614    0.042500253563051524
+19                solut  4.1562512196635755     0.04265047727460558
+20                 goal   4.114714297026102     0.04368992059360113
+21             independ   4.107178698486373     0.04388135476645208
+22    markwolfuscibccom   4.060553269089611     0.04508577055332928
+23              warrant  3.9675694307274822     0.04759366745533865
+24             descript  3.9611620294381487    0.047771854057468484
+25             individu  3.9401550151517566     0.04836103763154446
+26             benefici  3.9388845869470366     0.04839691609423315
+27              default  3.8672137428604825    0.050467550668784666
+28                 here  3.8446378079807504     0.05113915435546755
+29                given  3.8412448607641654    0.051240909761057274 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                           precision    recall  f1-score   support
+
+    mark.taylor@enron.com       0.43      0.30      0.35        20
+sara.shackleton@enron.com       0.56      0.69      0.62        26
+
+              avg / total       0.50      0.52      0.50        46
+
+Accuracy: 0.521739130435
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 63 features were selected
+
+Top 30 Features:
+             token               score                  p-val
+0        centralxl  1.8586784294425904   0.000851285756062945
+1            anyth  1.8586784294425904   0.000851285756062945
+2              kam  1.8586784294425904   0.000851285756062945
+3             book    1.85496110999394  0.0008837657333898663
+4   corpenronenron  1.5782518561750931   0.011761925713113205
+5              ask  1.5337360490549854   0.017122284975019168
+6            about    1.49626129458693   0.023256425444924553
+7             told    1.49626129458693   0.023256425444924553
+8               cc  1.4018661706347635     0.0481890766242157
+9             show  1.3989973179644761   0.049218548414874136
+10         subject  1.3263940414378113    0.08229563142453049
+11           could  1.2319756528502923    0.15066538349550399
+12              pm  1.2048809203598203    0.17669317244035443
+13              do   1.163327507750536    0.22271086090424766
+14       torectect  1.0232789213415798     0.4300460475572318
+15     tehouectect  1.0232789213415798     0.4300460475572318
+16          eabeth  1.0232789213415796     0.4300460475572318
+17          karima  1.0131037607306512      0.447660479788984
+18         cecilia  1.0131037607306512      0.447660479788984
+19            1029  1.0131037607306512      0.447660479788984
+20          origin  1.0131037607306512      0.447660479788984
+21             lim  1.0131037607306512      0.447660479788984
+22          husain  1.0131037607306512      0.447660479788984
+23         jeffrey  1.0131037607306512      0.447660479788984
+24         dickson  1.0131037607306512      0.447660479788984
+25         lebrocq  1.0131037607306512      0.447660479788984
+26          lebeau  1.0131037607306512      0.447660479788984
+27            jone  1.0131037607306512      0.447660479788984
+28   processescont  1.0131037607306512      0.447660479788984
+29            hodg  1.0131037607306512      0.447660479788984 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                                   precision    recall  f1-score   support
+
+         anthony.campos@enron.com       0.00      0.00      0.00        21
+      bernice.rodriguez@enron.com       0.14      0.04      0.07        23
+              bob.bowen@enron.com       0.00      0.00      0.00        24
+            brant.reves@enron.com       0.00      0.00      0.00        24
+     bridgette.anderson@enron.com       0.00      0.00      0.00        20
+            bruce.mills@enron.com       0.00      0.00      0.00        21
+           cheryl.dawes@enron.com       0.00      0.00      0.00        21
+        christa.winfrey@enron.com       0.00      0.00      0.00        20
+             cindy.horn@enron.com       0.00      0.00      0.00        21
+cyndie.balfour-flanagan@enron.com       0.00      0.00      0.00        21
+            david.hardy@enron.com       0.00      0.00      0.00        22
+        debbie.brackett@enron.com       0.03      1.00      0.06        20
+      debra.perlingiere@enron.com       0.00      0.00      0.00        21
+            dianne.seib@enron.com       0.00      0.00      0.00        20
+              elsie.lew@enron.com       0.00      0.00      0.00        21
+       genia.fitzgerald@enron.com       0.00      0.00      0.00        20
+           geoff.storey@enron.com       0.00      0.00      0.00        21
+            jeremy.wong@enron.com       0.00      0.00      0.00        20
+              jim.homco@enron.com       0.00      0.00      0.00        21
+             joan.quick@enron.com       0.00      0.00      0.00        20
+          karen.lambert@enron.com       0.00      0.00      0.00        20
+             kori.loibl@enron.com       0.00      0.00      0.00        24
+           laurel.adams@enron.com       0.00      0.00      0.00        21
+            liz.hillman@enron.com       0.00      0.00      0.00        21
+           lynn.shivers@enron.com       0.00      0.00      0.00        21
+        marilyn.colbert@enron.com       0.00      0.00      0.00        22
+          michael.eiben@enron.com       0.00      0.00      0.00        20
+          mike.croucher@enron.com       0.00      0.00      0.00        21
+         nathan.hlavaty@enron.com       0.00      0.00      0.00        21
+         peggy.hedstrom@enron.com       0.00      0.00      0.00        20
+            rahil.jafry@enron.com       0.00      0.00      0.00        21
+         richard.mckeel@enron.com       0.00      0.00      0.00        21
+             rita.wynne@enron.com       0.00      0.00      0.00        20
+           romeo.dsouza@enron.com       0.00      0.00      0.00        21
+        russell.diamond@enron.com       0.00      0.00      0.00        20
+         scotty.gilbert@enron.com       0.00      0.00      0.00        21
+      stacey.richardson@enron.com       0.00      0.00      0.00        23
+          susan.trevino@enron.com       0.00      0.00      0.00        20
+             tana.jones@enron.com       0.00      0.00      0.00        23
+         troy.klussmann@enron.com       0.00      0.00      0.00        21
+        victor.lamadrid@enron.com       0.00      0.00      0.00        20
+
+                      avg / total       0.00      0.02      0.00       864
+
+Accuracy: 0.0243055555556
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 326 features were selected
+
+Top 30 Features:
+                            token               score                   p-val
+0                            deal   38.91824117334353   4.815515367235992e-75
+1                 goodellenroncom  14.339775944104154   9.078068372829336e-27
+2                            sold  13.875803668213816   8.186060865185347e-26
+3                         bookout  12.559062334915474  4.2390709939223735e-23
+4                  corpenronenron  12.327357426685664  1.2743133629415457e-22
+5                       venroncom  11.454432199450316   8.063035368418425e-21
+6                           power   10.53550789840745   6.340140576856146e-19
+7                             ces  10.527681411339788   6.580152987363138e-19
+8                           charg  10.307224743969812   1.873722320969835e-18
+9                         purchas   9.947539860556024   1.032264775487625e-17
+10                         demand   8.662725907065026   4.513510172505511e-15
+11                      houectect    8.49620001898313   9.902031960317044e-15
+12                            dan   8.123419871253919   5.732593844033238e-14
+13                           cgas   7.905895527612101  1.5940232543633508e-13
+14                           2000  7.7921326319017075  2.7195297562795097e-13
+15       d1columbiaenergygroupcom   7.741441046631062  3.4498788913218105e-13
+16                        subject   7.676101127625895   4.687106019571066e-13
+17  pdrexelcolumbiaenergygroupcom   7.560505235130945   8.057511721005819e-13
+18                          offer   7.546607921733296   8.599499223703606e-13
+19                             cc   7.535707067143301   9.049968181864938e-13
+20                 junekhouectect   7.503961611510558  1.0500489457865111e-12
+21                           sale   7.335308681268785  2.3114878693398493e-12
+22                         robert   6.819446131038751   2.560770818204987e-11
+23                            the   6.767268047164824  3.2634091835820034e-11
+24                           sole  6.7255543660580885  3.9609944157875536e-11
+25                      disclosur  6.7255543660580885  3.9609944157875536e-11
+26                       prohibit  6.7255543660580885  3.9609944157875536e-11
+27                             on   6.661268130803128    5.33795505772567e-11
+28                         122799   6.297589854191479   2.872123234909325e-10
+29                          delet   6.120515243046529   6.494993903631722e-10 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                             precision    recall  f1-score   support
+
+    beverly.beaty@enron.com       0.08      0.04      0.05        24
+  brenda.fletcher@enron.com       0.24      0.26      0.25        31
+        dan.junek@enron.com       0.17      0.13      0.15        23
+     dick.jenkins@enron.com       0.04      0.04      0.04        25
+    joann.collins@enron.com       0.24      0.30      0.27        30
+    judy.townsend@enron.com       0.04      0.04      0.04        27
+   robert.allwein@enron.com       0.14      0.18      0.15        34
+      robin.barbe@enron.com       0.19      0.19      0.19        27
+    scott.goodell@enron.com       0.39      0.33      0.36        36
+scott.hendrickson@enron.com       0.19      0.19      0.19        21
+  victor.lamadrid@enron.com       0.00      0.00      0.00        34
+  victoria.versen@enron.com       0.12      0.10      0.11        21
+
+                avg / total       0.16      0.16      0.16       333
+
+Accuracy: 0.156156156156
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 300 features were selected
+
+Top 30 Features:
+      token               score                   p-val
+0        wi   74.14981064516253  2.9278058350895664e-28
+1       wou    66.8916166159939   6.596400246322915e-26
+2      peas  50.110825117423026    3.20777148768359e-20
+3      woul  49.521981643886726  5.1573359604876817e-20
+4       aso   49.26609298529451   6.341454166644037e-20
+5      shou   39.98252913475085  1.3205740267689005e-16
+6      will  39.165204308675165  2.6234254696465037e-16
+7     shoul   32.78957485993939   6.008391103608487e-14
+8       fie  30.920140452492692  3.0380577489975825e-13
+9       ike  30.045671029210403   6.512211447272108e-13
+10    pleas   28.06137336326654   3.712443490490938e-12
+11     also   28.00746647277634   3.893003315930937e-12
+12     incu   27.46408886626234   6.287044595908892e-12
+13       et   26.43246793056244  1.5666669762862876e-11
+14     like  26.321395364401706  1.7289185256225396e-11
+15     file  23.566653639624015  2.0219547804167785e-10
+16       ca  23.080753304583503  3.1294810621936816e-10
+17     coul  22.072127576110102   7.771958174738545e-10
+18      all   21.60809136700948    1.18268010474523e-09
+19      cou  21.503914638304497  1.2997292904660823e-09
+20      oni  19.233256932909335  1.0276529213618322e-08
+21   utiiti   18.02316594440048   3.119538461232059e-08
+22    inclu   17.81340215428548  3.7839746146051746e-08
+23     onli  15.177521599402167  4.3491795001681695e-07
+24      let  14.436436621851785   8.685996379165977e-07
+25     emai  14.376399215092496   9.187573158954625e-07
+26  origina  14.220902339075408  1.0626217774269255e-06
+27   anguag  14.082469522565788  1.2096530684690217e-06
+28   scheue  13.928202261280596  1.3977263173620056e-06
+29      ast  13.857904407960765  1.4929190807375606e-06 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                           precision    recall  f1-score   support
+
+     l..nicolay@enron.com       1.00      0.94      0.97        34
+richard.shapiro@enron.com       0.46      0.50      0.48        24
+  sarah.novosel@enron.com       0.54      0.54      0.54        26
+
+              avg / total       0.70      0.69      0.70        84
+
+Accuracy: 0.690476190476
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 156 features were selected
+
+Top 30 Features:
+             token               score                   p-val
+0          subject    48.6868713391383  2.6208400487385583e-11
+1               pm  34.264382931697405  1.4859043106596666e-08
+2           market  29.211338753969205    1.49920946549374e-07
+3          forward  25.219520759309113   9.667580174423645e-07
+4               ub  25.043739296230665  1.0503144287938212e-06
+5        lonectect  24.467010046703493  1.3792996790359179e-06
+6   corpenronenron  22.318321940826863   3.833590672959659e-06
+7             name  19.231057575955603  1.7000796665029115e-05
+8               re   18.80934311415746   2.087911664238214e-05
+9           justin   17.19267662593123   4.612583180118812e-05
+10          lonect  16.449321117418965   6.658907127470454e-05
+11           louis   16.42320225375241   6.745588425174276e-05
+12       houectect   16.17475917309415   7.629505395713871e-05
+13              by  16.127923121654224    7.80885963714424e-05
+14          edmund   15.49597749042702  0.00010692010618080934
+15   boydlonectect  15.247334315145784  0.00012103701996864712
+16         comment  14.979682658524478  0.00013835662652004587
+17       corpenron  13.679572066725228  0.00026591996098836363
+18             but  13.467853618544156   0.0002959540206088711
+19            plan  13.384869189885176  0.00030864614853502715
+20              cc  13.156126826872287  0.00034657046898240503
+21           pleas    12.4197848392589   0.0005040230886214315
+22              et  12.104603220007643   0.0005920849498995745
+23            want  12.031363755629338   0.0006146984561843928
+24             eta  11.809141578760565   0.0006888386976604972
+25      australian  11.789524286738583    0.000695805841270365
+26            minn  11.601820629799187   0.0007662063825744739
+27           posit  11.181985550194234   0.0009511106241853408
+28            meet   11.03269636630531   0.0010273192730367274
+29           amita  10.951998812370427   0.0010710750800695217 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                          precision    recall  f1-score   support
+
+louise.kitchen@enron.com       0.78      0.81      0.79        26
+   mark.taylor@enron.com       0.79      0.76      0.78        25
+
+             avg / total       0.78      0.78      0.78        51
+
+Accuracy: 0.78431372549
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 91 features were selected
+
+Top 30 Features:
+                 token               score                 p-val
+0              languag   8.914647463486949  0.003061970151221117
+1               credit   8.356345518077134  0.004124014926916571
+2               aquila   7.937728638601806  0.005162792322042724
+3             veronica    7.04123305606838   0.00838987176918062
+4               redlin   5.446187334776287  0.020271420275218263
+5                peopl    5.05323835318801   0.02530607979303313
+6                pleas    5.01483867626578   0.02586359457697202
+7                addit   4.947915279146855   0.02686612096132836
+8             kathleen   4.631570900482234  0.032186455353182326
+9                   if   4.519558307412449    0.0343260117022157
+10                dirk   4.413146347287882   0.03649734476256344
+11                agre   4.106467317997908   0.04360396564407633
+12                 say   4.102614141927721  0.043702035715135354
+13  kdirksutilicorpcom   4.007731810349326   0.04619209365232514
+14               sheet  3.9513193699642097   0.04774343807925022
+15              corpor  3.8615901710124776   0.05032595020754992
+16               spoke  3.8504661086279524   0.05065630364923884
+17              materi  3.7434626855335282   0.05395436843262789
+18               delay  3.7224166095660673   0.05462954312168994
+19                abov   3.697165158708167  0.055451530826607885
+20              replac   3.678039563223034  0.056082880346660854
+21                your  3.6748041947296697   0.05619043806302579
+22                 doe  3.5625810080251195   0.06006091290906247
+23             version   3.516946786670171   0.06171542807526845
+24                 ani  3.3472184188360945   0.06831103483125575
+25               engag   3.319612465964921   0.06945355272240294
+26              latest   3.303344469885539   0.07013644309780563
+27              advers  3.2940574284702393   0.07052952751121504
+28              accept  3.2861312801309754   0.07086688666336252
+29               again   3.221977497709848    0.0736623014298402 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                             precision    recall  f1-score   support
+
+  russell.diamond@enron.com       0.59      0.59      0.59        29
+veronica.espinoza@enron.com       0.62      0.62      0.62        32
+
+                avg / total       0.61      0.61      0.61        61
+
+Accuracy: 0.606557377049
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 285 features were selected
+
+Top 30 Features:
+           token               score                   p-val
+0            pls  108.05268926853863   9.046852868362855e-22
+1          print  100.15855712185282  1.7197452964552883e-20
+2       etsenron   76.33982569092292  1.8286857189985095e-16
+3        forward    72.7594492807631   7.777480736633477e-16
+4           rate  40.597555876843245   7.173808038465692e-10
+5           that   38.86843213237829    1.56517477849247e-09
+6             by  35.200046068216366    8.32535065925958e-09
+7            let   31.28852085856961   5.074722213512602e-08
+8             of  30.301395383781987   8.042958417635767e-08
+9          susan  29.955595756197926   9.455095495731986e-08
+10          what   27.80014963962893   2.604905073999489e-07
+11            im   26.36754751790465   5.134772736643003e-07
+12  transwestern  26.255165989329036   5.416492631936466e-07
+13         think    24.8564180233645  1.0553460939485125e-06
+14          dave   23.51361922174779  2.0100144569971417e-06
+15         indic   21.88363785945763  4.4177935783057235e-06
+16           ani   21.81020578178785   4.578003676739783e-06
+17          know  21.526134788365727   5.255049351489028e-06
+18            to   21.25005033162505   6.009990809024648e-06
+19           the  20.889273593303606   7.164321003396679e-06
+20         under  20.616344798454513   8.184445480189905e-06
+21            it  20.614973547141975    8.18992515206105e-06
+22           but  20.336369718148966   9.383816905618217e-06
+23        approv  19.771522319621578  1.2372574734608314e-05
+24      commerci   19.60276370335215  1.3440181016783474e-05
+25         julia    19.3496971051608  1.5218351240701558e-05
+26           who   19.28460751248566   1.571298472476353e-05
+27          some  19.210860876552776   1.629307880972356e-05
+28            we   18.95144907069129   1.851124671124023e-05
+29          file     18.312610296362   2.536767997824602e-05 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                         precision    recall  f1-score   support
+
+martha.benner@enron.com       0.78      0.89      0.83        36
+  susan.scott@enron.com       0.79      0.62      0.70        24
+
+            avg / total       0.78      0.78      0.78        60
+
+Accuracy: 0.783333333333
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 389 features were selected
+
+Top 30 Features:
+       token               score                   p-val
+0         pm  101.25718013062955   4.913439284753374e-21
+1        day   96.33697550188641   3.376933860492854e-20
+2    houston   92.04120351375836  1.8513247654961334e-19
+3     volunt   77.31370828713165   7.254691749761461e-17
+4     inform   70.48494903979645  1.2474372554497001e-15
+5     espeak   69.96931798153659  1.5495022266118154e-15
+6       free    64.0228168448194   1.929987590407302e-14
+7    contact  63.537007537783246  2.3758096165330746e-14
+8     famili   60.96580961327252   7.169462849085268e-14
+9      lunch  58.447955728956934   2.130510927657451e-13
+10    ticket   58.21570937077384   2.356559653339992e-13
+11     pleas   58.17933134612635   2.394091747515906e-13
+12    reserv     55.698135857112   7.060526800445213e-13
+13     limit    55.1994704548498   8.782739311493453e-13
+14      more    52.3742734501384  3.0423918644810614e-12
+15  children    51.6805457457304   4.134065218350758e-12
+16      park   49.41901051606262  1.1280855225773868e-11
+17        it   49.14759749498866  1.2730826841379775e-11
+18   present   46.84948953467724   3.557913703267182e-11
+19    center  44.274628841424686  1.1348457221439811e-10
+20      seat   43.14547534503475  1.8927236994865395e-10
+21    attend  42.936390337418175   2.081168734307092e-10
+22       ext  41.915301761794204   3.311258455369172e-10
+23      1200   41.61244854049921   3.801332635783924e-10
+24      need   40.86407424905761    5.34937399589665e-10
+25   through   40.50619487729792   6.300526474224443e-10
+26       the   40.26150443328474    7.04722165640979e-10
+27     bring   39.63965530718303   9.371365075903911e-10
+28     lobbi   38.26295450776276  1.7649181389510873e-09
+29    annual   37.88905011052761   2.097020415566768e-09 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                         precision    recall  f1-score   support
+
+  all.houston@enron.com       0.85      0.72      0.78        32
+all.worldwide@enron.com       0.79      0.89      0.84        37
+
+            avg / total       0.82      0.81      0.81        69
+
+Accuracy: 0.811594202899
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 469 features were selected
+
+Top 30 Features:
+                token               score                   p-val
+0                  pl  24.089597936026664    5.56885471669894e-31
+1               capit  21.238148529706883    3.08197948097027e-27
+2               manag   19.97065913215464   1.458718875573922e-25
+3               faulk    14.3973356448678  3.9781425884786096e-18
+4      corpenronenron  11.507539423543246  3.0488981925074065e-14
+5                  ee  11.054696207500875  1.2391063297095892e-13
+6            08242000  10.763915293376394  3.0480878427026143e-13
+7                 ect  10.274790224829028  1.3844683925578311e-12
+8             matthew    9.96697339536976   3.586196383799044e-12
+9            enronnet   9.678241009244987   8.752028434622352e-12
+10            houeese   8.997663288726118   7.148080155961048e-11
+11   lenharthouectect   8.604622113448723  2.3982967206280493e-10
+12              draft   8.549412999454386  2.8423376305296866e-10
+13          tubervill   7.690611431877295   3.966509272350081e-09
+14      hullhouectect    7.36590212624807  1.0704104779365994e-08
+15  baumbachhouectect    7.13589921887401  2.1590403682584587e-08
+16              david   7.123154008937217  2.2445423884533706e-08
+17   winfreehouectect   7.072317581136765  2.6205070863393297e-08
+18              oneal  6.9702251950292995   3.575680506779006e-08
+19              mobil   6.704769085921925   8.010660739908297e-08
+20             bledso   6.631430164196927  1.0006357306849005e-07
+21            william   6.508861038428403  1.4506202526178415e-07
+22         7134123667   6.453246850565323  1.7165425217412583e-07
+23         7136465745   6.453246850565323  1.7165425217412583e-07
+24         7138530380   6.453246850565323  1.7165425217412583e-07
+25              bryan   6.414454820006499  1.9302544983633747e-07
+26               from   6.342940740205861  2.3960504676740464e-07
+27             player   6.299662870803818    2.73066314616642e-07
+28             brunel   6.130020936759622  4.5550177724303854e-07
+29           enroncom   5.907994481246734   8.882275326996744e-07 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                             precision    recall  f1-score   support
+
+    brian.hoskins@enron.com       0.18      0.19      0.19        21
+       bryan.hull@enron.com       0.19      0.14      0.16        44
+   david.baumbach@enron.com       0.22      0.29      0.25        31
+  matthew.lenhart@enron.com       0.02      0.03      0.02        39
+    oneal.winfree@enron.com       0.06      0.04      0.05        23
+     phillip.love@enron.com       0.16      0.13      0.14        23
+    shanna.husser@enron.com       0.53      0.61      0.57        41
+timothy.blanchard@enron.com       0.26      0.25      0.25        40
+
+                avg / total       0.22      0.23      0.22       262
+
+Accuracy: 0.225190839695
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 258 features were selected
+
+Top 30 Features:
+                   token               score                    p-val
+0                  cuser   11.57785465126404   1.300779096871834e-122
+1                     ti  11.046192980753887  1.1725889711743665e-115
+2                  orrow    8.54765144111057    3.769624675015591e-83
+3               campaign   7.025546877630607   1.1912553406809803e-63
+4              pdxectect   6.516213579248849   3.2206081438668316e-57
+5              torectect   6.285803329956465   2.4941737185062635e-54
+6              houectect   5.855964966121554    5.570807502973068e-49
+7             leadership   5.753891770271719   1.0174179814064993e-47
+8                    iss    5.56095762256686   2.4100956522920582e-45
+9            18009982462   5.156014160317999    2.081556816626838e-40
+10        corpenronenron  5.0545140792611765   3.5034364385730215e-39
+11       sonnaenronenron   4.787061741577087    5.636885944888169e-36
+12                 daili  4.7466572230919315   1.7068572777403322e-35
+13                   mar   4.288412443237433   4.1805224075751015e-30
+14         alaenronenron   4.258612990720483    9.267167679176299e-30
+15               5316376  3.9628176747304313    2.305274801338504e-26
+16                  jodi  3.3723657585195728    8.112142908741642e-20
+17                 unabl  3.2280129722914124   2.8322127957112048e-18
+18                 leasa   3.188413627957614    7.426624031263124e-18
+19          lopezhoueese  3.1333470944121387   2.8151943170785845e-17
+20       gilenronenronxg  3.1333470944121387   2.8151943170785845e-17
+21   derrickenronenronxg  3.1333470944121387   2.8151943170785845e-17
+22    hillisenronenronxg  3.1333470944121387   2.8151943170785845e-17
+23                twanda  3.1333470944121387   2.8151943170785845e-17
+24    harrisenronenronxg  3.1333470944121387   2.8151943170785845e-17
+25  triboletenronenronxg  3.1333470944121387   2.8151943170785845e-17
+26        chapmanhoueese  3.1333470944121387   2.8151943170785845e-17
+27       delaineyhoueese  3.1333470944121387   2.8151943170785845e-17
+28  bradfordenronenronxg  3.1333470944121387   2.8151943170785845e-17
+29                 merci  3.1333470944121387   2.8151943170785845e-17 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                              precision    recall  f1-score   support
+
+       alan.comnes@enron.com       0.07      0.03      0.04        31
+      alberto.levy@enron.com       0.00      0.00      0.00        20
+      aleck.dadson@enron.com       0.00      0.00      0.00        23
+    barbara.hueter@enron.com       0.00      0.00      0.00        20
+bernadette.hawkins@enron.com       0.00      0.00      0.00        29
+        bill.moore@enron.com       0.00      0.00      0.00        25
+      carmen.perez@enron.com       0.00      0.00      0.00        20
+    carolyn.cooney@enron.com       0.00      0.00      0.00        30
+     charles.yeung@enron.com       0.00      0.00      0.00        31
+        chris.long@enron.com       0.15      0.21      0.18        24
+   christi.nicolay@enron.com       1.00      0.05      0.10        20
+       dan.staines@enron.com       0.04      0.03      0.04        30
+ daniel.allegretti@enron.com       0.00      0.00      0.00        33
+    donald.lassere@enron.com       0.00      0.00      0.00        31
+      donna.fulton@enron.com       0.00      0.00      0.00        24
+ elizabeth.linnell@enron.com       0.00      0.00      0.00        33
+       frank.rishe@enron.com       0.00      0.00      0.00        30
+    geriann.warner@enron.com       0.00      0.00      0.00        30
+    germain.palmer@enron.com       0.00      0.00      0.00        20
+    ginger.dernehl@enron.com       0.00      0.00      0.00        30
+     gloria.ogenyi@enron.com       0.00      0.00      0.00        30
+ guillermo.canovas@enron.com       0.00      0.00      0.00        20
+   harry.kingerski@enron.com       0.00      0.00      0.00        36
+     howard.fromer@enron.com       0.00      0.00      0.00        33
+     james.steffes@enron.com       0.02      0.03      0.03        29
+    janel.guerrero@enron.com       0.00      0.00      0.00        26
+     janine.migden@enron.com       0.00      0.00      0.00        32
+     jean.dressler@enron.com       0.00      0.00      0.00        29
+        jean.ryall@enron.com       0.00      0.00      0.00        27
+     jeff.dasovich@enron.com       0.06      0.04      0.05        47
+         joe.allen@enron.com       0.00      0.00      0.00        30
+        joe.connor@enron.com       0.00      0.00      0.00        29
+       joe.hartsoe@enron.com       0.00      0.00      0.00        20
+      joseph.alamo@enron.com       0.00      0.00      0.00        30
+ kathleen.sullivan@enron.com       0.00      0.00      0.00        29
+      kerry.stroup@enron.com       0.00      0.00      0.00        30
+    kirsten.bellas@enron.com       0.00      0.00      0.00        27
+      lara.leibman@enron.com       0.00      0.00      0.00        30
+     laurie.knight@enron.com       0.00      0.00      0.00        29
+     leslie.lawner@enron.com       0.00      0.00      0.00        31
+   linda.robertson@enron.com       0.00      0.00      0.00        37
+         lisa.yoho@enron.com       0.00      0.00      0.00        32
+     lora.sullivan@enron.com       0.00      0.00      0.00        30
+ marchris.robinson@enron.com       0.00      0.00      0.00        30
+  maureen.mcvicker@enron.com       0.00      0.00      0.00        30
+    melinda.pharms@enron.com       0.00      0.00      0.00        24
+    mona.petrochko@enron.com       0.00      0.00      0.00        21
+     nancy.hetrick@enron.com       0.00      0.00      0.00        30
+     patrick.keene@enron.com       0.00      0.00      0.00        31
+      paul.kaufman@enron.com       0.00      0.00      0.00        40
+ richard.ingersoll@enron.com       0.00      0.00      0.00        22
+   richard.shapiro@enron.com       0.02      0.38      0.04        42
+      robert.frank@enron.com       0.00      0.00      0.00        31
+   robert.hemstock@enron.com       0.17      0.03      0.05        32
+robert.neustaedter@enron.com       0.00      0.00      0.00        31
+        roy.boston@enron.com       0.00      0.00      0.00        30
+    rubena.buerger@enron.com       0.00      0.00      0.00        30
+   sandra.mccubbin@enron.com       0.00      0.00      0.00        21
+     sarah.novosel@enron.com       0.00      0.00      0.00        34
+      scott.bolton@enron.com       0.00      0.00      0.00        30
+     stephen.burns@enron.com       0.00      0.00      0.00        29
+   steve.montovano@enron.com       0.00      0.00      0.00        33
+      steve.walton@enron.com       0.00      0.00      0.00        31
+       steven.kean@enron.com       0.06      0.04      0.05        23
+          sue.nord@enron.com       0.14      0.12      0.13        33
+    susan.landwehr@enron.com       0.00      0.00      0.00        23
+        susan.mara@enron.com       0.00      0.00      0.00        36
+      terri.miller@enron.com       0.00      0.00      0.00        29
+      thane.twiggs@enron.com       0.00      0.00      0.00        29
+        tom.briggs@enron.com       0.00      0.00      0.00        26
+       tom.hoatson@enron.com       0.25      0.07      0.11        27
+      vinio.floris@enron.com       0.00      0.00      0.00        30
+
+                 avg / total       0.02      0.02      0.01      2085
+
+Accuracy: 0.0167865707434
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 319 features were selected
+
+Top 30 Features:
+                   token               score                   p-val
+0                   jeff   18.55578485042998   1.638772362918417e-11
+1              senroncom  11.537252761892749  2.3391751321960478e-07
+2                richard   10.62195087494881   8.267593090862129e-07
+3    shapironaenronenron   8.710383704917383  1.1632904906639043e-05
+4                  susan   8.198846525489776  2.3629417788004784e-05
+5   dasovichnaenronenron   8.127168419715304  2.6096707246977053e-05
+6                     ta   7.433330279684605   6.825507392324658e-05
+7               dasovich   6.228299662056049   0.0003621135477997558
+8       maranaenronenron   5.890733215520619   0.0005775057215667645
+9                christi   5.276321789152401   0.0013486211913579908
+10                 karen   5.170120135756267   0.0015611737434817737
+11                  deal  5.0814401550240165   0.0017639946928236655
+12                   rey   4.411030272823695    0.004430942265848726
+13     brownnaenronenron   4.033371499586668    0.007426906278637489
+14         skeanenroncom   3.937773037827743    0.008461395527068451
+15                    et   3.705466357789415    0.011608528016666252
+16                steven   3.634859706106993    0.012777053234406383
+17               protest   3.629169238378531    0.012876144053522807
+18                  risk  3.5956857001212987    0.013474789037516725
+19   dennecorpenronenron  3.5205058825935125    0.014920986902327104
+20               against   3.238849411861877    0.021835825938967313
+21      nicolayhouectect  3.2261833872912957    0.022211920302120554
+22                 claim   3.222677002010637    0.022317159202556665
+23               jeffrey  3.1357935846283973    0.025087533238961856
+24                mandat   3.053784888378107    0.028011745429146744
+25                   jds  3.0520158765197314    0.028078382602055443
+26      odayapenronenron   3.040565548948086    0.028513491957447096
+27               nichola   3.040565548948086    0.028513491957447096
+28       mpalmerenroncom   3.035966284065215     0.02869012287749761
+29      kaufmanpdxectect  3.0311151265835057    0.028877593161721404 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                           precision    recall  f1-score   support
+
+  jeff.dasovich@enron.com       0.43      0.47      0.45        43
+richard.shapiro@enron.com       0.15      0.14      0.15        29
+    steven.kean@enron.com       0.05      0.04      0.04        23
+     susan.mara@enron.com       0.28      0.29      0.29        24
+
+              avg / total       0.26      0.27      0.26       119
+
+Accuracy: 0.268907563025
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 1060 features were selected
+
+Top 30 Features:
+                        token               score p-val
+0                        woul    99.8025713294015   0.0
+1          glarreawilliamscom   97.46570968712733   0.0
+2                          yn   88.85423289333457   0.0
+3             rogerpelotescom   85.44135657854328   0.0
+4           kentpalmertonscom   85.13647324067256   0.0
+5       tpalmertonwilliamscom   83.84985136105308   0.0
+6                       eison   81.47449243373333   0.0
+7      hstoutreliantenergycom   73.98673538865219   0.0
+8                         sai    70.1449650035305   0.0
+9           pelotewilliamscom   69.19825187374497   0.0
+10               ponderfplcom   69.07233635867567   0.0
+11                        avi   69.02874355959634   0.0
+12            johnglarreascom   68.42151393860003   0.0
+13         soosogdenenergycom   65.23767247887051   0.0
+14           kentpalmertoncom   63.70309963358522   0.0
+15                wcalpinecom   63.30696383969191   0.0
+16             rogerpelotecom    62.1819714405209   0.0
+17             johnglarreacom  59.509520370254656   0.0
+18                rcalpinecom   56.60060647211967   0.0
+19     mcfaddenogdenenergycom   55.89285229146589   0.0
+20          eisenmangenpgecom   54.06735846454813   0.0
+21  carlsonwastemanagementcom   52.69552825723557   0.0
+22             codycarterscom   51.49764811978429   0.0
+23            derosagenpgecom  50.462182166771534   0.0
+24                        nee   48.78691675817393   0.0
+25                       uner   48.01394459048948   0.0
+26                        kas   44.84933821798298   0.0
+27                         wr   42.35961671471788   0.0
+28        rescteriobravogmcom   41.24006296223962   0.0
+29                       esct   40.53087164930565   0.0 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.06 m
+Prediction time: 0.0 m
+                              precision    recall  f1-score   support
+
+       alan.comnes@enron.com       0.22      0.24      0.23        79
+    angela.schwarz@enron.com       0.00      0.00      0.00        42
+      beverly.aden@enron.com       0.11      0.10      0.10        42
+        bill.votaw@enron.com       0.78      0.61      0.68        41
+    brenda.barreda@enron.com       0.00      0.00      0.00        41
+     carol.moffett@enron.com       0.24      0.24      0.24        41
+      cathy.corbin@enron.com       0.00      0.00      0.00        41
+      chris.foster@enron.com       0.11      0.06      0.08        48
+ christina.liscano@enron.com       0.00      0.00      0.00        41
+christopher.calger@enron.com       0.11      0.18      0.13        34
+      craig.sutter@enron.com       0.75      0.07      0.13        42
+        d..steffes@enron.com       0.70      0.79      0.74        47
+          dan.leff@enron.com       0.00      0.00      0.00        50
+  debora.whitehead@enron.com       0.17      0.10      0.12        42
+  dennis.benevides@enron.com       0.00      0.00      0.00        48
+     dirk.vanulden@enron.com       0.00      0.00      0.00        35
+         don.black@enron.com       0.10      0.06      0.08        48
+dorothy.youngblood@enron.com       0.00      0.00      0.00        41
+    douglas.condon@enron.com       0.00      0.00      0.00        31
+      douglas.huth@enron.com       0.00      0.00      0.00        42
+      edward.sacks@enron.com       0.01      0.02      0.02        42
+        eric.letke@enron.com       0.03      0.04      0.03        26
+       eric.melvin@enron.com       0.16      0.17      0.16        41
+       erika.dupre@enron.com       0.00      0.00      0.00        41
+       evan.hughes@enron.com       0.00      0.00      0.00        44
+      fran.deltoro@enron.com       0.17      0.27      0.21        41
+      gayle.muench@enron.com       0.00      0.00      0.00        41
+    ginger.dernehl@enron.com       0.03      0.04      0.04        52
+     gordon.savage@enron.com       0.29      0.05      0.08        42
+        greg.wolfe@enron.com       0.19      0.20      0.19        35
+   harold.buchanan@enron.com       0.00      0.00      0.00        41
+   harry.kingerski@enron.com       0.02      0.02      0.02       108
+        iris.waser@enron.com       0.00      0.00      0.00        41
+       james.lewis@enron.com       0.00      0.00      0.00        42
+     james.steffes@enron.com       0.08      0.10      0.09       154
+      james.wright@enron.com       0.01      0.09      0.02        76
+    janel.guerrero@enron.com       0.01      0.02      0.01        61
+      jeff.messina@enron.com       0.00      0.00      0.00        41
+  jennifer.rudolph@enron.com       0.00      0.00      0.00        39
+   jeremy.blachman@enron.com       0.00      0.00      0.00        57
+       jess.hewitt@enron.com       0.00      0.00      0.00        41
+       joe.hartsoe@enron.com       0.39      0.33      0.36        67
+      john.neslage@enron.com       0.56      0.35      0.43        26
+      joseph.alamo@enron.com       0.51      0.50      0.51        36
+     jubran.whalan@enron.com       0.00      0.00      0.00        39
+       karen.denne@enron.com       0.12      0.15      0.14       143
+  kathryn.corbally@enron.com       0.33      0.02      0.04        42
+        kathy.bass@enron.com       0.00      0.00      0.00        41
+      kathy.dodgen@enron.com       0.00      0.00      0.00        42
+     ken.gustafson@enron.com       0.22      0.26      0.24        42
+      kevin.hughes@enron.com       0.00      0.00      0.00        41
+       leasa.lopez@enron.com       0.00      0.00      0.00        41
+   leticia.botello@enron.com       0.00      0.00      0.00        41
+   linda.robertson@enron.com       0.00      0.00      0.00        36
+       mark.muller@enron.com       0.38      0.29      0.33        41
+      marsha.suggs@enron.com       0.00      0.00      0.00        41
+     martin.wenzel@enron.com       0.00      0.00      0.00        30
+       marty.sunde@enron.com       0.90      0.21      0.34        43
+         mary.hain@enron.com       0.00      0.00      0.00        24
+meredith.eggleston@enron.com       0.00      0.00      0.00        41
+  michael.etringer@enron.com       0.00      0.00      0.00        50
+      michael.mann@enron.com       0.01      0.02      0.02        42
+  michael.tribolet@enron.com       0.00      0.00      0.00        53
+ michelle.cisneros@enron.com       0.00      0.00      0.00        42
+        mike.smith@enron.com       0.04      0.07      0.05        45
+    mona.petrochko@enron.com       0.00      0.00      0.00        26
+           mpalmer@enron.com       0.00      0.00      0.00        89
+      neil.bresnan@enron.com       0.00      0.00      0.00        43
+         neil.hong@enron.com       0.00      0.00      0.00        41
+      paul.kaufman@enron.com       0.22      0.21      0.22       173
+      paula.warren@enron.com       0.70      0.17      0.27        41
+   richard.leibert@enron.com       0.00      0.00      0.00        41
+   richard.sanders@enron.com       0.04      0.24      0.07        74
+   richard.shapiro@enron.com       0.08      0.08      0.08       169
+richard.zdunkewicz@enron.com       0.00      0.00      0.00        41
+     rita.hennessy@enron.com       0.00      0.00      0.00        41
+     robert.badeer@enron.com       0.31      0.16      0.21        25
+      robert.frank@enron.com       0.44      0.33      0.38        21
+   robert.williams@enron.com       0.41      0.30      0.34        44
+        roger.yang@enron.com       0.60      0.24      0.34        50
+rosalinda.tijerina@enron.com       0.00      0.00      0.00        41
+   sandra.mccubbin@enron.com       0.22      0.20      0.21        99
+     sarah.novosel@enron.com       0.00      0.00      0.00        64
+        scott.gahn@enron.com       0.06      0.02      0.03        48
+     scott.stoness@enron.com       0.03      0.02      0.02        49
+       sharon.dick@enron.com       0.00      0.00      0.00        42
+             skean@enron.com       0.03      0.02      0.02       105
+      steve.walker@enron.com       0.30      0.37      0.33        35
+        susan.mara@enron.com       0.24      0.24      0.24       183
+      tanya.leslie@enron.com       1.00      0.05      0.09        41
+        tasha.lair@enron.com       0.00      0.00      0.00        41
+        ted.murphy@enron.com       0.25      0.34      0.29        41
+    terri.greenlee@enron.com       0.00      0.00      0.00        41
+        tim.belden@enron.com       0.47      0.33      0.39        73
+     tony.spruiell@enron.com       0.21      0.22      0.21        41
+            triley@enron.com       0.00      0.00      0.00        38
+       vicki.sharp@enron.com       0.22      0.07      0.10        60
+    vladimir.gorny@enron.com       0.00      0.00      0.00        42
+       wanda.curry@enron.com       0.04      0.02      0.02        57
+             wgang@enron.com       0.00      0.00      0.00        30
+  william.bradford@enron.com       0.35      0.27      0.31        41
+
+                 avg / total       0.14      0.10      0.11      5202
+
+Accuracy: 0.102652825836
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 132 features were selected
+
+Top 30 Features:
+                  token               score                    p-val
+0                 enron  370.10974387838525  2.6018218916051974e-141
+1                  from  243.52899592088838  1.3502468010602676e-106
+2                   apb    62.4530631777533   1.3909962125551497e-35
+3              natsourc   33.71752993567656   2.7024562849834997e-20
+4   hundlcorpenronenron   32.68533134252635   1.0252761009086026e-19
+5                 caiso  32.462166001262005   1.3687564538244885e-19
+6                energi   25.52819526905279    1.219394601838249e-15
+7                    cc  24.958808906787368   2.5993876906070622e-15
+8                kimber  23.874841200294263   1.1028502184075612e-14
+9             pdxectect  22.867796733758883    4.243916968576813e-14
+10                   pm  22.507525188778086    6.880827218768466e-14
+11              confirm  22.188017438140516   1.0567864113366047e-13
+12             checkout  20.954803108099785    5.561086613439976e-13
+13                  tfs  20.823494011026977    6.639373989455124e-13
+14               prebon  17.234136589669323     8.69152559120756e-11
+15              comment  16.110906249663334    4.041762149602144e-10
+16               broker  15.793471756486971     6.24621519114423e-10
+17              contact  13.485500957255342   1.4971807065901914e-08
+18    smithenronenronxg  12.358343573717997    7.113847192780491e-08
+19                  ami  12.358343573717997    7.113847192780491e-08
+20                   re  11.009856439211084    4.613907968718619e-07
+21              forward    10.2065571628257   1.4083743935413999e-06
+22               amerex   9.413358678152191    4.244286054145688e-06
+23                  new   9.015013764448641    7.388328779368748e-06
+24                 ncpa   8.784616042984158    1.018164179431871e-05
+25               letter   8.546971811822525   1.4173757558189151e-05
+26                 real   8.374217351177235   1.8027231006456916e-05
+27              default    8.21313671491297    2.255884340711055e-05
+28              discrep  7.7986484117669015   4.0169963392645425e-05
+29                 firm   7.702101550803784    4.594775486972785e-05 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                            precision    recall  f1-score   support
+
+  evelyn.metoyer@enron.com       0.84      0.87      0.85        47
+  kerri.thompson@enron.com       0.86      0.80      0.83        45
+    sharen.cason@enron.com       0.88      1.00      0.93        21
+stephanie.piwetz@enron.com       0.84      0.76      0.80        21
+
+               avg / total       0.85      0.85      0.85       134
+
+Accuracy: 0.850746268657
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 547 features were selected
+
+Top 30 Features:
+                           token               score                   p-val
+0                            ect   40.16507522511148   7.687221153982925e-60
+1                      houectect   31.91755130003687  1.4854812864958747e-47
+2                   enronenronxg  24.853228966263153    8.30543282735541e-37
+3                   naenronenron  24.740738913800833  1.2361094896175131e-36
+4                           mdea  21.917436024398498  2.7595976277387006e-32
+5                   enrondevelop  20.997603401876262   7.300043336726911e-31
+6                          david  20.941070067375033    8.92967181130573e-31
+7                        exhibit   17.45390992789973  2.3180884683065443e-25
+8                          pleas  17.413096528609046  2.6832578855306226e-25
+9                          print   15.71458777729402  1.1884944674630251e-22
+10                        assign  14.928444612994362   1.999645400935623e-21
+11                            ge  14.583080251952246   6.912672709323572e-21
+12                           the   13.66467047776036  1.8715828411879105e-19
+13                         carlo   13.45911370416369  3.9156591080339324e-19
+14                         draft  12.274819103943118  2.7479568048057563e-17
+15                          sent   12.16229559922136  4.1143928110535073e-17
+16       engeldorfcorpenronenron  12.139138594117108  4.4707228893673304e-17
+17                          cost  12.108005177406241   4.998881567313711e-17
+18                           gas   11.91490036121411   9.991092354479906e-17
+19                     clarksdal  11.839970632141247  1.3070231648713498e-16
+20                       6463393  11.365403637018092    7.15890440070964e-16
+21                    confidenti  11.323454322455365   8.319515977225575e-16
+22                          load  11.261798062467827  1.0375104566230498e-15
+23                        marvin  11.150792416682522  1.5438548718758443e-15
+24  enrondevelopmentenrondevelop  11.095624640260269   1.880943192530157e-15
+25                       consent  10.905553568604065   3.713543947878234e-15
+26                       3458191   10.82361948165149   4.978370109439506e-15
+27                     770027361  10.715569517145545   7.326848524611543e-15
+28                       roseann  10.575482722404736  1.2090120802369811e-14
+29                          fuel  10.421119051687356  2.0989571090063185e-14 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                             precision    recall  f1-score   support
+
+       ben.jacoby@enron.com       0.30      0.32      0.31        57
+      carlos.sole@enron.com       0.32      0.30      0.31        47
+    heather.kroll@enron.com       0.25      0.21      0.23        29
+kathleen.carnahan@enron.com       0.37      0.45      0.40        56
+       lisa.bills@enron.com       0.06      0.04      0.05        23
+ reagan.rorschach@enron.com       0.50      0.27      0.35        26
+roseann.engeldorf@enron.com       0.09      0.09      0.09        35
+     sheila.tweed@enron.com       0.29      0.21      0.25        42
+    suzanne.adams@enron.com       0.62      0.78      0.70        93
+
+                avg / total       0.36      0.38      0.37       408
+
+Accuracy: 0.382352941176
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 25 features were selected
+
+Top 30 Features:
+        token              score                   p-val
+0          re  99.49146245386027  1.3800180993462875e-48
+1      report  37.03963646799205  3.0687343628379774e-21
+2   enovatexl  17.83389388653614   6.575329721177423e-11
+3        2001  8.487173328451135  1.7466074163631357e-05
+4       trade  8.289137108905772  2.2876593739758465e-05
+5      attach  7.784758710474109   4.551190532857357e-05
+6          to  7.557330720095221   6.207638765631397e-05
+7       chris  7.045067738321583  0.00012494764474640596
+8        abel  7.045067738321583  0.00012494764474640596
+9        will   6.96578414170846  0.00013924000248674042
+10       copi  6.292815587549825   0.0003492084621673666
+11       hard  6.292815587549825   0.0003492084621673666
+12   signatur  6.292815587549819   0.0003492084621673666
+13   chairman  6.292815587549819   0.0003492084621673666
+14        rac  6.292815587549819   0.0003492084621673666
+15     return  6.292815587549819   0.0003492084621673666
+16       sign  6.292815587549819   0.0003492084621673666
+17    forward  6.292815587549819   0.0003492084621673666
+18      print  6.292815587549819   0.0003492084621673666
+19        who  6.292815587549819   0.0003492084621673666
+20    respons  6.292815587549819   0.0003492084621673666
+21        out  6.292815587549819   0.0003492084621673666
+22     obtain  6.292815587549819   0.0003492084621673666
+23      offic  6.292815587549819   0.0003492084621673666
+24     august  5.681459627183304   0.0008049228848223734
+25       risk  5.646229266481283   0.0008445866324321735
+26      their   5.49016882940498    0.001045109402572608
+27         at  5.049922448717908   0.0019051788147919492
+28       open  4.465145287719677    0.004222411268449204
+29        net  4.465145287719677    0.004222411268449204 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                             precision    recall  f1-score   support
+
+cassandra.schultz@enron.com       0.00      0.00      0.00        20
+       chris.abel@enron.com       0.38      0.48      0.43        21
+       david.port@enron.com       0.81      0.59      0.68        22
+         rick.buy@enron.com       0.18      0.27      0.21        22
+
+                avg / total       0.35      0.34      0.34        85
+
+Accuracy: 0.341176470588
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 431 features were selected
+
+Top 30 Features:
+         token               score                    p-val
+0          ion  29.075590900121853                      0.0
+1         esat  29.029600860157984                      0.0
+2           ag  21.652175859748617  1.3659895168747368e-261
+3         plem   18.45930718688012  5.0384081823692003e-219
+4          mar   13.27459909396512  3.6227377324818825e-149
+5        pabli   12.50522163206532   9.096809848068658e-139
+6          isd  11.543120941870749    9.02542433229501e-126
+7          iss   9.695744615996077   6.744436894334656e-101
+8        gterm   9.535037170686891    9.636449939995833e-99
+9          ert   7.821224830946388     6.45748192593291e-76
+10          ta   6.998613021436801    4.164435344936256e-65
+11        chge   6.890908270538771   1.0591805548149486e-63
+12        ulat   6.093071094685874   2.2172914540660936e-53
+13        cpuc   5.666241117676843    6.150683085355765e-48
+14      gigaul   5.239826250445512   1.4384868363209682e-42
+15  california   4.848835577648344   1.0188617398477018e-37
+16         ger   4.690816109362178     8.81873457095486e-36
+17          es   4.322082529429577    2.549667131432334e-31
+18        opiz   4.310883498667767   3.4717438616577025e-31
+19      mariti   3.754171136463579    1.202294431087341e-24
+20       ghaul   3.720157944262367   2.9558691824704112e-24
+21        weed  3.5511509957475265   2.4800409919012767e-22
+22         wea   3.464664607965343    2.328232001789949e-21
+23         eni  3.3931760468583727   1.4603234292110426e-20
+24         bro  3.2746155273908464   2.9732264402467845e-19
+25      edison  3.2443488091140877    6.374832714540105e-19
+26        liet  3.2310556150864973    8.903655584311693e-19
+27         ine  3.2240515351928734   1.0615131281595305e-18
+28      corner  3.1550309440732978   5.9539525415316024e-18
+29          az  3.1048049547286185   2.0681157012891055e-17 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.01 m
+Prediction time: 0.0 m
+                              precision    recall  f1-score   support
+
+       allen.cohrs@enron.com       0.04      0.03      0.04        30
+       bill.fowler@enron.com       0.13      0.09      0.11        32
+      bill.mangels@enron.com       0.00      0.00      0.00        21
+      bob.burleson@enron.com       0.00      0.00      0.00        33
+       bob.stevens@enron.com       0.00      0.00      0.00        32
+     chris.sebesta@enron.com       0.00      0.00      0.00        31
+  christine.stokes@enron.com       0.00      0.00      0.00        29
+   chuck.wilkinson@enron.com       0.00      0.00      0.00        33
+   courtney.barker@enron.com       0.00      0.00      0.00        24
+     craig.buehler@enron.com       0.00      0.00      0.00        32
+        dana.jones@enron.com       0.00      0.00      0.00        30
+     dave.neubauer@enron.com       0.00      0.00      0.00        35
+      david.badura@enron.com       0.00      0.00      0.00        20
+        don.powell@enron.com       0.00      0.00      0.00        30
+    eileen.peebles@enron.com       0.00      0.00      0.00        26
+   frank.oldenhuis@enron.com       0.00      0.00      0.00        33
+       frank.semin@enron.com       0.00      0.00      0.00        32
+      janet.bowers@enron.com       0.00      0.00      0.00        33
+      jeff.nielsen@enron.com       0.00      0.00      0.00        28
+   jeffery.fawcett@enron.com       0.00      0.00      0.00        38
+      jim.wiltfong@enron.com       0.00      0.00      0.00        24
+       jo.williams@enron.com       0.36      0.23      0.28        35
+    john.dushinske@enron.com       0.00      0.00      0.00        35
+       john.fiscus@enron.com       0.00      0.00      0.00        30
+    joni.bollinger@enron.com       0.00      0.00      0.00        31
+  karen.lagerstrom@enron.com       0.00      0.00      0.00        32
+        kay.threet@enron.com       0.00      0.00      0.00        32
+        ken.powers@enron.com       0.67      0.20      0.31        30
+       kent.miller@enron.com       0.00      0.00      0.00        34
+       kevin.hyatt@enron.com       0.00      0.00      0.00        51
+   kimberly.watson@enron.com       0.00      0.00      0.00        38
+      larry.pavlou@enron.com       0.00      0.00      0.00        34
+       larry.swett@enron.com       0.00      0.00      0.00        31
+  laura.lantefield@enron.com       0.00      0.00      0.00        31
+       lee.ferrell@enron.com       0.00      0.00      0.00        23
+         lee.huber@enron.com       0.00      0.00      0.00        24
+      lindy.donoho@enron.com       0.00      0.00      0.00        51
+       lisa.valley@enron.com       0.00      0.00      0.00        31
+       lon.stanton@enron.com       0.12      0.21      0.15        24
+     loren.penkava@enron.com       0.00      0.00      0.00        31
+ lorraine.lindberg@enron.com       0.00      0.00      0.00        51
+        lynn.blair@enron.com       0.00      0.00      0.00        21
+   martha.janousek@enron.com       0.00      0.00      0.00        32
+    michael.bodnar@enron.com       0.00      0.00      0.00        20
+    michael.ratner@enron.com       0.00      0.00      0.00        32
+     michael.stage@enron.com       0.00      0.00      0.00        24
+    michelle.lokay@enron.com       0.01      0.02      0.01        50
+        mike.barry@enron.com       0.00      0.00      0.00        31
+      mike.mcgowan@enron.com       0.00      0.00      0.00        22
+        mike.ullom@enron.com       0.00      0.00      0.00        21
+   miriam.martinez@enron.com       0.00      0.00      0.00        20
+ morgan.gottsponer@enron.com       0.00      0.00      0.00        24
+         neal.shaw@enron.com       0.00      0.00      0.00        20
+    penny.mccarran@enron.com       0.00      0.00      0.00        33
+     reyna.cabrera@enron.com       0.00      0.00      0.00        29
+        rick.dietz@enron.com       0.00      0.00      0.00        21
+        rob.wilson@enron.com       0.10      0.17      0.13        24
+      robert.mason@enron.com       0.00      0.00      0.00        28
+     rockey.storie@enron.com       0.00      0.00      0.00        21
+    sarabeth.smith@enron.com       0.00      0.00      0.00        22
+        sean.bolks@enron.com       0.00      0.00      0.00        32
+      sheila.nacey@enron.com       0.00      0.00      0.00        21
+stephanie.korbelik@enron.com       0.00      0.00      0.00        30
+    stephen.herber@enron.com       0.00      0.00      0.00        33
+     steve.gilbert@enron.com       0.00      0.00      0.00        30
+      steve.weller@enron.com       0.00      0.00      0.00        33
+     steven.harris@enron.com       0.00      0.00      0.00        48
+    steven.january@enron.com       0.00      0.00      0.00        21
+       sue.neville@enron.com       0.09      0.09      0.09        33
+   theresa.branney@enron.com       0.00      0.00      0.00        27
+      tim.johanson@enron.com       0.82      0.27      0.41        33
+         tk.lohman@enron.com       0.00      0.00      0.00        50
+        tony.perry@enron.com       0.00      0.00      0.00        20
+   vernon.mercaldo@enron.com       0.00      0.00      0.00        34
+
+                 avg / total       0.03      0.02      0.02      2245
+
+Accuracy: 0.0178173719376
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 230 features were selected
+
+Top 30 Features:
+                  token               score                   p-val
+0                 35842  18.135685552131328  2.8601968273907488e-11
+1                  john  13.076739418855267  2.8031744520123417e-08
+2                 terri  11.375056623036647  2.9143988764303505e-07
+3                 pleas  10.160596586771009  1.5592149276422059e-06
+4              calendar   9.831267395115116   2.458812338402876e-06
+5             timesheet   9.233872827488405  5.6213055004734795e-06
+6                   the   8.837146891825402   9.738261657337975e-06
+7                   mtg   8.620066657588264  1.3155428568975601e-05
+8                 ilabl   8.211684444438022  2.3168605923513193e-05
+9             genroncom   7.796363581207956   4.120184153930937e-05
+10                   is  7.5434348564550575   5.850310772662787e-05
+11                 room   7.448171549954469    6.67612965592267e-05
+12  blanktimesheet30doc   7.076589169342438  0.00011173207997441856
+13                 were    6.78840554023156    0.000166563974656767
+14                 fran   6.629388783207088  0.00020760323829358145
+15     resolutionapprov   6.174425386040663   0.0003897150666664157
+16           codingissu   6.174425386040663   0.0003897150666664157
+17               action   6.174425386040663   0.0003897150666664157
+18                   my   6.114753024626141   0.0004232519614469374
+19                print   6.099762214810257    0.000432120322235026
+20                  paa   6.027675202754463  0.00047742535613817084
+21           settlement   5.791732381595157    0.000661548837430996
+22                 they   5.773676299862639   0.0006782625123626333
+23               sunday    5.76429600660369   0.0006871109669837261
+24                  are   5.647783139966447   0.0008071031653132986
+25                click   5.377803254083755   0.0011715853402418637
+26             darveaux  5.2760380368475595   0.0013481126918021187
+27                quiet   5.026884153195506    0.001900273057951871
+28                 pass   4.969472444275118    0.002056549870818605
+29                 oper   4.911516825001444   0.0022272803955948584 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                          precision    recall  f1-score   support
+
+    ava.garcia@enron.com       0.68      0.68      0.68        22
+ john.buchanan@enron.com       0.40      0.45      0.42        40
+shelley.corman@enron.com       0.57      0.35      0.43        23
+ terry.kowalke@enron.com       0.26      0.29      0.27        35
+
+             avg / total       0.44      0.42      0.43       120
+
+Accuracy: 0.425
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 631 features were selected
+
+Top 30 Features:
+        token               score                   p-val
+0        sell  25.641186156198216   8.194662137954328e-07
+1        high  23.194264215543168  2.5946959609182067e-06
+2         buy  22.886424948832797   3.002729806373509e-06
+3         low  22.720356604994738   3.249211562777589e-06
+4    investor   22.38510770887549  3.8109873496281988e-06
+5        earn   21.94178631025571   4.707809044275399e-06
+6       trial  21.175280838632375   6.792699112501337e-06
+7        pick   21.07740425522855  7.1190708907191575e-06
+8     quarter  20.774193194226584   8.234424254251033e-06
+9    disclaim  20.767864108045273   8.259501162817173e-06
+10     profit  20.694856135543727   8.554420146199291e-06
+11     sector  20.472912877080574   9.518080810320564e-06
+12  recommend   20.43930228502926   9.673308465053502e-06
+13   subscrib  20.276845093090532  1.0460510641960326e-05
+14       card  19.469447450642754   1.544899683895277e-05
+15     averag  19.468888484462926  1.5453177935133664e-05
+16      price   19.45515123172599  1.5556294113893564e-05
+17        aid   19.20337655772104  1.7574601062180372e-05
+18       turn   18.91126149663282  2.0251371273216194e-05
+19     result  18.834433046363813  2.1021597950907878e-05
+20       gain  18.741350212899068   2.199464784424038e-05
+21         52   18.64885454619964  2.3006760637158277e-05
+22     resist  18.578362123116253  2.3809678343762087e-05
+23     strong   18.39031934568046   2.609316783949944e-05
+24        200  18.335451552434478  2.6800368376655288e-05
+25       sale  18.095358314219496  3.0130658291770393e-05
+26        big   17.93856303352068   3.252893988326902e-05
+27       tech   17.90610142908938  3.3049141411298376e-05
+28    million   17.84399966294505   3.406793492755704e-05
+29        aol  17.836369553690588   3.419528404341828e-05 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                           precision    recall  f1-score   support
+
+sara.shackleton@enron.com       0.56      0.45      0.50        22
+     tana.jones@enron.com       0.61      0.70      0.66        27
+
+              avg / total       0.59      0.59      0.59        49
+
+Accuracy: 0.591836734694
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 119 features were selected
+
+Top 30 Features:
+                  token               score                  p-val
+0                raptor  17.816638363657106  3.322481983706235e-05
+1                 sheet   9.157054928142218  0.0027158109834563796
+2               michael   8.371303153649466   0.004121601224705971
+3                propos   8.062733908832168   0.004860806429690456
+4                  swap   8.044620656858408   0.004908208811679313
+5                  sara   7.627614746555542   0.006141157638523507
+6       vargashouectect   7.570143013909847   0.006334460336255315
+7       galvanhouectect   7.570143013909847   0.006334460336255315
+8      boydnaenronenron    7.48325745550142   0.006638641505683516
+9                 susan   7.362125631385711   0.007087972207500732
+10      baileyhouectect   7.054613183646971   0.008374691423883078
+11               public   6.974682165201008    0.00874697928626545
+12               valuat  6.8353260944292025   0.009437356105279982
+13                   by  6.5236681898035584   0.011192301306642173
+14                 upon   6.259657473499938   0.012941624041387803
+15    brucenaenronenron   6.208519023387355   0.013311936726795958
+16  shackletonhouectect   6.208519023387355   0.013311936726795958
+17               robert   6.208519023387355   0.013311936726795958
+18                brian   6.158194424248362   0.013687069002363437
+19              forward   6.029735677379717    0.01469508653614642
+20               houect  5.9763032304657155   0.015136736905499885
+21                 lisa   5.957351278075942   0.015296671581925141
+22                lunch   5.784743083497937   0.016836522189826123
+23                julia   5.664654044198418    0.01800208150432494
+24               stuart   5.514525165115594    0.01957816561788529
+25               report   5.443276542433816   0.020375727612865942
+26                 that   5.257520449082024   0.022618246761277754
+27               togeth   5.212563628575326    0.02319870243915316
+28              warrant   5.201106693438134   0.023349097664892658
+29               provid   5.148113049227925   0.024058098502068165 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                           precision    recall  f1-score   support
+
+sara.shackleton@enron.com       0.58      0.58      0.58        31
+     tana.jones@enron.com       0.46      0.46      0.46        24
+
+              avg / total       0.53      0.53      0.53        55
+
+Accuracy: 0.527272727273
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 256 features were selected
+
+Top 30 Features:
+                                                token               score  \
+0                                           senroncom   12.70007794629597   
+1                                      corpenronenron   8.187243982134643   
+2                                               susan   6.696322201839495   
+3                                                jame  6.6432527741138365   
+4                                       smaraenroncom    4.64898925658465   
+5                                         attorneycli   4.207776119506016   
+6                                                 sol   3.862404829640538   
+7                                                news   3.762323302640507   
+8   imceaexocaisooucorporatecndistribution20listsc...   3.538306629156186   
+9                                     cipantscaisocom   3.538306629156186   
+10                                               happ   3.535454903573046   
+11                                      shappcaisocom   3.535454903573046   
+12                                            richard   3.511950246579432   
+13                                            mercuri  3.5061606258627713   
+14                                             richey  3.5060001944947268   
+15                                steffesnaenronenron   3.469295779636131   
+16                                               jose   3.286444331214782   
+17                                             record  3.2374985825564795   
+18                                              jeann  3.2108551450935727   
+19                                            6087144   3.121178284129357   
+20                                             forego  3.0423341239882165   
+21                                          reproduct  3.0423341239882165   
+22                                              emiss  3.0114497649305707   
+23                                                air   3.002574281760989   
+24                                             polici  2.7994447764269146   
+25                                       naenronenron  2.7722245031255177   
+26                                           communic  2.5857266157461165   
+27                                           substant  2.5508438775924036   
+28                                             applic   2.524080040990086   
+29                                     steffeshoueese  2.5232065285730036   
+
+                     p-val  
+0    5.278952036081694e-08  
+1   2.5151639645309505e-05  
+2   0.00019538820067020938  
+3   0.00021018131303707455  
+4     0.003243584257601034  
+5      0.00592124523839724  
+6     0.009468520801710116  
+7      0.01084452900435925  
+8     0.014683542488255132  
+9     0.014683542488255132  
+10    0.014740209439274001  
+11    0.014740209439274001  
+12    0.015215584389181946  
+13    0.015334985460814694  
+14    0.015338307240706329  
+15     0.01611728372571531  
+16     0.02061952166215883  
+17    0.022022111645324704  
+18    0.022824730892236054  
+19    0.025743890467101696  
+20     0.02861213730407025  
+21     0.02861213730407025  
+22    0.029819448779670424  
+23     0.03017557787852657  
+24     0.03957006212794922  
+25    0.041029430115094814  
+26     0.05254625970841602  
+27     0.05502663573120396  
+28    0.057006835338037604  
+29    0.057072622566918245   
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                           precision    recall  f1-score   support
+
+  james.steffes@enron.com       0.14      0.16      0.15        31
+richard.sanders@enron.com       0.11      0.10      0.10        21
+  sarah.novosel@enron.com       0.04      0.05      0.05        20
+     susan.mara@enron.com       0.29      0.23      0.26        26
+
+              avg / total       0.15      0.14      0.15        98
+
+Accuracy: 0.142857142857
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 223 features were selected
+
+Top 30 Features:
+        token               score                   p-val
+0        were   11.17222652704686   3.866185963651585e-07
+1         was   7.716325879593068   4.609804155067855e-05
+2         fun   6.667903889375655  0.00019701575941074515
+3        went   6.640433988629875  0.00020465379459716875
+4         but  6.1354924506644855  0.00041162678769219837
+5       susan   5.820217354921167   0.0006364916877960961
+6       check  5.7117349717711825    0.000739399507379477
+7       didnt   5.606129510693366   0.0008554878112339178
+8   grasshopp   5.548260706409418   0.0009266333987190514
+9        that   5.319832137709876   0.0012699033283714923
+10     number   4.878833787264387   0.0023309204104853477
+11    subject   4.818728096603442   0.0025317459963626354
+12       bill   4.658247987534194   0.0031562880979715976
+13      phone   4.596930525954701   0.0034334688693767397
+14       hang   4.541923232563618   0.0037026457013308285
+15       call   4.480623717393597    0.004027382941416194
+16    alreadi   4.414003064587044    0.004412460975087614
+17         go    4.28317808697655    0.005278219638677364
+18      watch    4.26199538742285     0.00543345853137068
+19        ckl   4.163055959937262    0.006220712593323424
+20        ext  4.0359820865871034    0.007399839393599037
+21         do   4.035796127869728    0.007401717887932824
+22       suck   4.033010477592025    0.007429914275034422
+23        ice  3.9903757465162486    0.007874990633817686
+24       liar  3.9277386981401112    0.008577221938665718
+25         cc  3.8569672718779806    0.009445522263784445
+26        hit   3.823915232064127    0.009880332567727874
+27       morn  3.7434401575635485     0.01102363502316151
+28        you   3.731529081754451    0.011203627694975548
+29        how   3.672171449864487    0.012144881079956827 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                         precision    recall  f1-score   support
+
+   bryan.hull@enron.com       0.33      0.47      0.39        32
+  chad.landry@enron.com       0.52      0.45      0.48        29
+lisa.gillette@enron.com       0.51      0.56      0.53        36
+    luis.mena@enron.com       0.30      0.14      0.19        22
+
+            avg / total       0.43      0.43      0.42       119
+
+Accuracy: 0.428571428571
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 42 features were selected
+
+Top 30 Features:
+     token               score                  p-val
+0     deal   10.15794408461007  0.0015182535387571604
+1    smoke  10.107789951651835   0.001559356514039561
+2     know   9.112010738359785   0.002656859866423248
+3     take   8.999443416734142  0.0028227239917414946
+4      let   8.769314247340818  0.0031954276546291346
+5     game   8.490978035853775  0.0037140454716744994
+6     ride   6.930299724537544    0.00871247068895448
+7    money   6.878448106582224   0.008965560800922803
+8    excit   6.810667114112102   0.009307834858540597
+9    youll   6.784467670221667   0.009443706171641897
+10    over   6.672892948358271     0.0100455570673512
+11   readi  6.2349125745770255    0.01281636909794703
+12  troubl   6.199793040547395   0.013070179470110988
+13    hope  5.8098182137218926    0.01626344907988235
+14    time   5.613032377106805    0.01817114252378914
+15  suppos   5.384184702990168   0.020684362303840843
+16    just   5.088840755963773    0.02447161036109873
+17    your  4.9829076069424705   0.026000051848396752
+18    sore    4.87983062831086     0.0275829730552332
+19    plan   4.734142182243537   0.029993798386038665
+20     off    4.69971439018823   0.030595029176445725
+21     new   4.570443695873854    0.03296748700547345
+22      ok  4.5113945900517285   0.034114557042698675
+23      me   4.298977679220424   0.038599391262486474
+24   sorri   4.194275079048195   0.041034139936591635
+25     ive   4.186300317055893   0.041226093946183706
+26    love    4.17862381357488   0.041411762498951205
+27     and   4.158548596421342    0.04190149078764628
+28    nice   4.146521388856895   0.042197810951605456
+29    babi   4.016800644602265    0.04553801474413494 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                           precision    recall  f1-score   support
+
+amanda.rybarski@enron.com       0.67      0.40      0.50        25
+michelle.nelson@enron.com       0.84      0.94      0.89        86
+
+              avg / total       0.80      0.82      0.80       111
+
+Accuracy: 0.81981981982
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 355 features were selected
+
+Top 30 Features:
+          token               score                    p-val
+0            th  434.99943173354205  1.0479283416681954e-253
+1            he  362.74484813192396  2.9760411060634075e-229
+2           the  214.76124579885587   8.213570803949909e-166
+3            fo  195.42289806658192  1.2753991756180032e-155
+4         maket  105.73663819261986    3.937486594275735e-99
+5            ha  103.43799087092027    1.988869215266489e-97
+6         poduc   97.34985963030437    7.723745795741763e-93
+7           fom   92.22854376092553    6.899526352930121e-89
+8          pape   82.54205321942099   3.5586648493819353e-81
+9          pice   76.42122727384461   3.9446461562702904e-76
+10           ae   74.13598173398047    3.275380924599899e-74
+11         mark   71.42179413726602    6.619862170268414e-72
+12        markt    66.7229514110961    7.606569178194695e-68
+13  papeloopcom   63.98470776863659   1.9445285235684593e-65
+14       poduct   63.34201046982072    7.218406970115301e-65
+15          wih    60.0728964865385    6.068190258037343e-62
+16           bu   59.85586455786144    9.524627749824304e-62
+17          yea   58.83069472475757    8.062126187458649e-61
+18          his   58.70265121142705   1.0534888794064209e-60
+19          hav  58.533213833263744    1.501342527927043e-60
+20          onn  50.398515756767814    5.186617636902967e-53
+21       market    48.2590930580162    5.603595481622577e-51
+22           ar   46.27908434774706    4.467886811764978e-49
+23         thee  46.037227068207194    7.650533274406379e-49
+24         pric   45.81661611076713     1.25028994187659e-48
+25         papr  43.297035683824895   3.5508337000406695e-46
+26         epot  42.878650468803464    9.136253714665023e-46
+27          wee  41.760877027466094   1.1524499265666842e-44
+28        repor   41.60408900970672    1.646421081266782e-44
+29         aach   40.16436638200104    4.415065737211421e-43 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                         precision    recall  f1-score   support
+
+craig.rickard@enron.com       0.00      0.00      0.00        21
+  david.allan@enron.com       0.09      0.11      0.10        28
+ dirk.dimitry@enron.com       0.06      0.04      0.05        23
+    e..carter@enron.com       1.00      1.00      1.00        34
+  james.bryja@enron.com       0.00      0.00      0.00        21
+    r..conner@enron.com       1.00      0.86      0.92        21
+  t..robinson@enron.com       1.00      0.86      0.93        22
+
+            avg / total       0.48      0.44      0.46       170
+
+Accuracy: 0.441176470588
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 131 features were selected
+
+Top 30 Features:
+                   token               score                 p-val
+0                   firm   6.814834080271178  0.009588512510288671
+1              agreement   6.334589082978635  0.012469694195405242
+2                   such   6.220072671168573  0.013280509105336923
+3                  traci   6.198615012818324  0.013438409550551476
+4                 sender   5.797807981909589  0.016774033574536273
+5                contain   5.797807981909589  0.016774033574536273
+6                  repli   5.797807981909589  0.016774033574536273
+7                conclus   5.695764736002996  0.017753390484930145
+8                neither   5.695764736002996  0.017753390484930145
+9                   debt  5.6889228133627405  0.017821145128725173
+10                offici     5.6704225166665   0.01800570031890202
+11            understood     5.6704225166665   0.01800570031890202
+12  privilegedconfidenti     5.6704225166665   0.01800570031890202
+13                footer     5.6704225166665   0.01800570031890202
+14              addresse     5.6704225166665   0.01800570031890202
+15                 shall     5.6704225166665   0.01800570031890202
+16                   nor     5.6704225166665   0.01800570031890202
+17                 deliv     5.6704225166665   0.01800570031890202
+18               destroy     5.6704225166665   0.01800570031890202
+19                endors     5.6704225166665   0.01800570031890202
+20                employ     5.6704225166665   0.01800570031890202
+21               consent     5.6704225166665   0.01800570031890202
+22                  kind   5.563597585603076   0.01911094597356441
+23              internet   5.514362389278998  0.019643889740342486
+24                  note   5.453073622778728  0.020328999107709713
+25                 thank   5.436169785839914  0.020522301077003407
+26                   4th    5.23983923110896  0.022913060010763913
+27              deliveri  5.1122645162494385  0.024620860156092276
+28              contract   4.698905256647075  0.031129717883868677
+29                 futur   4.688388961373536  0.031317131761254356 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                          precision    recall  f1-score   support
+
+james.saunders@enron.com       0.41      0.29      0.34        24
+tracy.geaccone@enron.com       0.50      0.63      0.56        27
+
+             avg / total       0.46      0.47      0.46        51
+
+Accuracy: 0.470588235294
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 43 features were selected
+
+Top 30 Features:
+                        token               score                   p-val
+0                        tana   500.1503004320311  1.4879407596346726e-56
+1              joneshouectect   436.7785393754828  2.1399251662689994e-52
+2                         tom  394.70806221264195  2.1179848316884165e-49
+3                enronenronxg  191.54131368275443   4.460037923059451e-31
+4           moranenronenronxg   165.0700353017185   5.254672035912576e-28
+5                   houectect  19.445752700800945  1.6810741558842445e-05
+6              moranhouectect  10.900439282513888   0.0011367818393491656
+7                       moran   8.418478262151737    0.004126120293466503
+8                     johnson   3.221673560247474      0.0741643270038792
+9                      cheryl   3.221673560247474      0.0741643270038792
+10       enronenronxgateenron  3.0581010196795315     0.08185450428105029
+11  moranenronenronxgateenron    3.05808792191964     0.08185515366423955
+12                      chang   3.057392999998608     0.08188961572727442
+13                         re  3.0236845852748266     0.08358035519642368
+14                        sap  2.9563414975399045     0.08707308096927839
+15                       also   2.938308986200918     0.08803512036032864
+16                       such   2.806583104569724     0.09542541383134169
+17                   tradenam  2.6133417292091434     0.10752886391073038
+18                       jone   2.410011518096353      0.1221268010953103
+19                      divis  2.3494857833348313     0.12688899814570878
+20                   document  2.3030327227237164      0.1306851243441975
+21                         it  2.2966044018442484     0.13122041260864525
+22                         is   2.198363656180748     0.13971576510465683
+23                    respons  2.0314990468730763     0.15561191064374805
+24                     rollup  2.0168782107631187      0.1571002346521532
+25                    exposur  2.0168782107631187      0.1571002346521532
+26                       link    2.01296340245532     0.15750150056446444
+27                      hello  1.9831460305287247      0.1605965789267494
+28                        can  1.9552729618599298      0.1635530728564666
+29                         do   1.944605155926469     0.16470111874997678 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                      precision    recall  f1-score   support
+
+tana.jones@enron.com       1.00      0.86      0.92        21
+ tom.moran@enron.com       0.87      1.00      0.93        20
+
+         avg / total       0.94      0.93      0.93        41
+
+Accuracy: 0.926829268293
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 455 features were selected
+
+Top 30 Features:
+                           token               score                   p-val
+0                          print   29.97842521155807  3.7493930857270728e-59
+1                            sam  22.505598604118784   5.483102806469984e-44
+2                         credit  13.733355359077471   9.366819939890141e-26
+3                          delta   13.52851209441355   2.515612094261139e-25
+4                           isda  12.187120160144309  1.6235173865903662e-22
+5                         taylor   11.33083527935824  1.0069739411939749e-20
+6                            iii   10.97963775084933   5.465176534020033e-20
+7                         sheila  10.122637919120788  3.3708278964482004e-18
+8                           lynn   10.11723353877486   3.459487466858584e-18
+9                           corp    9.66733780117555   2.998335337739284e-17
+10                            st   9.468971661413727   7.760280612355217e-17
+11                        houect   9.453253476081896   8.367340267836132e-17
+12                         enron   9.373423806968644   1.226533366594678e-16
+13  enrondevelopmentenrondevelop   9.347037920587656  1.3917583587027868e-16
+14                         77002   9.152812145448253   3.526564571784373e-16
+15                          1400     9.0519317916564   5.713754995836294e-16
+16                        street   8.956339932658581     9.0240286649511e-16
+17                            et   8.397246151441582  1.3001213034894253e-14
+18                         smith   8.178745047934793   3.677751536932729e-14
+19                          texa   8.177727772513594   3.695584651554549e-14
+20                    7136463490   8.153078492088664   4.155096757829291e-14
+21                         3801a   8.146575672882618  4.2855552086378205e-14
+22                       forward    8.09495729986256   5.477163782752556e-14
+23                        lauren    7.82886759163228  1.9368064425928366e-13
+24                        glover   7.737845425614188   2.981472156796612e-13
+25                    7138535620   7.682182421029231  3.8807910198096396e-13
+26                            eb   7.643677155655902   4.656758974781537e-13
+27                  naenronenron   7.587773670545026   6.066859633566199e-13
+28                       america   7.479902631761522   1.010311633674951e-12
+29                           fax  7.4681152061854785  1.0681781344380586e-12 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                           precision    recall  f1-score   support
+
+   brent.hendry@enron.com       0.31      0.45      0.37        38
+    carol.clair@enron.com       0.14      0.12      0.13        33
+     kaye.ellis@enron.com       0.36      0.45      0.40        42
+    marie.heard@enron.com       0.13      0.17      0.15        29
+    mark.taylor@enron.com       0.06      0.05      0.05        40
+      mary.cook@enron.com       0.12      0.08      0.10        24
+  samantha.boyd@enron.com       0.21      0.16      0.18        31
+stephanie.panus@enron.com       0.16      0.14      0.15        36
+   susan.bailey@enron.com       0.11      0.14      0.12        49
+    susan.flynn@enron.com       0.05      0.04      0.04        27
+     tana.jones@enron.com       0.20      0.16      0.18        32
+  tanya.rohauer@enron.com       0.32      0.24      0.28        33
+
+              avg / total       0.18      0.19      0.19       414
+
+Accuracy: 0.193236714976
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 80 features were selected
+
+Top 30 Features:
+           token               score                   p-val
+0        subject   11.38623274353572   3.130552841937754e-07
+1             cc  11.345999562601515   3.307154206556188e-07
+2            ect   9.117718081197262   6.981659185108162e-06
+3   naenronenron   8.477017436655986   1.683257627377074e-05
+4             am   7.474259451830992    6.68440237263054e-05
+5            ani   6.565673702132976   0.0002333562776458022
+6            log   6.368143044493805   0.0003062177898166375
+7            not   6.268873772872358   0.0003510156062148421
+8         attach   6.123674195650875  0.00042858975378388817
+9         termin   5.917846564062495   0.0005687550978519399
+10    7133453249   5.495412034954512   0.0010160855143453008
+11            ph    5.46696818977593    0.001056541804555622
+12    7136463490    5.46696818977593    0.001056541804555622
+13      wholesal   5.449155556344557   0.0010826911239894827
+14       through  5.3503417358450145   0.0012399194400469892
+15      incorpor   5.248007127548404   0.0014267774633604372
+16          list  5.2149290253947855   0.0014929864549139355
+17           fax   5.092532688145089   0.0017657250057491387
+18       naenron   4.733797677017013   0.0028855133500786064
+19         there   4.678221398637263    0.003113344019652573
+20         pleas   4.636249612478915   0.0032971897823365045
+21      enroncom   4.633909740831621    0.003307751038163866
+22            is   4.569303521232238    0.003613032234040983
+23     distribut   4.520874413350947    0.003860105293268845
+24            an   4.357691849869937    0.004822995083999961
+25            on   4.312874155425238    0.005126929103946362
+26          well    4.25019171800836   0.0055841818115370005
+27        effect   4.188212266081742    0.006076097921775614
+28           she   4.142659805735945    0.006464850087705469
+29       januari   4.128336380550911    0.006592117675708279 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                           precision    recall  f1-score   support
+
+   brent.hendry@enron.com       0.11      0.09      0.10        22
+sara.shackleton@enron.com       0.30      0.42      0.35        33
+   susan.bailey@enron.com       0.04      0.04      0.04        25
+     tana.jones@enron.com       0.00      0.00      0.00        20
+
+              avg / total       0.14      0.17      0.15       100
+
+Accuracy: 0.17
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 591 features were selected
+
+Top 30 Features:
+                          token               score                    p-val
+0                       publish  37.802083197857016   4.969960134177505e-170
+1                   rcalpinecom   34.01131070454706   5.907126855809555e-153
+2                    8004868201   34.00131383354216   6.558055178207341e-153
+3                            rt   32.79019651547899   2.143779776580214e-147
+4                        reader  32.403475470546674  1.2530708021372915e-145
+5                        season   31.75600815660844  1.1548226966373482e-142
+6                      hawksley  31.521341712977232   1.377138490211887e-141
+7                            us  31.208368925223375   3.769658359827659e-140
+8                    restructur  28.153446521367336   5.066601971594904e-126
+9                    2022988201    23.1822982806052  1.1686417543414579e-102
+10   bricerestructuringtodaycom  21.780582997598206    5.422606244328114e-96
+11                        brice  21.780582997598195    5.422606244328114e-96
+12                          kas  15.103029426174421    7.656671026591612e-64
+13                        pleas  14.974734053434487    3.209875497963812e-63
+14                      respond  14.951639124402437   4.1547861064892776e-63
+15          rescteriobravogmcom   14.04596783851765   1.0358679591125751e-58
+16             dsteffesenroncom  13.476036124555828    6.078216389544997e-56
+17              djandkemptoncom  13.460641531014348    7.220478336121311e-56
+18         dhunterandkemptoncom    13.3367645176616   2.8866543372878312e-55
+19                          see  13.168698169847607   1.8920358498593844e-54
+20                         esat  13.107021804885179   3.7720818140060786e-54
+21                         file  12.635500478263843    7.368386923083513e-52
+22                         esct  12.427356227614652    7.559267556390731e-51
+23     wwwrestructuringtodaycom  11.999000128648879    9.095812104930052e-49
+24                   flattkporg   11.61614630638149    6.567433101393629e-47
+25                  18004868201    11.4297224642504    5.272341870864456e-46
+26                  seguinkporg  10.493439811094621    1.818573415339084e-41
+27                       attach  10.209517649727244    4.298801081759124e-40
+28                           cc  10.194662289505793    5.071998043630315e-40
+29  seasonrestructuringtodaycom   10.16306326047183    7.210407211686726e-40 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                            precision    recall  f1-score   support
+
+     alan.comnes@enron.com       0.10      0.09      0.10        44
+ christian.yoder@enron.com       0.00      0.00      0.00        22
+        dan.leff@enron.com       0.00      0.00      0.00        20
+dennis.benevides@enron.com       0.00      0.00      0.00        25
+       don.black@enron.com       0.04      0.05      0.04        22
+ harry.kingerski@enron.com       0.07      0.03      0.04        36
+   james.steffes@enron.com       0.00      0.00      0.00        48
+    james.wright@enron.com       0.05      0.19      0.08        32
+   jeff.dasovich@enron.com       0.29      0.25      0.27        91
+ jeremy.blachman@enron.com       0.00      0.00      0.00        23
+     joe.hartsoe@enron.com       0.17      0.17      0.17        24
+    joseph.alamo@enron.com       0.00      0.00      0.00        20
+   jubran.whalan@enron.com       0.00      0.00      0.00        21
+     karen.denne@enron.com       0.05      0.03      0.03        39
+ linda.robertson@enron.com       0.00      0.00      0.00        23
+       mary.hain@enron.com       0.00      0.00      0.00        21
+michael.tribolet@enron.com       0.00      0.00      0.00        25
+      mike.smith@enron.com       0.05      0.12      0.07        24
+    paul.kaufman@enron.com       0.03      0.02      0.02        42
+ richard.sanders@enron.com       0.00      0.00      0.00        24
+ richard.shapiro@enron.com       0.08      0.13      0.10        63
+   robert.badeer@enron.com       0.00      0.00      0.00        24
+ sandra.mccubbin@enron.com       0.10      0.09      0.09        35
+   sarah.novosel@enron.com       0.00      0.00      0.00        25
+      tim.belden@enron.com       0.11      0.10      0.10        31
+     vicki.sharp@enron.com       0.00      0.00      0.00        24
+     wanda.curry@enron.com       0.00      0.00      0.00        22
+
+               avg / total       0.07      0.07      0.06       850
+
+Accuracy: 0.0682352941176
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 79 features were selected
+
+Top 30 Features:
+                  token               score                   p-val
+0                  mark    8.71981032534561  1.2156390235235146e-05
+1                  tana   7.886884114041014  3.8144148101282166e-05
+2                  sara   4.560214785420694   0.0036660620002629935
+3                 susan   4.542335620584456   0.0037566281559023545
+4        joneshouectect  4.5285695102533925    0.003827873176483857
+5       taylorhouectect   4.461316686473022    0.004195725268770425
+6       baileyhouectect   3.282455299757943    0.020742533594771302
+7                bailey   2.774241693714682     0.04093600649801697
+8   shackletonhouectect   2.530451278993008     0.05654783098460257
+9               definit   2.443255714940587     0.06343730931303382
+10                 temp   1.810389236634478      0.1443556178901223
+11                 jone   1.691331615552646     0.16798805206730427
+12                   et  1.5802212677740828     0.19330035924114225
+13                  gas   1.422266001668009      0.2354742705466574
+14               taylor  1.4059047817089836     0.24029870821113888
+15             11162000  1.2783152027316376     0.28114644760059754
+16                 veri  1.2522673270697977     0.29022450682257406
+17           shackleton  1.2501528274060005     0.29097292686528275
+18                  bar  1.2470122788676385      0.2920877241973943
+19                  red  1.2470122788676385      0.2920877241973943
+20             strategi  1.2470122788676385      0.2920877241973943
+21               barrel  1.2470122788676385      0.2920877241973943
+22              bimonth  1.2470122788676385      0.2920877241973943
+23                 btus  1.2470122788676385      0.2920877241973943
+24                  inc  1.2470122788676383      0.2920877241973943
+25             09072000  1.2470122788676383      0.2920877241973943
+26                split  1.2470122788676383      0.2920877241973943
+27                stack  1.2470122788676383      0.2920877241973943
+28              stanley  1.2470122788676383      0.2920877241973943
+29               reciev  1.2470122788676383      0.2920877241973943 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                           precision    recall  f1-score   support
+
+    mark.taylor@enron.com       0.44      0.16      0.24        25
+sara.shackleton@enron.com       0.33      0.15      0.21        20
+   susan.bailey@enron.com       0.15      0.08      0.11        25
+     tana.jones@enron.com       0.21      0.52      0.30        27
+
+              avg / total       0.28      0.24      0.21        97
+
+Accuracy: 0.237113402062
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 389 features were selected
+
+Top 30 Features:
+                 token               score p-val
+0               samuel   254.3480815440006   0.0
+1      taylorhouectect  238.27674603721564   0.0
+2                debbi  232.42445591150053   0.0
+3                karen  231.95754691120942   0.0
+4                 mark  223.88389049956564   0.0
+5     lamberthouectect   223.5967505792823   0.0
+6                  tom  222.21597929637113   0.0
+7                brant  219.85737916856866   0.0
+8      schotthouectect    213.786016731816   0.0
+9                  eol    202.310699573436   0.0
+10      hardylonectect  194.09834585698735   0.0
+11               david  184.40698702679435   0.0
+12             subject  182.17474091460414   0.0
+13                  cc  181.67117514014615   0.0
+14   bracketthouectect   177.3976125107122   0.0
+15           houectect  167.72492324764718   0.0
+16             cynthia   155.5803286904892   0.0
+17                lisa  148.53841039357363   0.0
+18      moranhouectect  144.18652038070596   0.0
+19            stephani   140.1109355517331   0.0
+20               europ  136.88372618144146   0.0
+21               lesli  135.57196340268325   0.0
+22      reveshouectect  135.08915852238502   0.0
+23              global   129.7974200004378   0.0
+24               molli  126.17018632347484   0.0
+25  rodriguezhouectect  121.35350271864245   0.0
+26              bernic  120.78423808321631   0.0
+27      davishouectect  118.23395170269815   0.0
+28             claudia  117.18123485492454   0.0
+29             respons  116.06459812559734   0.0 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                           precision    recall  f1-score   support
+
+ alan.aronowitz@enron.com       0.00      0.00      0.00        76
+    andrea.calo@enron.com       0.00      0.00      0.00        31
+      bob.bowen@enron.com       0.10      0.09      0.10        22
+   brent.hendry@enron.com       0.00      0.00      0.00        31
+    carol.clair@enron.com       0.02      0.03      0.03        37
+    david.minns@enron.com       0.53      0.49      0.51        59
+    david.portz@enron.com       0.25      0.31      0.28        32
+elizabeth.sager@enron.com       0.00      0.00      0.00        33
+    frank.davis@enron.com       0.13      0.14      0.14        49
+  harry.collins@enron.com       0.16      0.15      0.16        85
+   jane.mcbride@enron.com       0.00      0.00      0.00        36
+  jeffrey.hodge@enron.com       0.00      0.00      0.00        74
+  john.viverito@enron.com       0.00      0.00      0.00        40
+  leslie.hansen@enron.com       0.03      0.03      0.03        69
+      lisa.lees@enron.com       0.14      0.12      0.13        24
+    marie.heard@enron.com       0.07      0.05      0.06        78
+    mark.taylor@enron.com       0.12      0.16      0.14        63
+  peter.keohane@enron.com       0.19      0.18      0.19        38
+    robbi.rossi@enron.com       0.00      0.00      0.00        57
+sara.shackleton@enron.com       0.00      0.00      0.00        40
+    shari.stack@enron.com       0.06      0.05      0.06        41
+   sheri.thomas@enron.com       0.05      0.05      0.05        22
+  stacy.dickson@enron.com       0.00      0.00      0.00        54
+stephanie.sever@enron.com       0.20      0.24      0.22        37
+   susan.bailey@enron.com       0.00      0.00      0.00        34
+  tanya.rohauer@enron.com       0.11      0.10      0.10        30
+      tom.moran@enron.com       0.00      0.00      0.00        26
+
+              avg / total       0.08      0.08      0.08      1218
+
+Accuracy: 0.0845648604269
+
+### PREPROCESSING DATA ###
+-- Vectorization
+-- Feature Selection
+Top 300 features were selected
+
+Top 30 Features:
+                          token               score                   p-val
+0                       shirley  58.298367541904064  1.2648464199178307e-13
+1             crenshawhouectect   38.15481724221316  1.4140127239020135e-09
+2                           ani  31.541765684244037   3.341571322221478e-08
+3                     recommend   28.26998371979723  1.6329904671552168e-07
+4                        summer  26.571980209265355   3.743607215451307e-07
+5                         creat  23.153698140948016   2.017085432114514e-06
+6                    internship   22.77998204447472   2.427819115606311e-06
+7                       stinson  18.395539404648027  2.1787285433720845e-05
+8                            we  17.757439090410493  3.0085008152463805e-05
+9                           are  16.639186026802918   5.308239726277419e-05
+10      arsystemmailmanenroncom  16.222004555492987   6.565824363694315e-05
+11                           of  15.597099587537059   9.035858317503663e-05
+12                          onc  13.955836121203484  0.00021010122807736532
+13                     outstand  13.658875516855366   0.0002449644940330535
+14                       should  13.082365482014296  0.00033028679928943797
+15                          one  13.058479605529577  0.00033440963198884177
+16                      thought  12.880449463493571   0.0003668262993844903
+17                       baylor   12.59688326787995   0.0004251663477075814
+18              gibnerhouectect  12.536299443171442    0.000438802637503985
+19  enehouhoustoncommonresearch  12.515298157305766   0.0004436323514315982
+20                      request  12.460439796144307   0.0004565038882501425
+21                      student  12.073018360539182   0.0005588560786748635
+22                     interest   11.83905673932738   0.0006316431542939441
+23                          whi  11.787975096458382   0.0006487732382575991
+24                           id  11.727286723960782   0.0006697384648516626
+25         jamesgarvenbayloredu  11.590558242533366   0.0007195260060214384
+26                    directori  11.304094879472387   0.0008363634434962078
+27                         data  11.278756981906067   0.0008475826322404561
+28                        pleas   11.07261754485033   0.0009447248762252219
+29                       spring  10.707617853097776   0.0011453388641150621 
+
+
+### CLASSIFICATION using Random Forest ###
+building tree 1 of 10
+building tree 2 of 10
+building tree 3 of 10
+building tree 4 of 10
+building tree 5 of 10
+building tree 6 of 10
+building tree 7 of 10
+building tree 8 of 10
+building tree 9 of 10
+building tree 10 of 10
+Training time: 0.0 m
+Prediction time: 0.0 m
+                            precision    recall  f1-score   support
+
+shirley.crenshaw@enron.com       0.82      0.94      0.88        67
+  stinson.gibner@enron.com       0.78      0.50      0.61        28
+
+               avg / total       0.81      0.81      0.80        95
+
+Accuracy: 0.810526315789
+##################################
+Mean Recipient Score: 0.7323222838517831
+##################################
+FINAL SCORE: 0.6040292229022943
+##################################

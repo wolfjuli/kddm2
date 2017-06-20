@@ -36,6 +36,10 @@ def init_classification_data():
                       1: ("Recipients", recipients),
                       2: ("AuthorsAndRecipients", zip(authors, recipients))}
 
+    return word_data, target_options, classes
+
+
+def init_classifiers():
     clfs = {0: ("Naive Bayes", MultinomialNB()),
             1: ("Decision Tree", DecisionTreeClassifier(min_samples_split=10)),
             2: ("Linear SVM", LinearSVC(verbose=1)),
@@ -43,14 +47,24 @@ def init_classification_data():
             4: ("Random Forest", RandomForestClassifier(verbose=3)),
             5: ("Neural Network", MLPClassifier(hidden_layer_sizes=(300,), early_stopping=True, verbose=True)),
             6: ("Gradient Boosting", GradientBoostingClassifier(verbose=1)),
-            7: ("Keras MLP (TF GPU Support)", KerasMLP(hidden_layer_sizes=(300,)))}
+            7: ("Keras MLP (TF GPU Support)", KerasMLP(hidden_layer_sizes=(100,), batch_size=10))}
 
-    return word_data, authors, recipients, classes, clfs, target_options
+    return clfs
+
+
+def load_classifier(classifier, X, y):
+    try:
+        return joblib.load("./data/{} Classifier.pkl".format(classifier[0]))
+    except:
+        try:
+            return KerasMLP.load("./data/{} Classifier".format(classifier[0]))
+        except:
+            return classify(classifier, y, X, save=True)
 
 
 def classify(c, t, word_data, save=False):
     targets, clf = t[1], c[1]
-    target_names = classes[np.unique(targets)]
+    target_names = class_labels[np.unique(targets)]
     if len(target_names) == 1: return _, 1
     features_train, features_test, labels_train, labels_test = preprocess(word_data, targets)
 
@@ -79,30 +93,27 @@ def classify(c, t, word_data, save=False):
 
 
 # CONFIGURATION
-t = 0
+t = 2
 c = 7
 save_results = True
 
+X, y_options, class_labels = init_classification_data()
+y = y_options.get(t)
+clfs = init_classifiers()
+
 #for t in range(len(target_options)):
 #for c in range(4,6):
-word_data, authors, recipients, classes, clfs, target_options = init_classification_data()
-title = "{} by {}".format(target_options.get(t)[0], clfs.get(c)[0])
+title = "{} by {}".format(y[0], clfs.get(c)[0])
 if save_results:
     sys.stdout = Logger(title)
 
 if t == 2:
     accuracies = []
-    try:
-        clf, author_score = joblib.load("./data/Neural Network Classifier.pkl")
-    except:
-        try:
-            clf, author_score = KerasMLP.load("./data/{} Classifier".format(clfs.get(c)[0]))
-        except:
-            clf, author_score = classify(clfs.get(c), target_options.get(t), word_data, save=True if t == 1 else False)
-    for a in np.unique(authors):
-        s_targets = list(compress(recipients, authors == a))
-        s_data = list(compress(word_data, authors == a))
-        _, score = classify(clfs.get(c), ("Recipients of {}".format(classes[a]), s_targets), s_data)
+    clf, author_score = load_classifier(clfs.get(7), X, y_options.get(0))
+    for a in np.unique(y_options.get(0)[1]):
+        s_targets = list(compress(y_options.get(1)[1], y_options.get(0)[1] == a))
+        s_data = list(compress(X, y_options.get(0)[1] == a))
+        _, score = classify(clfs.get(c), ("Recipients of {}".format(class_labels[a]), s_targets), s_data)
         accuracies.append(np.mean(score))
 
     print("##################################")
@@ -111,5 +122,5 @@ if t == 2:
     print("FINAL SCORE: {}".format(np.mean(author_score * np.mean(accuracies))))
     print("##################################")
 else:
-    classify(clfs.get(c), target_options.get(t), word_data, save=True if t == 0 else False)
+    classify(clfs.get(c), y, X, save=True if t == 0 else False)
 
