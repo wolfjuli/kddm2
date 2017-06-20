@@ -3,6 +3,7 @@
 from preprocess import preprocess
 from parse_emails import *
 from helper_functions import Logger
+from KerasMLP import KerasMLP
 
 from time import time
 import numpy as np
@@ -40,8 +41,9 @@ def init_classification_data():
             2: ("Linear SVM", LinearSVC(verbose=1)),
             3: ("RBF SVM", SVC(C=10500, kernel="rbf", verbose=True, decision_function_shape="ovr")),
             4: ("Random Forest", RandomForestClassifier(verbose=3)),
-            5: ("Neural Network", MLPClassifier(hidden_layer_sizes=(200,), early_stopping=True, verbose=True)),
-            6: ("Gradient Boosting", GradientBoostingClassifier(verbose=1))}
+            5: ("Neural Network", MLPClassifier(hidden_layer_sizes=(300,), early_stopping=True, verbose=True)),
+            6: ("Gradient Boosting", GradientBoostingClassifier(verbose=1)),
+            7: ("Keras MLP (TF GPU Support)", KerasMLP(hidden_layer_sizes=(300,)))}
 
     return word_data, authors, recipients, classes, clfs, target_options
 
@@ -52,9 +54,9 @@ def classify(c, t, word_data, save=False):
     if len(target_names) == 1: return _, 1
     features_train, features_test, labels_train, labels_test = preprocess(word_data, targets)
 
-    print("\n### CLASSIFICATION using {} ###".format(clf))
+    print("\n### CLASSIFICATION using {} ###".format(c[0]))
     t0 = time()
-    clf.fit(features_train, labels_train)
+    clf.fit(features_train.toarray(), labels_train)
     print("Training time:", round((time()-t0)/60, 2), "m")
 
     t1 = time()
@@ -67,27 +69,36 @@ def classify(c, t, word_data, save=False):
 
     cnf_matrix = confusion_matrix(labels_test, prediction)
     score = np.diag(cnf_matrix)/np.sum(cnf_matrix, axis=0)
+    score = acc if np.isnan(score).any() else score
     plot_confusion_matrix(cnf_matrix, target_names, title, show=False)
-    if save: joblib.dump((clf, score), "./data/{} Classifier.pkl".format(c[0]))
-    return clf, acc if np.isnan(score).any() else score
+    try:
+        if save: joblib.dump((clf, score), "./data/{} Classifier.pkl".format(c[0]))
+    except:
+        clf.save("./data/{} Classifier".format(c[0]), score)
+    return clf, score
 
 
 # CONFIGURATION
-t = 2
-c = 5
+t = 0
+c = 7
+save_results = True
 
 #for t in range(len(target_options)):
 #for c in range(4,6):
 word_data, authors, recipients, classes, clfs, target_options = init_classification_data()
 title = "{} by {}".format(target_options.get(t)[0], clfs.get(c)[0])
-sys.stdout = Logger(title)
+if save_results:
+    sys.stdout = Logger(title)
 
 if t == 2:
     accuracies = []
     try:
         clf, author_score = joblib.load("./data/Neural Network Classifier.pkl")
     except:
-        clf, author_score = classify(clfs.get(c), target_options.get(t), word_data, save=True if t == 1 else False)
+        try:
+            clf, author_score = KerasMLP.load("./data/{} Classifier".format(clfs.get(c)[0]))
+        except:
+            clf, author_score = classify(clfs.get(c), target_options.get(t), word_data, save=True if t == 1 else False)
     for a in np.unique(authors):
         s_targets = list(compress(recipients, authors == a))
         s_data = list(compress(word_data, authors == a))

@@ -93,7 +93,7 @@ def plot_confusion_matrix(cm, targets, name, normalize=True, show=True):
     plt.title(title)
     plt.colorbar()
     tick_marks = np.arange(len(targets))
-    fontsize = max(12, int(500/len(targets)))
+    fontsize = min(12, int(500/len(targets)))
     plt.xticks(tick_marks, targets, rotation=90, fontsize=fontsize)
     plt.yticks(tick_marks, targets, fontsize=fontsize)
     try:
@@ -122,5 +122,5 @@ class Logger(object):
         self.log.write(message)
 
     def flush(self):
-        self.log.close()
+        #self.log.close()
         pass
