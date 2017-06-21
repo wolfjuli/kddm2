@@ -7,6 +7,7 @@ from KerasMLP import KerasMLP
 
 from time import time
 import numpy as np
+from pandas import DataFrame
 from itertools import compress
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 from sklearn.externals import joblib
@@ -79,22 +80,24 @@ def classify(c, t, word_data, save=False):
 
     print(classification_report(labels_test, prediction, target_names=target_names))
     acc = accuracy_score(prediction, labels_test)
-    print("Accuracy:", accuracy_score(prediction, labels_test))
+    print("Accuracy:", acc)
 
-    cnf_matrix = confusion_matrix(labels_test, prediction)
-    score = np.diag(cnf_matrix)/np.sum(cnf_matrix, axis=0)
-    score = acc if np.isnan(score).any() else score
-    plot_confusion_matrix(cnf_matrix, target_names, title, show=False)
-    try:
-        if save: joblib.dump((clf, score), "./data/{} Classifier.pkl".format(c[0]))
-    except:
-        clf.save("./data/{} Classifier".format(c[0]), score)
+    cm = np.nan_to_num(confusion_matrix(labels_test, prediction))
+    norm_cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+    score = np.diag(norm_cm)
+    if save:
+        try:
+            joblib.dump((clf, score), "./data/{} Classifier.pkl".format(c[0]))
+        except:
+            clf.save("./data/{} Classifier".format(c[0]), score)
+        plot_confusion_matrix(norm_cm, target_names, title, show=False)
+
     return clf, score
 
 
 # CONFIGURATION
 t = 2
-c = 7
+c = 0
 save_results = True
 
 X, y_options, class_labels = init_classification_data()
@@ -108,19 +111,30 @@ if save_results:
     sys.stdout = Logger(title)
 
 if t == 2:
+    authors = y_options.get(0)[1]
+    recipients = y_options.get(1)[1]
     accuracies = []
+    results = {}
     clf, author_score = load_classifier(clfs.get(7), X, y_options.get(0))
-    for a in np.unique(y_options.get(0)[1]):
-        s_targets = list(compress(y_options.get(1)[1], y_options.get(0)[1] == a))
-        s_data = list(compress(X, y_options.get(0)[1] == a))
+
+    for a in np.unique(authors):
+        s_targets = list(compress(recipients, authors == a))
+        s_data = list(compress(X, authors == a))
         _, score = classify(clfs.get(c), ("Recipients of {}".format(class_labels[a]), s_targets), s_data)
         accuracies.append(np.mean(score))
+        results[a] = dict(zip(np.unique(s_targets), np.atleast_1d(score)))
 
+    df = DataFrame(results).T
+    plot_accuracy_matrix(df, class_labels[np.unique(recipients)], class_labels[np.unique(authors)], title)
+
+    df = df.T.fillna(df.mean(axis=1)).T
+    plot_accuracy_matrix(df, class_labels[np.unique(recipients)], class_labels[np.unique(authors)], title+" (filled)")
     print("##################################")
     print("Mean Recipient Score: {}".format(np.mean(accuracies)))
     print("##################################")
     print("FINAL SCORE: {}".format(np.mean(author_score * np.mean(accuracies))))
     print("##################################")
+
 else:
-    classify(clfs.get(c), y, X, save=True if t == 0 else False)
+    classify(clfs.get(c), y, X, save=save_results if t == 0 else False)
 

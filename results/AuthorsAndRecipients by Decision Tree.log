@@ -43,14 +43,14 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                          precision    recall  f1-score   support
 
-jeff.dasovich@enron.com       0.26      0.42      0.32        38
-  ray.alvarez@enron.com       0.17      0.08      0.11        24
-   susan.mara@enron.com       0.12      0.12      0.12        32
-   tim.belden@enron.com       0.46      0.22      0.30        27
+jeff.dasovich@enron.com       0.28      0.42      0.34        38
+  ray.alvarez@enron.com       0.20      0.21      0.20        24
+   susan.mara@enron.com       0.12      0.06      0.08        32
+   tim.belden@enron.com       0.36      0.30      0.33        27
 
-            avg / total       0.25      0.23      0.22       121
+            avg / total       0.24      0.26      0.24       121
 
-Accuracy: 0.231404958678
+Accuracy: 0.256198347107
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -96,15 +96,15 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                              precision    recall  f1-score   support
 
-     lindy.donoho@enron.com       0.00      0.00      0.00        22
-lorraine.lindberg@enron.com       0.04      0.04      0.04        23
-   michelle.lokay@enron.com       0.04      0.04      0.04        25
-    steven.harris@enron.com       0.20      0.09      0.13        22
+     lindy.donoho@enron.com       0.02      0.05      0.03        22
+lorraine.lindberg@enron.com       0.00      0.00      0.00        23
+   michelle.lokay@enron.com       0.12      0.12      0.12        25
+    steven.harris@enron.com       0.10      0.05      0.06        22
         tk.lohman@enron.com       0.00      0.00      0.00        23
 
-                avg / total       0.05      0.03      0.04       115
+                avg / total       0.05      0.04      0.04       115
 
-Accuracy: 0.0347826086957
+Accuracy: 0.0434782608696
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -150,20 +150,20 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                          precision    recall  f1-score   support
 
-  bert.meyers@enron.com       0.01      0.05      0.01        20
-bill.williams@enron.com       0.05      0.10      0.07        31
+  bert.meyers@enron.com       0.00      0.00      0.00        20
+bill.williams@enron.com       0.06      0.13      0.08        31
    craig.dean@enron.com       0.00      0.00      0.00        22
  geir.solberg@enron.com       0.00      0.00      0.00        23
-   kate.symes@enron.com       0.27      0.19      0.23        36
+   kate.symes@enron.com       0.39      0.25      0.31        36
  leaf.harasin@enron.com       0.00      0.00      0.00        21
-  mark.guzman@enron.com       1.00      0.05      0.09        22
+  mark.guzman@enron.com       1.00      0.09      0.17        22
  ryan.slinger@enron.com       0.00      0.00      0.00        23
    todd.bland@enron.com       0.00      0.00      0.00        20
     v..porter@enron.com       1.00      0.60      0.75        20
 
-            avg / total       0.22      0.10      0.12       238
+            avg / total       0.24      0.11      0.14       238
 
-Accuracy: 0.100840336134
+Accuracy: 0.113445378151
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -209,12 +209,12 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
 
-    mark.taylor@enron.com       0.40      0.30      0.34        20
-sara.shackleton@enron.com       0.55      0.65      0.60        26
+    mark.taylor@enron.com       0.48      0.55      0.51        20
+sara.shackleton@enron.com       0.61      0.54      0.57        26
 
-              avg / total       0.48      0.50      0.49        46
+              avg / total       0.55      0.54      0.55        46
 
-Accuracy: 0.5
+Accuracy: 0.54347826087
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -263,7 +263,7 @@ Prediction time: 0.0 m
          anthony.campos@enron.com       0.00      0.00      0.00        20
       bernice.rodriguez@enron.com       0.00      0.00      0.00        23
               bob.bowen@enron.com       0.00      0.00      0.00        24
-            brant.reves@enron.com       0.03      0.71      0.05        24
+            brant.reves@enron.com       0.02      0.67      0.05        24
      bridgette.anderson@enron.com       0.00      0.00      0.00        20
             bruce.mills@enron.com       0.00      0.00      0.00        21
            cheryl.dawes@enron.com       0.00      0.00      0.00        21
@@ -271,7 +271,7 @@ Prediction time: 0.0 m
              cindy.horn@enron.com       0.00      0.00      0.00        21
 cyndie.balfour-flanagan@enron.com       0.00      0.00      0.00        21
             david.hardy@enron.com       0.00      0.00      0.00        22
-        debbie.brackett@enron.com       0.00      0.00      0.00        20
+        debbie.brackett@enron.com       0.00      0.00      0.00        21
       debra.perlingiere@enron.com       0.00      0.00      0.00        21
             dianne.seib@enron.com       0.00      0.00      0.00        20
               elsie.lew@enron.com       0.00      0.00      0.00        21
@@ -280,13 +280,13 @@ cyndie.balfour-flanagan@enron.com       0.00      0.00      0.00        21
             jeremy.wong@enron.com       0.00      0.00      0.00        20
               jim.homco@enron.com       0.00      0.00      0.00        20
              joan.quick@enron.com       0.00      0.00      0.00        20
-          karen.lambert@enron.com       0.00      0.00      0.00        21
+          karen.lambert@enron.com       0.00      0.00      0.00        20
              kori.loibl@enron.com       0.00      0.00      0.00        24
            laurel.adams@enron.com       0.00      0.00      0.00        21
-            liz.hillman@enron.com       0.00      0.00      0.00        21
-           lynn.shivers@enron.com       0.00      0.00      0.00        20
+            liz.hillman@enron.com       0.00      0.00      0.00        20
+           lynn.shivers@enron.com       0.00      0.00      0.00        21
         marilyn.colbert@enron.com       1.00      0.05      0.09        22
-          michael.eiben@enron.com       0.00      0.00      0.00        21
+          michael.eiben@enron.com       0.00      0.00      0.00        20
           mike.croucher@enron.com       0.00      0.00      0.00        21
          nathan.hlavaty@enron.com       0.00      0.00      0.00        21
          peggy.hedstrom@enron.com       0.00      0.00      0.00        21
@@ -300,11 +300,11 @@ cyndie.balfour-flanagan@enron.com       0.00      0.00      0.00        21
           susan.trevino@enron.com       0.00      0.00      0.00        20
              tana.jones@enron.com       0.00      0.00      0.00        23
          troy.klussmann@enron.com       0.00      0.00      0.00        21
-        victor.lamadrid@enron.com       0.00      0.00      0.00        20
+        victor.lamadrid@enron.com       0.00      0.00      0.00        21
 
                       avg / total       0.03      0.02      0.00       864
 
-Accuracy: 0.0208333333333
+Accuracy: 0.0196759259259
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -350,22 +350,22 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                              precision    recall  f1-score   support
 
-    beverly.beaty@enron.com       0.00      0.00      0.00        24
-  brenda.fletcher@enron.com       0.12      0.23      0.16        31
-        dan.junek@enron.com       0.12      0.09      0.10        23
-     dick.jenkins@enron.com       0.04      0.04      0.04        25
-    joann.collins@enron.com       0.23      0.20      0.21        30
-    judy.townsend@enron.com       0.14      0.11      0.12        27
-   robert.allwein@enron.com       0.22      0.12      0.15        34
-      robin.barbe@enron.com       0.24      0.15      0.18        27
-    scott.goodell@enron.com       0.39      0.39      0.39        36
+    beverly.beaty@enron.com       0.04      0.17      0.07        24
+  brenda.fletcher@enron.com       0.21      0.23      0.22        31
+        dan.junek@enron.com       0.17      0.13      0.15        23
+     dick.jenkins@enron.com       0.00      0.00      0.00        25
+    joann.collins@enron.com       0.24      0.27      0.25        30
+    judy.townsend@enron.com       0.06      0.07      0.07        27
+   robert.allwein@enron.com       0.20      0.12      0.15        34
+      robin.barbe@enron.com       0.33      0.15      0.21        27
+    scott.goodell@enron.com       0.40      0.33      0.36        36
 scott.hendrickson@enron.com       0.25      0.14      0.18        21
-  victor.lamadrid@enron.com       0.00      0.00      0.00        34
-  victoria.versen@enron.com       0.25      0.10      0.14        21
+  victor.lamadrid@enron.com       0.10      0.06      0.07        34
+  victoria.versen@enron.com       0.25      0.05      0.08        21
 
-                avg / total       0.17      0.14      0.15       333
+                avg / total       0.19      0.15      0.16       333
 
-Accuracy: 0.138138138138
+Accuracy: 0.15015015015
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -411,13 +411,13 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
 
-     l..nicolay@enron.com       1.00      0.97      0.99        34
-richard.shapiro@enron.com       0.44      0.50      0.47        24
-  sarah.novosel@enron.com       0.46      0.42      0.44        26
+     l..nicolay@enron.com       0.96      0.76      0.85        34
+richard.shapiro@enron.com       0.32      0.38      0.35        24
+  sarah.novosel@enron.com       0.34      0.38      0.36        26
 
-              avg / total       0.67      0.67      0.67        84
+              avg / total       0.59      0.54      0.56        84
 
-Accuracy: 0.666666666667
+Accuracy: 0.535714285714
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -463,12 +463,12 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                           precision    recall  f1-score   support
 
-louise.kitchen@enron.com       0.76      0.85      0.80        26
-   mark.taylor@enron.com       0.82      0.72      0.77        25
+louise.kitchen@enron.com       0.81      0.85      0.83        26
+   mark.taylor@enron.com       0.83      0.80      0.82        25
 
-             avg / total       0.79      0.78      0.78        51
+             avg / total       0.82      0.82      0.82        51
 
-Accuracy: 0.78431372549
+Accuracy: 0.823529411765
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -514,12 +514,12 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                              precision    recall  f1-score   support
 
-  russell.diamond@enron.com       0.54      0.66      0.59        29
-veronica.espinoza@enron.com       0.62      0.50      0.55        32
+  russell.diamond@enron.com       0.38      0.38      0.38        29
+veronica.espinoza@enron.com       0.44      0.44      0.44        32
 
-                avg / total       0.58      0.57      0.57        61
+                avg / total       0.41      0.41      0.41        61
 
-Accuracy: 0.573770491803
+Accuracy: 0.409836065574
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -565,12 +565,12 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                          precision    recall  f1-score   support
 
-martha.benner@enron.com       0.87      0.94      0.91        36
-  susan.scott@enron.com       0.90      0.79      0.84        24
+martha.benner@enron.com       0.85      0.78      0.81        36
+  susan.scott@enron.com       0.70      0.79      0.75        24
 
-            avg / total       0.88      0.88      0.88        60
+            avg / total       0.79      0.78      0.78        60
 
-Accuracy: 0.883333333333
+Accuracy: 0.783333333333
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -616,8 +616,8 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                          precision    recall  f1-score   support
 
-  all.houston@enron.com       0.74      0.81      0.78        32
-all.worldwide@enron.com       0.82      0.76      0.79        37
+  all.houston@enron.com       0.73      0.84      0.78        32
+all.worldwide@enron.com       0.84      0.73      0.78        37
 
             avg / total       0.79      0.78      0.78        69
 
@@ -667,18 +667,18 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                              precision    recall  f1-score   support
 
-    brian.hoskins@enron.com       0.00      0.00      0.00        21
-       bryan.hull@enron.com       0.11      0.18      0.14        44
-   david.baumbach@enron.com       0.25      0.16      0.20        31
-  matthew.lenhart@enron.com       0.10      0.10      0.10        39
-    oneal.winfree@enron.com       0.20      0.09      0.12        23
-     phillip.love@enron.com       0.47      0.35      0.40        23
-    shanna.husser@enron.com       0.53      0.59      0.56        41
-timothy.blanchard@enron.com       0.40      0.25      0.31        40
+    brian.hoskins@enron.com       0.04      0.10      0.06        21
+       bryan.hull@enron.com       0.09      0.16      0.11        44
+   david.baumbach@enron.com       0.11      0.10      0.10        31
+  matthew.lenhart@enron.com       0.15      0.10      0.12        39
+    oneal.winfree@enron.com       0.40      0.09      0.14        23
+     phillip.love@enron.com       0.67      0.09      0.15        23
+    shanna.husser@enron.com       0.52      0.56      0.54        41
+timothy.blanchard@enron.com       0.31      0.23      0.26        40
 
-                avg / total       0.27      0.23      0.24       262
+                avg / total       0.28      0.20      0.20       262
 
-Accuracy: 0.232824427481
+Accuracy: 0.198473282443
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -726,23 +726,23 @@ Prediction time: 0.0 m
 
        alan.comnes@enron.com       0.00      0.00      0.00        31
       alberto.levy@enron.com       0.00      0.00      0.00        20
-      aleck.dadson@enron.com       0.02      0.09      0.03        23
+      aleck.dadson@enron.com       0.00      0.00      0.00        23
     barbara.hueter@enron.com       0.00      0.00      0.00        20
 bernadette.hawkins@enron.com       0.00      0.00      0.00        29
         bill.moore@enron.com       0.00      0.00      0.00        25
       carmen.perez@enron.com       0.00      0.00      0.00        20
     carolyn.cooney@enron.com       0.00      0.00      0.00        30
-     charles.yeung@enron.com       0.00      0.00      0.00        31
-        chris.long@enron.com       1.00      0.17      0.29        24
+     charles.yeung@enron.com       0.10      0.03      0.05        31
+        chris.long@enron.com       0.50      0.08      0.14        24
    christi.nicolay@enron.com       0.00      0.00      0.00        20
-       dan.staines@enron.com       1.00      0.03      0.06        30
+       dan.staines@enron.com       0.00      0.00      0.00        30
  daniel.allegretti@enron.com       0.00      0.00      0.00        33
     donald.lassere@enron.com       0.00      0.00      0.00        31
       donna.fulton@enron.com       0.00      0.00      0.00        24
  elizabeth.linnell@enron.com       0.00      0.00      0.00        33
        frank.rishe@enron.com       0.00      0.00      0.00        30
     geriann.warner@enron.com       0.00      0.00      0.00        30
-    germain.palmer@enron.com       0.25      0.05      0.08        20
+    germain.palmer@enron.com       0.00      0.00      0.00        20
     ginger.dernehl@enron.com       0.00      0.00      0.00        30
      gloria.ogenyi@enron.com       0.00      0.00      0.00        30
  guillermo.canovas@enron.com       0.00      0.00      0.00        20
@@ -753,10 +753,10 @@ bernadette.hawkins@enron.com       0.00      0.00      0.00        29
      janine.migden@enron.com       0.00      0.00      0.00        32
      jean.dressler@enron.com       0.00      0.00      0.00        29
         jean.ryall@enron.com       0.00      0.00      0.00        27
-     jeff.dasovich@enron.com       0.16      0.06      0.09        47
+     jeff.dasovich@enron.com       0.25      0.06      0.10        47
          joe.allen@enron.com       0.00      0.00      0.00        30
         joe.connor@enron.com       0.00      0.00      0.00        29
-       joe.hartsoe@enron.com       0.75      0.15      0.25        20
+       joe.hartsoe@enron.com       0.50      0.05      0.09        20
       joseph.alamo@enron.com       0.00      0.00      0.00        30
  kathleen.sullivan@enron.com       0.00      0.00      0.00        29
       kerry.stroup@enron.com       0.00      0.00      0.00        30
@@ -770,16 +770,16 @@ bernadette.hawkins@enron.com       0.00      0.00      0.00        29
  marchris.robinson@enron.com       0.00      0.00      0.00        30
   maureen.mcvicker@enron.com       0.00      0.00      0.00        30
     melinda.pharms@enron.com       0.00      0.00      0.00        24
-    mona.petrochko@enron.com       1.00      0.05      0.09        21
+    mona.petrochko@enron.com       0.00      0.00      0.00        21
      nancy.hetrick@enron.com       0.00      0.00      0.00        30
      patrick.keene@enron.com       0.00      0.00      0.00        31
-      paul.kaufman@enron.com       0.50      0.05      0.09        40
+      paul.kaufman@enron.com       1.00      0.10      0.18        40
  richard.ingersoll@enron.com       0.00      0.00      0.00        22
    richard.shapiro@enron.com       0.02      0.36      0.04        42
       robert.frank@enron.com       0.00      0.00      0.00        31
-   robert.hemstock@enron.com       0.50      0.03      0.06        32
+   robert.hemstock@enron.com       0.00      0.00      0.00        32
 robert.neustaedter@enron.com       0.00      0.00      0.00        31
-        roy.boston@enron.com       0.50      0.03      0.06        30
+        roy.boston@enron.com       0.00      0.00      0.00        30
     rubena.buerger@enron.com       0.00      0.00      0.00        30
    sandra.mccubbin@enron.com       0.00      0.00      0.00        21
      sarah.novosel@enron.com       0.00      0.00      0.00        34
@@ -788,18 +788,18 @@ robert.neustaedter@enron.com       0.00      0.00      0.00        31
    steve.montovano@enron.com       0.00      0.00      0.00        33
       steve.walton@enron.com       0.00      0.00      0.00        31
        steven.kean@enron.com       0.00      0.00      0.00        23
-          sue.nord@enron.com       0.50      0.03      0.06        33
+          sue.nord@enron.com       1.00      0.12      0.22        33
     susan.landwehr@enron.com       0.00      0.00      0.00        23
         susan.mara@enron.com       0.00      0.00      0.00        36
       terri.miller@enron.com       0.00      0.00      0.00        29
       thane.twiggs@enron.com       0.00      0.00      0.00        29
-        tom.briggs@enron.com       0.00      0.00      0.00        26
+        tom.briggs@enron.com       0.50      0.04      0.07        26
        tom.hoatson@enron.com       0.00      0.00      0.00        27
       vinio.floris@enron.com       0.00      0.00      0.00        30
 
-                 avg / total       0.08      0.02      0.02      2085
+                 avg / total       0.06      0.01      0.01      2085
 
-Accuracy: 0.0167865707434
+Accuracy: 0.0148681055156
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -845,14 +845,14 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
 
-  jeff.dasovich@enron.com       0.38      0.40      0.39        43
-richard.shapiro@enron.com       0.17      0.14      0.15        29
-    steven.kean@enron.com       0.07      0.09      0.08        23
-     susan.mara@enron.com       0.33      0.29      0.31        24
+  jeff.dasovich@enron.com       0.39      0.51      0.44        43
+richard.shapiro@enron.com       0.19      0.17      0.18        29
+    steven.kean@enron.com       0.45      0.22      0.29        23
+     susan.mara@enron.com       0.29      0.29      0.29        24
 
-              avg / total       0.26      0.25      0.25       119
+              avg / total       0.33      0.33      0.32       119
 
-Accuracy: 0.252100840336
+Accuracy: 0.327731092437
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -898,111 +898,111 @@ Training time: 0.38 m
 Prediction time: 0.0 m
                               precision    recall  f1-score   support
 
-       alan.comnes@enron.com       0.04      0.29      0.06        79
+       alan.comnes@enron.com       0.03      0.20      0.05        79
     angela.schwarz@enron.com       0.00      0.00      0.00        42
-      beverly.aden@enron.com       0.01      0.02      0.01        41
-        bill.votaw@enron.com       0.80      0.39      0.52        41
+      beverly.aden@enron.com       0.03      0.10      0.05        41
+        bill.votaw@enron.com       0.51      0.68      0.58        41
     brenda.barreda@enron.com       0.00      0.00      0.00        41
-     carol.moffett@enron.com       0.93      0.34      0.50        41
+     carol.moffett@enron.com       0.74      0.34      0.47        41
       cathy.corbin@enron.com       0.00      0.00      0.00        41
-      chris.foster@enron.com       0.21      0.10      0.14        48
- christina.liscano@enron.com       0.00      0.00      0.00        41
-christopher.calger@enron.com       0.11      0.09      0.10        34
-      craig.sutter@enron.com       1.00      0.02      0.05        41
-        d..steffes@enron.com       0.89      0.72      0.80        47
-          dan.leff@enron.com       0.18      0.06      0.09        50
-  debora.whitehead@enron.com       0.43      0.15      0.22        41
-  dennis.benevides@enron.com       0.05      0.02      0.03        48
+      chris.foster@enron.com       0.09      0.08      0.08        48
+ christina.liscano@enron.com       0.00      0.00      0.00        42
+christopher.calger@enron.com       0.10      0.09      0.10        34
+      craig.sutter@enron.com       0.33      0.02      0.04        42
+        d..steffes@enron.com       0.74      0.62      0.67        47
+          dan.leff@enron.com       0.03      0.02      0.02        50
+  debora.whitehead@enron.com       0.62      0.12      0.20        41
+  dennis.benevides@enron.com       0.15      0.04      0.07        48
      dirk.vanulden@enron.com       0.00      0.00      0.00        35
-         don.black@enron.com       0.33      0.08      0.13        48
-dorothy.youngblood@enron.com       0.33      0.02      0.05        41
-    douglas.condon@enron.com       0.06      0.03      0.04        31
-      douglas.huth@enron.com       0.00      0.00      0.00        42
+         don.black@enron.com       0.25      0.12      0.17        48
+dorothy.youngblood@enron.com       0.50      0.05      0.09        41
+    douglas.condon@enron.com       0.11      0.06      0.08        31
+      douglas.huth@enron.com       0.22      0.05      0.08        42
       edward.sacks@enron.com       0.00      0.00      0.00        42
-        eric.letke@enron.com       0.14      0.04      0.06        26
-       eric.melvin@enron.com       0.26      0.12      0.17        41
+        eric.letke@enron.com       0.06      0.04      0.05        26
+       eric.melvin@enron.com       0.08      0.02      0.04        41
        erika.dupre@enron.com       0.00      0.00      0.00        41
        evan.hughes@enron.com       0.00      0.00      0.00        43
-      fran.deltoro@enron.com       0.70      0.34      0.46        41
+      fran.deltoro@enron.com       0.81      0.41      0.55        41
       gayle.muench@enron.com       0.00      0.00      0.00        41
-    ginger.dernehl@enron.com       0.00      0.00      0.00        52
-     gordon.savage@enron.com       0.67      0.05      0.09        42
-        greg.wolfe@enron.com       0.89      0.23      0.36        35
+    ginger.dernehl@enron.com       0.05      0.02      0.03        52
+     gordon.savage@enron.com       0.50      0.10      0.16        42
+        greg.wolfe@enron.com       0.76      0.37      0.50        35
    harold.buchanan@enron.com       0.00      0.00      0.00        41
-   harry.kingerski@enron.com       0.07      0.11      0.08       108
+   harry.kingerski@enron.com       0.01      0.02      0.01       108
         iris.waser@enron.com       0.00      0.00      0.00        41
-       james.lewis@enron.com       0.06      0.02      0.03        42
-     james.steffes@enron.com       0.07      0.12      0.09       154
-      james.wright@enron.com       0.00      0.07      0.01        76
-    janel.guerrero@enron.com       0.03      0.02      0.02        61
-      jeff.messina@enron.com       0.00      0.00      0.00        42
-  jennifer.rudolph@enron.com       0.33      0.03      0.05        39
+       james.lewis@enron.com       0.15      0.05      0.07        42
+     james.steffes@enron.com       0.06      0.09      0.07       154
+      james.wright@enron.com       0.00      0.03      0.00        76
+    janel.guerrero@enron.com       0.01      0.02      0.02        61
+      jeff.messina@enron.com       0.00      0.00      0.00        41
+  jennifer.rudolph@enron.com       0.17      0.03      0.04        39
    jeremy.blachman@enron.com       0.00      0.00      0.00        57
        jess.hewitt@enron.com       0.00      0.00      0.00        41
-       joe.hartsoe@enron.com       0.42      0.33      0.37        67
-      john.neslage@enron.com       0.55      0.42      0.48        26
-      joseph.alamo@enron.com       0.34      0.28      0.31        36
+       joe.hartsoe@enron.com       0.55      0.31      0.40        67
+      john.neslage@enron.com       0.56      0.35      0.43        26
+      joseph.alamo@enron.com       0.36      0.28      0.31        36
      jubran.whalan@enron.com       0.00      0.00      0.00        39
-       karen.denne@enron.com       0.07      0.07      0.07       143
-  kathryn.corbally@enron.com       0.33      0.02      0.04        42
+       karen.denne@enron.com       0.09      0.10      0.09       143
+  kathryn.corbally@enron.com       1.00      0.05      0.09        42
         kathy.bass@enron.com       0.00      0.00      0.00        41
       kathy.dodgen@enron.com       0.00      0.00      0.00        42
-     ken.gustafson@enron.com       0.81      0.40      0.54        42
+     ken.gustafson@enron.com       0.94      0.40      0.57        42
       kevin.hughes@enron.com       0.00      0.00      0.00        41
-       leasa.lopez@enron.com       0.00      0.00      0.00        42
+       leasa.lopez@enron.com       0.00      0.00      0.00        41
    leticia.botello@enron.com       0.00      0.00      0.00        41
-   linda.robertson@enron.com       0.03      0.03      0.03        36
-       mark.muller@enron.com       0.62      0.24      0.34        42
+   linda.robertson@enron.com       0.00      0.00      0.00        36
+       mark.muller@enron.com       0.71      0.24      0.36        41
       marsha.suggs@enron.com       0.00      0.00      0.00        41
      martin.wenzel@enron.com       0.00      0.00      0.00        30
-       marty.sunde@enron.com       0.75      0.21      0.33        43
-         mary.hain@enron.com       0.08      0.04      0.06        24
+       marty.sunde@enron.com       0.71      0.23      0.35        43
+         mary.hain@enron.com       0.00      0.00      0.00        24
 meredith.eggleston@enron.com       0.00      0.00      0.00        41
-  michael.etringer@enron.com       0.03      0.02      0.03        50
-      michael.mann@enron.com       0.00      0.00      0.00        42
-  michael.tribolet@enron.com       0.00      0.00      0.00        53
+  michael.etringer@enron.com       0.04      0.02      0.03        50
+      michael.mann@enron.com       0.25      0.05      0.08        42
+  michael.tribolet@enron.com       0.07      0.02      0.03        53
  michelle.cisneros@enron.com       0.00      0.00      0.00        42
-        mike.smith@enron.com       0.31      0.09      0.14        45
-    mona.petrochko@enron.com       0.11      0.08      0.09        26
-           mpalmer@enron.com       0.02      0.01      0.02        89
+        mike.smith@enron.com       0.44      0.16      0.23        45
+    mona.petrochko@enron.com       0.00      0.00      0.00        26
+           mpalmer@enron.com       0.00      0.00      0.00        89
       neil.bresnan@enron.com       0.00      0.00      0.00        43
          neil.hong@enron.com       0.00      0.00      0.00        41
-      paul.kaufman@enron.com       0.23      0.20      0.21       173
-      paula.warren@enron.com       0.80      0.29      0.43        41
+      paul.kaufman@enron.com       0.30      0.22      0.25       173
+      paula.warren@enron.com       0.94      0.37      0.53        41
    richard.leibert@enron.com       0.00      0.00      0.00        41
-   richard.sanders@enron.com       0.05      0.34      0.08        74
-   richard.shapiro@enron.com       0.09      0.07      0.08       169
-richard.zdunkewicz@enron.com       0.00      0.00      0.00        42
-     rita.hennessy@enron.com       0.00      0.00      0.00        41
+   richard.sanders@enron.com       0.04      0.22      0.07        74
+   richard.shapiro@enron.com       0.19      0.08      0.12       169
+richard.zdunkewicz@enron.com       0.00      0.00      0.00        41
+     rita.hennessy@enron.com       0.00      0.00      0.00        42
      robert.badeer@enron.com       0.00      0.00      0.00        26
-      robert.frank@enron.com       0.73      0.38      0.50        21
-   robert.williams@enron.com       0.65      0.30      0.41        44
-        roger.yang@enron.com       0.83      0.30      0.44        50
+      robert.frank@enron.com       0.29      0.19      0.23        21
+   robert.williams@enron.com       0.56      0.20      0.30        44
+        roger.yang@enron.com       0.50      0.22      0.31        50
 rosalinda.tijerina@enron.com       0.00      0.00      0.00        41
-   sandra.mccubbin@enron.com       0.49      0.27      0.35        99
+   sandra.mccubbin@enron.com       0.46      0.17      0.25        99
      sarah.novosel@enron.com       0.00      0.00      0.00        64
-        scott.gahn@enron.com       0.23      0.10      0.14        48
-     scott.stoness@enron.com       0.14      0.02      0.04        49
+        scott.gahn@enron.com       0.32      0.17      0.22        48
+     scott.stoness@enron.com       0.24      0.10      0.14        49
        sharon.dick@enron.com       0.00      0.00      0.00        42
              skean@enron.com       0.00      0.00      0.00       105
-      steve.walker@enron.com       0.86      0.34      0.49        35
-        susan.mara@enron.com       0.32      0.22      0.26       183
-      tanya.leslie@enron.com       0.00      0.00      0.00        41
+      steve.walker@enron.com       0.77      0.49      0.60        35
+        susan.mara@enron.com       0.32      0.19      0.24       183
+      tanya.leslie@enron.com       1.00      0.05      0.09        42
         tasha.lair@enron.com       0.00      0.00      0.00        41
-        ted.murphy@enron.com       0.83      0.37      0.51        41
+        ted.murphy@enron.com       0.81      0.32      0.46        41
     terri.greenlee@enron.com       0.00      0.00      0.00        41
-        tim.belden@enron.com       0.55      0.30      0.39        73
-     tony.spruiell@enron.com       0.89      0.20      0.32        41
+        tim.belden@enron.com       0.66      0.37      0.47        73
+     tony.spruiell@enron.com       0.92      0.27      0.42        41
             triley@enron.com       0.00      0.00      0.00        38
-       vicki.sharp@enron.com       0.40      0.03      0.06        60
+       vicki.sharp@enron.com       0.50      0.03      0.06        60
     vladimir.gorny@enron.com       0.00      0.00      0.00        41
-       wanda.curry@enron.com       1.00      0.05      0.10        57
+       wanda.curry@enron.com       0.33      0.05      0.09        57
              wgang@enron.com       0.00      0.00      0.00        30
-  william.bradford@enron.com       0.89      0.41      0.57        41
+  william.bradford@enron.com       1.00      0.34      0.51        41
 
-                 avg / total       0.22      0.11      0.12      5202
+                 avg / total       0.22      0.10      0.13      5202
 
-Accuracy: 0.106113033449
+Accuracy: 0.104382929642
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1048,14 +1048,14 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                             precision    recall  f1-score   support
 
-  evelyn.metoyer@enron.com       0.74      0.91      0.82        47
-  kerri.thompson@enron.com       0.86      0.71      0.78        45
-    sharen.cason@enron.com       0.82      0.86      0.84        21
-stephanie.piwetz@enron.com       0.88      0.71      0.79        21
+  evelyn.metoyer@enron.com       0.82      0.87      0.85        47
+  kerri.thompson@enron.com       0.86      0.82      0.84        45
+    sharen.cason@enron.com       0.90      0.90      0.90        21
+stephanie.piwetz@enron.com       0.90      0.86      0.88        21
 
-               avg / total       0.82      0.81      0.80       134
+               avg / total       0.86      0.86      0.86       134
 
-Accuracy: 0.805970149254
+Accuracy: 0.858208955224
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1101,19 +1101,19 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                              precision    recall  f1-score   support
 
-       ben.jacoby@enron.com       0.41      0.42      0.42        57
-      carlos.sole@enron.com       0.28      0.23      0.26        47
-    heather.kroll@enron.com       0.13      0.21      0.16        29
-kathleen.carnahan@enron.com       0.36      0.30      0.33        56
-       lisa.bills@enron.com       0.22      0.17      0.20        23
- reagan.rorschach@enron.com       0.38      0.42      0.40        26
-roseann.engeldorf@enron.com       0.14      0.11      0.13        35
-     sheila.tweed@enron.com       0.22      0.19      0.21        42
-    suzanne.adams@enron.com       0.61      0.70      0.65        93
+       ben.jacoby@enron.com       0.32      0.35      0.33        57
+      carlos.sole@enron.com       0.22      0.23      0.23        47
+    heather.kroll@enron.com       0.21      0.24      0.23        29
+kathleen.carnahan@enron.com       0.34      0.41      0.37        56
+       lisa.bills@enron.com       0.13      0.09      0.11        23
+ reagan.rorschach@enron.com       0.27      0.12      0.16        26
+roseann.engeldorf@enron.com       0.18      0.17      0.17        35
+     sheila.tweed@enron.com       0.15      0.14      0.15        42
+    suzanne.adams@enron.com       0.61      0.63      0.62        93
 
-                avg / total       0.36      0.37      0.36       408
+                avg / total       0.33      0.34      0.33       408
 
-Accuracy: 0.367647058824
+Accuracy: 0.335784313725
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1159,14 +1159,14 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                              precision    recall  f1-score   support
 
-cassandra.schultz@enron.com       0.00      0.00      0.00        20
-       chris.abel@enron.com       0.34      0.52      0.42        21
-       david.port@enron.com       0.88      0.64      0.74        22
-         rick.buy@enron.com       0.21      0.27      0.24        22
+cassandra.schultz@enron.com       0.00      0.00      0.00        21
+       chris.abel@enron.com       0.31      0.80      0.44        20
+       david.port@enron.com       0.50      0.41      0.45        22
+         rick.buy@enron.com       0.00      0.00      0.00        22
 
-                avg / total       0.37      0.36      0.36        85
+                avg / total       0.20      0.29      0.22        85
 
-Accuracy: 0.364705882353
+Accuracy: 0.294117647059
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1212,9 +1212,9 @@ Training time: 0.03 m
 Prediction time: 0.0 m
                               precision    recall  f1-score   support
 
-       allen.cohrs@enron.com       0.00      0.13      0.01        30
-       bill.fowler@enron.com       0.02      0.16      0.03        32
-      bill.mangels@enron.com       0.00      0.00      0.00        21
+       allen.cohrs@enron.com       0.00      0.10      0.00        30
+       bill.fowler@enron.com       0.01      0.09      0.02        32
+      bill.mangels@enron.com       0.16      0.14      0.15        21
       bob.burleson@enron.com       0.00      0.00      0.00        33
        bob.stevens@enron.com       0.00      0.00      0.00        32
      chris.sebesta@enron.com       0.00      0.00      0.00        31
@@ -1225,7 +1225,7 @@ Prediction time: 0.0 m
         dana.jones@enron.com       0.00      0.00      0.00        30
      dave.neubauer@enron.com       0.00      0.00      0.00        35
       david.badura@enron.com       0.00      0.00      0.00        20
-        don.powell@enron.com       0.50      0.03      0.06        30
+        don.powell@enron.com       1.00      0.07      0.12        30
     eileen.peebles@enron.com       0.00      0.00      0.00        26
    frank.oldenhuis@enron.com       0.00      0.00      0.00        33
        frank.semin@enron.com       0.00      0.00      0.00        32
@@ -1233,24 +1233,24 @@ Prediction time: 0.0 m
       jeff.nielsen@enron.com       1.00      0.04      0.07        28
    jeffery.fawcett@enron.com       0.00      0.00      0.00        38
       jim.wiltfong@enron.com       0.00      0.00      0.00        24
-       jo.williams@enron.com       0.67      0.29      0.40        35
+       jo.williams@enron.com       0.41      0.26      0.32        35
     john.dushinske@enron.com       0.00      0.00      0.00        35
        john.fiscus@enron.com       0.00      0.00      0.00        30
     joni.bollinger@enron.com       0.00      0.00      0.00        31
   karen.lagerstrom@enron.com       0.00      0.00      0.00        32
         kay.threet@enron.com       0.00      0.00      0.00        32
-        ken.powers@enron.com       1.00      0.13      0.24        30
+        ken.powers@enron.com       1.00      0.07      0.12        30
        kent.miller@enron.com       0.00      0.00      0.00        34
-       kevin.hyatt@enron.com       0.00      0.00      0.00        51
+       kevin.hyatt@enron.com       0.02      0.06      0.03        51
    kimberly.watson@enron.com       0.00      0.00      0.00        38
       larry.pavlou@enron.com       0.00      0.00      0.00        34
        larry.swett@enron.com       0.00      0.00      0.00        31
   laura.lantefield@enron.com       0.00      0.00      0.00        31
-       lee.ferrell@enron.com       0.00      0.00      0.00        23
+       lee.ferrell@enron.com       1.00      0.04      0.08        23
          lee.huber@enron.com       0.00      0.00      0.00        24
-      lindy.donoho@enron.com       0.01      0.02      0.01        51
+      lindy.donoho@enron.com       0.00      0.00      0.00        51
        lisa.valley@enron.com       0.00      0.00      0.00        31
-       lon.stanton@enron.com       1.00      0.29      0.45        24
+       lon.stanton@enron.com       1.00      0.21      0.34        24
      loren.penkava@enron.com       0.00      0.00      0.00        31
  lorraine.lindberg@enron.com       0.00      0.00      0.00        51
         lynn.blair@enron.com       0.00      0.00      0.00        21
@@ -1268,7 +1268,7 @@ Prediction time: 0.0 m
     penny.mccarran@enron.com       0.00      0.00      0.00        33
      reyna.cabrera@enron.com       0.00      0.00      0.00        29
         rick.dietz@enron.com       0.00      0.00      0.00        21
-        rob.wilson@enron.com       1.00      0.21      0.34        24
+        rob.wilson@enron.com       1.00      0.17      0.29        24
       robert.mason@enron.com       0.00      0.00      0.00        28
      rockey.storie@enron.com       0.00      0.00      0.00        21
     sarabeth.smith@enron.com       0.00      0.00      0.00        22
@@ -1280,16 +1280,16 @@ stephanie.korbelik@enron.com       0.00      0.00      0.00        30
       steve.weller@enron.com       0.00      0.00      0.00        33
      steven.harris@enron.com       0.00      0.00      0.00        48
     steven.january@enron.com       0.00      0.00      0.00        21
-       sue.neville@enron.com       1.00      0.12      0.22        33
+       sue.neville@enron.com       1.00      0.18      0.31        33
    theresa.branney@enron.com       0.00      0.00      0.00        27
-      tim.johanson@enron.com       0.60      0.18      0.28        33
+      tim.johanson@enron.com       0.88      0.21      0.34        33
          tk.lohman@enron.com       0.00      0.00      0.00        50
         tony.perry@enron.com       0.00      0.00      0.00        20
    vernon.mercaldo@enron.com       0.00      0.00      0.00        34
 
-                 avg / total       0.09      0.02      0.03      2245
+                 avg / total       0.11      0.02      0.03      2245
 
-Accuracy: 0.0213808463252
+Accuracy: 0.0218262806236
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1335,14 +1335,14 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                           precision    recall  f1-score   support
 
-    ava.garcia@enron.com       0.31      0.23      0.26        22
- john.buchanan@enron.com       0.35      0.42      0.39        40
-shelley.corman@enron.com       0.50      0.43      0.47        23
- terry.kowalke@enron.com       0.31      0.31      0.31        35
+    ava.garcia@enron.com       0.54      0.59      0.57        22
+ john.buchanan@enron.com       0.36      0.45      0.40        40
+shelley.corman@enron.com       0.38      0.39      0.38        23
+ terry.kowalke@enron.com       0.23      0.14      0.18        35
 
-             avg / total       0.36      0.36      0.36       120
+             avg / total       0.36      0.38      0.36       120
 
-Accuracy: 0.358333333333
+Accuracy: 0.375
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1439,12 +1439,12 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
 
-sara.shackleton@enron.com       0.50      0.55      0.52        31
-     tana.jones@enron.com       0.33      0.29      0.31        24
+sara.shackleton@enron.com       0.52      0.71      0.60        31
+     tana.jones@enron.com       0.31      0.17      0.22        24
 
-              avg / total       0.43      0.44      0.43        55
+              avg / total       0.43      0.47      0.43        55
 
-Accuracy: 0.436363636364
+Accuracy: 0.472727272727
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1522,12 +1522,12 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
 
-  james.steffes@enron.com       0.15      0.23      0.18        31
-richard.sanders@enron.com       0.08      0.10      0.09        21
-  sarah.novosel@enron.com       0.08      0.05      0.06        20
-     susan.mara@enron.com       0.57      0.31      0.40        26
+  james.steffes@enron.com       0.19      0.26      0.22        31
+richard.sanders@enron.com       0.05      0.05      0.05        21
+  sarah.novosel@enron.com       0.00      0.00      0.00        20
+     susan.mara@enron.com       0.43      0.35      0.38        26
 
-              avg / total       0.23      0.18      0.19        98
+              avg / total       0.19      0.18      0.18        98
 
 Accuracy: 0.183673469388
 
@@ -1575,14 +1575,14 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                          precision    recall  f1-score   support
 
-   bryan.hull@enron.com       0.30      0.44      0.35        32
-  chad.landry@enron.com       0.29      0.34      0.31        29
-lisa.gillette@enron.com       0.46      0.36      0.41        36
-    luis.mena@enron.com       0.22      0.09      0.13        22
+   bryan.hull@enron.com       0.26      0.34      0.30        32
+  chad.landry@enron.com       0.33      0.21      0.26        29
+lisa.gillette@enron.com       0.40      0.47      0.44        36
+    luis.mena@enron.com       0.24      0.18      0.21        22
 
-            avg / total       0.33      0.33      0.32       119
+            avg / total       0.32      0.32      0.31       119
 
-Accuracy: 0.327731092437
+Accuracy: 0.319327731092
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1628,10 +1628,10 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
 
-amanda.rybarski@enron.com       0.53      0.36      0.43        25
-michelle.nelson@enron.com       0.83      0.91      0.87        86
+amanda.rybarski@enron.com       0.53      0.40      0.45        25
+michelle.nelson@enron.com       0.84      0.90      0.87        86
 
-              avg / total       0.76      0.78      0.77       111
+              avg / total       0.77      0.78      0.77       111
 
 Accuracy: 0.783783783784
 
@@ -1679,17 +1679,17 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                          precision    recall  f1-score   support
 
-craig.rickard@enron.com       0.00      0.00      0.00        21
-  david.allan@enron.com       0.19      0.21      0.20        28
- dirk.dimitry@enron.com       0.07      0.04      0.05        23
+craig.rickard@enron.com       0.02      0.05      0.03        21
+  david.allan@enron.com       0.16      0.21      0.18        28
+ dirk.dimitry@enron.com       0.00      0.00      0.00        23
     e..carter@enron.com       1.00      1.00      1.00        34
   james.bryja@enron.com       0.00      0.00      0.00        21
-    r..conner@enron.com       0.94      0.76      0.84        21
+    r..conner@enron.com       1.00      0.90      0.95        21
   t..robinson@enron.com       1.00      0.95      0.98        22
 
-            avg / total       0.49      0.46      0.47       170
+            avg / total       0.48      0.48      0.48       170
 
-Accuracy: 0.458823529412
+Accuracy: 0.476470588235
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1735,12 +1735,12 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                           precision    recall  f1-score   support
 
-james.saunders@enron.com       0.33      0.25      0.29        24
-tracy.geaccone@enron.com       0.45      0.56      0.50        27
+james.saunders@enron.com       0.53      0.42      0.47        24
+tracy.geaccone@enron.com       0.56      0.67      0.61        27
 
-             avg / total       0.40      0.41      0.40        51
+             avg / total       0.55      0.55      0.54        51
 
-Accuracy: 0.411764705882
+Accuracy: 0.549019607843
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1786,12 +1786,12 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                       precision    recall  f1-score   support
 
-tana.jones@enron.com       0.94      0.80      0.86        20
- tom.moran@enron.com       0.83      0.95      0.89        21
+tana.jones@enron.com       0.91      1.00      0.95        20
+ tom.moran@enron.com       1.00      0.90      0.95        21
 
-         avg / total       0.89      0.88      0.88        41
+         avg / total       0.96      0.95      0.95        41
 
-Accuracy: 0.878048780488
+Accuracy: 0.951219512195
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1837,22 +1837,22 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
 
-   brent.hendry@enron.com       0.10      0.16      0.12        38
-    carol.clair@enron.com       0.08      0.12      0.09        33
-     kaye.ellis@enron.com       0.40      0.50      0.44        42
-    marie.heard@enron.com       0.23      0.24      0.23        29
-    mark.taylor@enron.com       0.16      0.12      0.14        40
-      mary.cook@enron.com       0.23      0.12      0.16        24
-  samantha.boyd@enron.com       0.44      0.26      0.33        31
-stephanie.panus@enron.com       0.23      0.22      0.23        36
-   susan.bailey@enron.com       0.07      0.06      0.07        49
-    susan.flynn@enron.com       0.14      0.07      0.10        27
-     tana.jones@enron.com       0.10      0.06      0.08        32
-  tanya.rohauer@enron.com       0.27      0.36      0.31        33
+   brent.hendry@enron.com       0.21      0.37      0.27        38
+    carol.clair@enron.com       0.11      0.18      0.14        33
+     kaye.ellis@enron.com       0.29      0.29      0.29        42
+    marie.heard@enron.com       0.13      0.17      0.15        29
+    mark.taylor@enron.com       0.27      0.20      0.23        40
+      mary.cook@enron.com       0.19      0.17      0.18        24
+  samantha.boyd@enron.com       0.36      0.29      0.32        31
+stephanie.panus@enron.com       0.06      0.06      0.06        36
+   susan.bailey@enron.com       0.08      0.06      0.07        49
+    susan.flynn@enron.com       0.09      0.07      0.08        27
+     tana.jones@enron.com       0.21      0.16      0.18        32
+  tanya.rohauer@enron.com       0.47      0.27      0.35        33
 
-              avg / total       0.20      0.20      0.19       414
+              avg / total       0.20      0.19      0.19       414
 
-Accuracy: 0.195652173913
+Accuracy: 0.190821256039
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1899,13 +1899,13 @@ Prediction time: 0.0 m
                            precision    recall  f1-score   support
 
    brent.hendry@enron.com       0.00      0.00      0.00        22
-sara.shackleton@enron.com       0.28      0.21      0.24        33
+sara.shackleton@enron.com       0.23      0.33      0.28        33
    susan.bailey@enron.com       0.00      0.00      0.00        25
-     tana.jones@enron.com       0.17      0.05      0.08        20
+     tana.jones@enron.com       0.12      0.05      0.07        20
 
-              avg / total       0.13      0.08      0.10       100
+              avg / total       0.10      0.12      0.11       100
 
-Accuracy: 0.08
+Accuracy: 0.12
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1951,37 +1951,37 @@ Training time: 0.01 m
 Prediction time: 0.0 m
                             precision    recall  f1-score   support
 
-     alan.comnes@enron.com       0.04      0.11      0.06        44
+     alan.comnes@enron.com       0.03      0.09      0.04        44
  christian.yoder@enron.com       0.00      0.00      0.00        22
-        dan.leff@enron.com       0.00      0.00      0.00        20
-dennis.benevides@enron.com       0.14      0.12      0.13        25
-       don.black@enron.com       0.18      0.09      0.12        22
- harry.kingerski@enron.com       0.05      0.06      0.05        36
-   james.steffes@enron.com       0.02      0.02      0.02        48
-    james.wright@enron.com       0.01      0.06      0.02        32
-   jeff.dasovich@enron.com       0.28      0.20      0.23        91
+        dan.leff@enron.com       0.04      0.05      0.04        20
+dennis.benevides@enron.com       0.06      0.08      0.07        25
+       don.black@enron.com       0.17      0.09      0.12        22
+ harry.kingerski@enron.com       0.04      0.06      0.05        36
+   james.steffes@enron.com       0.00      0.00      0.00        48
+    james.wright@enron.com       0.02      0.09      0.03        32
+   jeff.dasovich@enron.com       0.25      0.22      0.24        91
  jeremy.blachman@enron.com       0.00      0.00      0.00        23
-     joe.hartsoe@enron.com       1.00      0.12      0.22        24
-    joseph.alamo@enron.com       0.10      0.05      0.07        20
+     joe.hartsoe@enron.com       1.00      0.21      0.34        24
+    joseph.alamo@enron.com       0.00      0.00      0.00        20
    jubran.whalan@enron.com       0.00      0.00      0.00        21
-     karen.denne@enron.com       0.18      0.05      0.08        39
+     karen.denne@enron.com       0.17      0.05      0.08        39
  linda.robertson@enron.com       0.00      0.00      0.00        23
        mary.hain@enron.com       0.00      0.00      0.00        21
-michael.tribolet@enron.com       0.11      0.04      0.06        25
-      mike.smith@enron.com       0.21      0.29      0.24        24
-    paul.kaufman@enron.com       0.36      0.12      0.18        42
+michael.tribolet@enron.com       0.00      0.00      0.00        25
+      mike.smith@enron.com       0.12      0.21      0.15        24
+    paul.kaufman@enron.com       0.25      0.10      0.14        42
  richard.sanders@enron.com       0.00      0.00      0.00        24
- richard.shapiro@enron.com       0.16      0.25      0.19        63
-   robert.badeer@enron.com       0.50      0.21      0.29        24
- sandra.mccubbin@enron.com       0.42      0.23      0.30        35
+ richard.shapiro@enron.com       0.11      0.16      0.13        63
+   robert.badeer@enron.com       0.71      0.21      0.32        24
+ sandra.mccubbin@enron.com       0.60      0.17      0.27        35
    sarah.novosel@enron.com       0.00      0.00      0.00        25
-      tim.belden@enron.com       0.43      0.29      0.35        31
-     vicki.sharp@enron.com       0.40      0.08      0.14        24
-     wanda.curry@enron.com       0.33      0.09      0.14        22
+      tim.belden@enron.com       0.64      0.23      0.33        31
+     vicki.sharp@enron.com       0.00      0.00      0.00        24
+     wanda.curry@enron.com       0.00      0.00      0.00        22
 
-               avg / total       0.19      0.11      0.12       850
+               avg / total       0.17      0.09      0.10       850
 
-Accuracy: 0.110588235294
+Accuracy: 0.0917647058824
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -2027,12 +2027,12 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
 
-    mark.taylor@enron.com       0.33      0.16      0.22        25
-sara.shackleton@enron.com       0.55      0.30      0.39        20
-   susan.bailey@enron.com       0.38      0.12      0.18        25
-     tana.jones@enron.com       0.26      0.63      0.37        27
+    mark.taylor@enron.com       0.26      0.20      0.23        25
+sara.shackleton@enron.com       0.45      0.25      0.32        20
+   susan.bailey@enron.com       0.62      0.20      0.30        25
+     tana.jones@enron.com       0.25      0.56      0.35        27
 
-              avg / total       0.37      0.31      0.28        97
+              avg / total       0.39      0.31      0.30        97
 
 Accuracy: 0.309278350515
 
@@ -2080,37 +2080,37 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
 
- alan.aronowitz@enron.com       0.00      0.01      0.00        76
-    andrea.calo@enron.com       0.00      0.00      0.00        31
-      bob.bowen@enron.com       0.08      0.32      0.13        22
-   brent.hendry@enron.com       0.03      0.06      0.04        31
-    carol.clair@enron.com       0.06      0.05      0.06        37
-    david.minns@enron.com       0.46      0.54      0.50        59
-    david.portz@enron.com       0.48      0.31      0.38        32
+ alan.aronowitz@enron.com       0.00      0.00      0.00        76
+    andrea.calo@enron.com       0.01      0.03      0.02        31
+      bob.bowen@enron.com       0.01      0.05      0.02        22
+   brent.hendry@enron.com       0.00      0.00      0.00        31
+    carol.clair@enron.com       0.07      0.08      0.08        37
+    david.minns@enron.com       0.62      0.58      0.60        59
+    david.portz@enron.com       0.44      0.47      0.45        32
 elizabeth.sager@enron.com       0.00      0.00      0.00        33
-    frank.davis@enron.com       0.18      0.16      0.17        49
-  harry.collins@enron.com       0.13      0.07      0.09        85
+    frank.davis@enron.com       0.12      0.12      0.12        49
+  harry.collins@enron.com       0.18      0.11      0.13        85
    jane.mcbride@enron.com       0.00      0.00      0.00        36
   jeffrey.hodge@enron.com       0.00      0.00      0.00        74
   john.viverito@enron.com       0.00      0.00      0.00        40
-  leslie.hansen@enron.com       0.04      0.01      0.02        69
-      lisa.lees@enron.com       0.13      0.12      0.13        24
-    marie.heard@enron.com       0.21      0.09      0.13        78
-    mark.taylor@enron.com       0.29      0.17      0.22        63
-  peter.keohane@enron.com       0.00      0.00      0.00        38
+  leslie.hansen@enron.com       0.07      0.01      0.02        69
+      lisa.lees@enron.com       0.16      0.12      0.14        24
+    marie.heard@enron.com       0.16      0.06      0.09        78
+    mark.taylor@enron.com       0.19      0.16      0.17        63
+  peter.keohane@enron.com       0.20      0.05      0.08        38
     robbi.rossi@enron.com       0.00      0.00      0.00        57
-sara.shackleton@enron.com       0.00      0.00      0.00        40
-    shari.stack@enron.com       0.00      0.00      0.00        41
+sara.shackleton@enron.com       0.14      0.05      0.07        40
+    shari.stack@enron.com       0.14      0.02      0.04        41
    sheri.thomas@enron.com       0.00      0.00      0.00        22
   stacy.dickson@enron.com       0.00      0.00      0.00        54
-stephanie.sever@enron.com       0.17      0.11      0.13        37
+stephanie.sever@enron.com       0.08      0.05      0.06        37
    susan.bailey@enron.com       0.00      0.00      0.00        34
-  tanya.rohauer@enron.com       0.00      0.00      0.00        30
-      tom.moran@enron.com       0.05      0.04      0.04        26
+  tanya.rohauer@enron.com       0.09      0.03      0.05        30
+      tom.moran@enron.com       0.14      0.08      0.10        26
 
-              avg / total       0.10      0.08      0.08      1218
+              avg / total       0.11      0.08      0.09      1218
 
-Accuracy: 0.0779967159278
+Accuracy: 0.0804597701149
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -2156,14 +2156,14 @@ Training time: 0.0 m
 Prediction time: 0.0 m
                             precision    recall  f1-score   support
 
-shirley.crenshaw@enron.com       0.86      0.93      0.89        67
-  stinson.gibner@enron.com       0.78      0.64      0.71        28
+shirley.crenshaw@enron.com       0.83      0.96      0.89        67
+  stinson.gibner@enron.com       0.83      0.54      0.65        28
 
-               avg / total       0.84      0.84      0.84        95
+               avg / total       0.83      0.83      0.82        95
 
-Accuracy: 0.842105263158
+Accuracy: 0.831578947368
 ##################################
-Mean Recipient Score: 0.7303734116022115
+Mean Recipient Score: 0.7238320358721589
 ##################################
-FINAL SCORE: 0.6024217669824047
+FINAL SCORE: 0.5970263527145858
 ##################################

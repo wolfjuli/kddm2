@@ -80,31 +80,44 @@ def stem(row):
     return " ".join(words)
 
 
-def plot_confusion_matrix(cm, targets, name, normalize=True, show=True):
-    if normalize:
-        title = "Normalized confusion matrix of {}".format(name)
-        np.set_printoptions(precision=2)
-        cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
-    else:
-        title = "Confusion matrix of {}".format(name)
+def plot_confusion_matrix(cm, targets, name, show=True, save=True):
+    matrix = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+    plot_matrix(matrix, targets, targets, "Normalized confusion matrix of {}".format(name))
+    plt.ylabel('True label')
+    plt.xlabel('Predicted label')
+    if save:
+        plt.savefig("../results/{} CM.png".format(name))
+    if show:
+        plt.show()
 
-    plt.figure(figsize=(13, 13))
-    plt.imshow(cm, interpolation='none')
+
+def plot_accuracy_matrix(matrix, labels_x, labels_y, name, show=True, save=True):
+    plot_matrix(matrix, labels_x, labels_y, "Accuracy matrix of {}".format(name))
+    plt.ylabel('Authors')
+    plt.xlabel('Recipients')
+    if save:
+        plt.savefig("../results/{} AM.png".format(name))
+    if show:
+        plt.show()
+
+
+def plot_matrix(matrix, labels_x, labels_y, title):
+    np.set_printoptions(precision=2)
+    lable_ratio = len(labels_y) / len(labels_x)
+    plt.figure(figsize=(13, min(int(13*lable_ratio)*2, 13)))
+    plt.imshow(matrix, interpolation='none')
     plt.title(title)
     plt.colorbar()
-    tick_marks = np.arange(len(targets))
-    fontsize = min(12, int(500/len(targets)))
-    plt.xticks(tick_marks, targets, rotation=90, fontsize=fontsize)
-    plt.yticks(tick_marks, targets, fontsize=fontsize)
+    tick_marks_x = np.arange(len(labels_x))
+    tick_marks_y = np.arange(len(labels_y))
+    fontsize = min(12, int(500/max(len(labels_x), len(labels_x))))
+    plt.xticks(tick_marks_x, labels_x, rotation=90, fontsize=fontsize)
+    plt.yticks(tick_marks_y, labels_y, fontsize=fontsize)
     try:
         plt.tight_layout()
     except:
         pass
-    plt.ylabel('True label')
-    plt.xlabel('Predicted label')
-    plt.savefig("../results/{} CM.png".format(name))
-    if show:
-        plt.show()
+
 
 
 class Logger(object):
