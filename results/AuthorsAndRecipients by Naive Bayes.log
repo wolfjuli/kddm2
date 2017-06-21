@@ -38,19 +38,19 @@ Top 30 Features:
 29                esct  3.8963324957793852    0.008944457811067202 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                          precision    recall  f1-score   support
 
-jeff.dasovich@enron.com       0.33      0.95      0.49        38
+jeff.dasovich@enron.com       0.31      0.95      0.47        38
   ray.alvarez@enron.com       0.00      0.00      0.00        24
-   susan.mara@enron.com       0.08      0.03      0.05        32
+   susan.mara@enron.com       0.33      0.06      0.11        32
    tim.belden@enron.com       0.00      0.00      0.00        27
 
-            avg / total       0.13      0.31      0.17       121
+            avg / total       0.19      0.31      0.18       121
 
-Accuracy: 0.305785123967
+Accuracy: 0.314049586777
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -91,20 +91,20 @@ Top 30 Features:
 29     pleas  1.0979389894870664  0.35670339769049686 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                              precision    recall  f1-score   support
 
      lindy.donoho@enron.com       0.00      0.00      0.00        22
-lorraine.lindberg@enron.com       0.00      0.00      0.00        23
-   michelle.lokay@enron.com       0.23      1.00      0.37        25
-    steven.harris@enron.com       0.00      0.00      0.00        22
-        tk.lohman@enron.com       0.00      0.00      0.00        23
+lorraine.lindberg@enron.com       0.25      0.04      0.07        23
+   michelle.lokay@enron.com       0.23      0.96      0.37        25
+    steven.harris@enron.com       1.00      0.05      0.09        22
+        tk.lohman@enron.com       0.20      0.04      0.07        23
 
-                avg / total       0.05      0.22      0.08       115
+                avg / total       0.33      0.23      0.13       115
 
-Accuracy: 0.217391304348
+Accuracy: 0.234782608696
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -145,13 +145,13 @@ Top 30 Features:
 29           delieri  3.6339423639904695   0.00017288062360906463 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                          precision    recall  f1-score   support
 
   bert.meyers@enron.com       0.00      0.00      0.00        20
-bill.williams@enron.com       1.00      0.19      0.32        31
+bill.williams@enron.com       1.00      0.06      0.12        31
    craig.dean@enron.com       0.00      0.00      0.00        22
  geir.solberg@enron.com       0.00      0.00      0.00        23
    kate.symes@enron.com       0.16      1.00      0.27        36
@@ -159,11 +159,11 @@ bill.williams@enron.com       1.00      0.19      0.32        31
   mark.guzman@enron.com       0.00      0.00      0.00        22
  ryan.slinger@enron.com       0.00      0.00      0.00        23
    todd.bland@enron.com       0.00      0.00      0.00        20
-    v..porter@enron.com       1.00      0.15      0.26        20
+    v..porter@enron.com       1.00      0.20      0.33        20
 
-            avg / total       0.24      0.19      0.11       238
+            avg / total       0.24      0.18      0.08       238
 
-Accuracy: 0.189075630252
+Accuracy: 0.176470588235
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -204,7 +204,7 @@ Top 30 Features:
 29                given  3.8412448607641654    0.051240909761057274 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
@@ -255,15 +255,15 @@ Top 30 Features:
 29            hodg  1.0131037607306512      0.447660479788984 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                                    precision    recall  f1-score   support
 
          anthony.campos@enron.com       0.00      0.00      0.00        20
-      bernice.rodriguez@enron.com       1.00      0.04      0.08        23
+      bernice.rodriguez@enron.com       0.00      0.00      0.00        23
               bob.bowen@enron.com       0.00      0.00      0.00        24
-            brant.reves@enron.com       0.03      0.79      0.06        24
+            brant.reves@enron.com       0.03      0.92      0.06        24
      bridgette.anderson@enron.com       0.00      0.00      0.00        20
             bruce.mills@enron.com       0.00      0.00      0.00        21
            cheryl.dawes@enron.com       0.00      0.00      0.00        21
@@ -271,40 +271,40 @@ Prediction time: 0.0 m
              cindy.horn@enron.com       0.00      0.00      0.00        21
 cyndie.balfour-flanagan@enron.com       0.00      0.00      0.00        21
             david.hardy@enron.com       0.00      0.00      0.00        22
-        debbie.brackett@enron.com       0.00      0.00      0.00        20
+        debbie.brackett@enron.com       0.00      0.00      0.00        21
       debra.perlingiere@enron.com       0.00      0.00      0.00        21
             dianne.seib@enron.com       0.00      0.00      0.00        20
               elsie.lew@enron.com       0.00      0.00      0.00        21
        genia.fitzgerald@enron.com       0.00      0.00      0.00        20
            geoff.storey@enron.com       0.00      0.00      0.00        20
             jeremy.wong@enron.com       0.00      0.00      0.00        20
-              jim.homco@enron.com       0.00      0.00      0.00        21
+              jim.homco@enron.com       0.00      0.00      0.00        20
              joan.quick@enron.com       0.00      0.00      0.00        21
           karen.lambert@enron.com       0.00      0.00      0.00        20
-             kori.loibl@enron.com       0.03      0.21      0.04        24
+             kori.loibl@enron.com       0.02      0.17      0.04        24
            laurel.adams@enron.com       0.00      0.00      0.00        21
             liz.hillman@enron.com       0.00      0.00      0.00        21
            lynn.shivers@enron.com       0.00      0.00      0.00        21
         marilyn.colbert@enron.com       0.00      0.00      0.00        22
           michael.eiben@enron.com       0.00      0.00      0.00        20
           mike.croucher@enron.com       0.00      0.00      0.00        21
-         nathan.hlavaty@enron.com       0.00      0.00      0.00        21
+         nathan.hlavaty@enron.com       0.00      0.00      0.00        20
          peggy.hedstrom@enron.com       0.00      0.00      0.00        21
             rahil.jafry@enron.com       0.00      0.00      0.00        21
          richard.mckeel@enron.com       0.00      0.00      0.00        21
              rita.wynne@enron.com       0.00      0.00      0.00        20
            romeo.dsouza@enron.com       0.00      0.00      0.00        21
         russell.diamond@enron.com       0.00      0.00      0.00        20
-         scotty.gilbert@enron.com       0.00      0.00      0.00        20
+         scotty.gilbert@enron.com       0.00      0.00      0.00        21
       stacey.richardson@enron.com       0.00      0.00      0.00        23
           susan.trevino@enron.com       0.00      0.00      0.00        20
-             tana.jones@enron.com       0.00      0.00      0.00        23
+             tana.jones@enron.com       0.33      0.04      0.08        23
          troy.klussmann@enron.com       0.00      0.00      0.00        21
         victor.lamadrid@enron.com       0.00      0.00      0.00        21
 
-                      avg / total       0.03      0.03      0.01       864
+                      avg / total       0.01      0.03      0.00       864
 
-Accuracy: 0.0289351851852
+Accuracy: 0.03125
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -345,27 +345,27 @@ Top 30 Features:
 29                          delet   6.120515243046529   6.494993903631722e-10 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                              precision    recall  f1-score   support
 
     beverly.beaty@enron.com       0.00      0.00      0.00        24
-  brenda.fletcher@enron.com       0.41      0.23      0.29        31
+  brenda.fletcher@enron.com       0.19      0.32      0.24        31
         dan.junek@enron.com       0.00      0.00      0.00        23
      dick.jenkins@enron.com       0.00      0.00      0.00        25
-    joann.collins@enron.com       0.43      0.63      0.51        30
-    judy.townsend@enron.com       0.00      0.00      0.00        27
-   robert.allwein@enron.com       0.18      0.29      0.22        34
-      robin.barbe@enron.com       1.00      0.04      0.07        27
-    scott.goodell@enron.com       0.25      0.81      0.38        36
+    joann.collins@enron.com       0.36      0.47      0.41        30
+    judy.townsend@enron.com       1.00      0.07      0.14        27
+   robert.allwein@enron.com       0.14      0.21      0.17        34
+      robin.barbe@enron.com       0.00      0.00      0.00        27
+    scott.goodell@enron.com       0.23      0.86      0.36        36
 scott.hendrickson@enron.com       0.00      0.00      0.00        21
-  victor.lamadrid@enron.com       0.14      0.35      0.20        34
+  victor.lamadrid@enron.com       0.11      0.15      0.13        34
   victoria.versen@enron.com       0.00      0.00      0.00        21
 
-                avg / total       0.22      0.23      0.16       333
+                avg / total       0.18      0.21      0.14       333
 
-Accuracy: 0.234234234234
+Accuracy: 0.207207207207
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -406,18 +406,18 @@ Top 30 Features:
 29      ast  13.857904407960765  1.4929190807375606e-06 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
 
      l..nicolay@enron.com       0.83      1.00      0.91        34
-richard.shapiro@enron.com       1.00      0.17      0.29        24
-  sarah.novosel@enron.com       0.59      0.88      0.71        26
+richard.shapiro@enron.com       0.50      0.04      0.08        24
+  sarah.novosel@enron.com       0.56      0.88      0.69        26
 
-              avg / total       0.80      0.73      0.67        84
+              avg / total       0.65      0.69      0.60        84
 
-Accuracy: 0.72619047619
+Accuracy: 0.690476190476
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -458,17 +458,17 @@ Top 30 Features:
 29           amita  10.951998812370427   0.0010710750800695217 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                           precision    recall  f1-score   support
 
-louise.kitchen@enron.com       0.93      0.96      0.94        26
-   mark.taylor@enron.com       0.96      0.92      0.94        25
+louise.kitchen@enron.com       0.89      0.92      0.91        26
+   mark.taylor@enron.com       0.92      0.88      0.90        25
 
-             avg / total       0.94      0.94      0.94        51
+             avg / total       0.90      0.90      0.90        51
 
-Accuracy: 0.941176470588
+Accuracy: 0.901960784314
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -509,17 +509,17 @@ Top 30 Features:
 29               again   3.221977497709848    0.0736623014298402 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                              precision    recall  f1-score   support
 
-  russell.diamond@enron.com       0.75      0.21      0.32        29
-veronica.espinoza@enron.com       0.57      0.94      0.71        32
+  russell.diamond@enron.com       0.78      0.24      0.37        29
+veronica.espinoza@enron.com       0.58      0.94      0.71        32
 
-                avg / total       0.65      0.59      0.52        61
+                avg / total       0.67      0.61      0.55        61
 
-Accuracy: 0.590163934426
+Accuracy: 0.606557377049
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -560,17 +560,17 @@ Top 30 Features:
 29          file     18.312610296362   2.536767997824602e-05 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                          precision    recall  f1-score   support
 
-martha.benner@enron.com       0.80      0.97      0.88        36
-  susan.scott@enron.com       0.94      0.62      0.75        24
+martha.benner@enron.com       0.76      0.97      0.85        36
+  susan.scott@enron.com       0.93      0.54      0.68        24
 
-            avg / total       0.85      0.83      0.82        60
+            avg / total       0.83      0.80      0.79        60
 
-Accuracy: 0.833333333333
+Accuracy: 0.8
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -611,17 +611,17 @@ Top 30 Features:
 29    annual   37.88905011052761   2.097020415566768e-09 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                          precision    recall  f1-score   support
 
-  all.houston@enron.com       0.93      0.81      0.87        32
-all.worldwide@enron.com       0.85      0.95      0.90        37
+  all.houston@enron.com       1.00      0.88      0.93        32
+all.worldwide@enron.com       0.90      1.00      0.95        37
 
-            avg / total       0.89      0.88      0.88        69
+            avg / total       0.95      0.94      0.94        69
 
-Accuracy: 0.884057971014
+Accuracy: 0.942028985507
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -662,23 +662,23 @@ Top 30 Features:
 29           enroncom   5.907994481246734   8.882275326996744e-07 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                              precision    recall  f1-score   support
 
     brian.hoskins@enron.com       0.00      0.00      0.00        21
-       bryan.hull@enron.com       0.22      0.80      0.35        44
-   david.baumbach@enron.com       1.00      0.19      0.32        31
-  matthew.lenhart@enron.com       0.22      0.10      0.14        39
+       bryan.hull@enron.com       0.22      0.77      0.34        44
+   david.baumbach@enron.com       1.00      0.06      0.12        31
+  matthew.lenhart@enron.com       0.21      0.08      0.11        39
     oneal.winfree@enron.com       1.00      0.04      0.08        23
-     phillip.love@enron.com       0.00      0.00      0.00        23
-    shanna.husser@enron.com       0.48      0.63      0.55        41
-timothy.blanchard@enron.com       0.35      0.23      0.27        40
+     phillip.love@enron.com       1.00      0.04      0.08        23
+    shanna.husser@enron.com       0.42      0.61      0.50        41
+timothy.blanchard@enron.com       0.30      0.20      0.24        40
 
-                avg / total       0.40      0.31      0.25       262
+                avg / total       0.47      0.28      0.22       262
 
-Accuracy: 0.309160305344
+Accuracy: 0.282442748092
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -719,7 +719,7 @@ Top 30 Features:
 29                 merci  3.1333470944121387   2.8151943170785845e-17 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                               precision    recall  f1-score   support
@@ -775,7 +775,7 @@ bernadette.hawkins@enron.com       0.00      0.00      0.00        29
      patrick.keene@enron.com       0.00      0.00      0.00        31
       paul.kaufman@enron.com       0.00      0.00      0.00        40
  richard.ingersoll@enron.com       0.00      0.00      0.00        22
-   richard.shapiro@enron.com       0.20      0.02      0.04        42
+   richard.shapiro@enron.com       0.10      0.02      0.04        42
       robert.frank@enron.com       0.00      0.00      0.00        31
    robert.hemstock@enron.com       0.00      0.00      0.00        32
 robert.neustaedter@enron.com       0.00      0.00      0.00        31
@@ -840,19 +840,19 @@ Top 30 Features:
 29      kaufmanpdxectect  3.0311151265835057    0.028877593161721404 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
 
-  jeff.dasovich@enron.com       0.37      1.00      0.54        43
-richard.shapiro@enron.com       0.50      0.03      0.06        29
+  jeff.dasovich@enron.com       0.36      1.00      0.53        43
+richard.shapiro@enron.com       0.00      0.00      0.00        29
     steven.kean@enron.com       0.00      0.00      0.00        23
-     susan.mara@enron.com       0.50      0.04      0.08        24
+     susan.mara@enron.com       0.00      0.00      0.00        24
 
-              avg / total       0.36      0.38      0.23       119
+              avg / total       0.13      0.36      0.19       119
 
-Accuracy: 0.378151260504
+Accuracy: 0.361344537815
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -893,8 +893,8 @@ Top 30 Features:
 29                       esct   40.53087164930565   0.0 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
-Training time: 0.0 m
+### CLASSIFICATION using Naive Bayes ###
+Training time: 0.01 m
 Prediction time: 0.0 m
                               precision    recall  f1-score   support
 
@@ -906,15 +906,15 @@ Prediction time: 0.0 m
      carol.moffett@enron.com       0.00      0.00      0.00        41
       cathy.corbin@enron.com       0.00      0.00      0.00        41
       chris.foster@enron.com       0.00      0.00      0.00        48
- christina.liscano@enron.com       0.00      0.00      0.00        42
+ christina.liscano@enron.com       0.00      0.00      0.00        41
 christopher.calger@enron.com       0.00      0.00      0.00        34
       craig.sutter@enron.com       0.00      0.00      0.00        41
-        d..steffes@enron.com       1.00      0.57      0.73        47
+        d..steffes@enron.com       1.00      0.64      0.78        47
           dan.leff@enron.com       0.00      0.00      0.00        50
-  debora.whitehead@enron.com       0.00      0.00      0.00        41
+  debora.whitehead@enron.com       0.00      0.00      0.00        42
   dennis.benevides@enron.com       0.00      0.00      0.00        48
      dirk.vanulden@enron.com       0.00      0.00      0.00        35
-         don.black@enron.com       0.00      0.00      0.00        47
+         don.black@enron.com       1.00      0.02      0.04        47
 dorothy.youngblood@enron.com       0.00      0.00      0.00        41
     douglas.condon@enron.com       0.00      0.00      0.00        31
       douglas.huth@enron.com       0.00      0.00      0.00        42
@@ -924,16 +924,16 @@ dorothy.youngblood@enron.com       0.00      0.00      0.00        41
        erika.dupre@enron.com       0.00      0.00      0.00        41
        evan.hughes@enron.com       0.00      0.00      0.00        43
       fran.deltoro@enron.com       0.00      0.00      0.00        41
-      gayle.muench@enron.com       0.00      0.00      0.00        41
+      gayle.muench@enron.com       0.00      0.00      0.00        42
     ginger.dernehl@enron.com       0.00      0.00      0.00        52
      gordon.savage@enron.com       0.00      0.00      0.00        42
         greg.wolfe@enron.com       0.00      0.00      0.00        35
-   harold.buchanan@enron.com       0.00      0.00      0.00        42
+   harold.buchanan@enron.com       0.00      0.00      0.00        41
    harry.kingerski@enron.com       0.00      0.00      0.00       108
         iris.waser@enron.com       0.00      0.00      0.00        41
        james.lewis@enron.com       0.00      0.00      0.00        42
-     james.steffes@enron.com       0.04      0.17      0.07       154
-      james.wright@enron.com       0.01      0.04      0.02        76
+     james.steffes@enron.com       0.02      0.12      0.04       154
+      james.wright@enron.com       0.42      0.07      0.11        76
     janel.guerrero@enron.com       0.00      0.00      0.00        61
       jeff.messina@enron.com       0.00      0.00      0.00        41
   jennifer.rudolph@enron.com       0.00      0.00      0.00        39
@@ -941,15 +941,15 @@ dorothy.youngblood@enron.com       0.00      0.00      0.00        41
        jess.hewitt@enron.com       0.00      0.00      0.00        41
        joe.hartsoe@enron.com       0.00      0.00      0.00        67
       john.neslage@enron.com       0.00      0.00      0.00        26
-      joseph.alamo@enron.com       0.56      0.14      0.22        36
+      joseph.alamo@enron.com       1.00      0.05      0.10        37
      jubran.whalan@enron.com       0.00      0.00      0.00        39
-       karen.denne@enron.com       0.08      0.03      0.04       143
+       karen.denne@enron.com       0.01      0.02      0.02       143
   kathryn.corbally@enron.com       0.00      0.00      0.00        42
         kathy.bass@enron.com       0.00      0.00      0.00        41
       kathy.dodgen@enron.com       0.00      0.00      0.00        42
      ken.gustafson@enron.com       0.00      0.00      0.00        42
       kevin.hughes@enron.com       0.00      0.00      0.00        41
-       leasa.lopez@enron.com       0.00      0.00      0.00        42
+       leasa.lopez@enron.com       0.00      0.00      0.00        41
    leticia.botello@enron.com       0.00      0.00      0.00        41
    linda.robertson@enron.com       0.00      0.00      0.00        36
        mark.muller@enron.com       0.00      0.00      0.00        42
@@ -958,7 +958,7 @@ dorothy.youngblood@enron.com       0.00      0.00      0.00        41
        marty.sunde@enron.com       0.00      0.00      0.00        44
          mary.hain@enron.com       0.00      0.00      0.00        24
 meredith.eggleston@enron.com       0.00      0.00      0.00        41
-  michael.etringer@enron.com       0.00      0.00      0.00        50
+  michael.etringer@enron.com       1.00      0.02      0.04        50
       michael.mann@enron.com       0.00      0.00      0.00        42
   michael.tribolet@enron.com       0.00      0.00      0.00        53
  michelle.cisneros@enron.com       0.00      0.00      0.00        42
@@ -967,11 +967,11 @@ meredith.eggleston@enron.com       0.00      0.00      0.00        41
            mpalmer@enron.com       0.00      0.00      0.00        89
       neil.bresnan@enron.com       0.00      0.00      0.00        43
          neil.hong@enron.com       0.00      0.00      0.00        41
-      paul.kaufman@enron.com       0.10      0.23      0.14       173
+      paul.kaufman@enron.com       0.14      0.21      0.17       173
       paula.warren@enron.com       0.00      0.00      0.00        41
    richard.leibert@enron.com       0.00      0.00      0.00        41
-   richard.sanders@enron.com       0.02      0.16      0.04        74
-   richard.shapiro@enron.com       0.02      0.14      0.04       169
+   richard.sanders@enron.com       0.02      0.15      0.04        74
+   richard.shapiro@enron.com       0.02      0.20      0.04       169
 richard.zdunkewicz@enron.com       0.00      0.00      0.00        41
      rita.hennessy@enron.com       0.00      0.00      0.00        41
      robert.badeer@enron.com       0.00      0.00      0.00        25
@@ -986,7 +986,7 @@ rosalinda.tijerina@enron.com       0.00      0.00      0.00        41
        sharon.dick@enron.com       0.00      0.00      0.00        42
              skean@enron.com       0.00      0.00      0.00       105
       steve.walker@enron.com       0.00      0.00      0.00        35
-        susan.mara@enron.com       0.07      0.88      0.14       183
+        susan.mara@enron.com       0.08      0.78      0.14       183
       tanya.leslie@enron.com       0.00      0.00      0.00        41
         tasha.lair@enron.com       0.00      0.00      0.00        41
         ted.murphy@enron.com       0.00      0.00      0.00        41
@@ -1000,9 +1000,9 @@ rosalinda.tijerina@enron.com       0.00      0.00      0.00        41
              wgang@enron.com       0.00      0.00      0.00        30
   william.bradford@enron.com       0.00      0.00      0.00        41
 
-                 avg / total       0.04      0.06      0.02      5202
+                 avg / total       0.07      0.06      0.03      5202
 
-Accuracy: 0.059015763168
+Accuracy: 0.0553633217993
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1043,19 +1043,19 @@ Top 30 Features:
 29                 firm   7.702101550803784    4.594775486972785e-05 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                             precision    recall  f1-score   support
 
-  evelyn.metoyer@enron.com       0.48      0.85      0.62        47
-  kerri.thompson@enron.com       0.83      0.84      0.84        45
-    sharen.cason@enron.com       0.80      0.19      0.31        21
+  evelyn.metoyer@enron.com       0.51      0.94      0.66        47
+  kerri.thompson@enron.com       0.86      0.84      0.85        45
+    sharen.cason@enron.com       1.00      0.19      0.32        21
 stephanie.piwetz@enron.com       0.00      0.00      0.00        21
 
-               avg / total       0.57      0.61      0.54       134
+               avg / total       0.63      0.64      0.57       134
 
-Accuracy: 0.611940298507
+Accuracy: 0.641791044776
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1096,24 +1096,24 @@ Top 30 Features:
 29                          fuel  10.421119051687356  2.0989571090063185e-14 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                              precision    recall  f1-score   support
 
-       ben.jacoby@enron.com       0.32      0.33      0.32        57
+       ben.jacoby@enron.com       0.37      0.33      0.35        57
       carlos.sole@enron.com       1.00      0.06      0.12        47
-    heather.kroll@enron.com       0.50      0.03      0.06        29
-kathleen.carnahan@enron.com       0.92      0.21      0.35        56
+    heather.kroll@enron.com       0.00      0.00      0.00        29
+kathleen.carnahan@enron.com       0.73      0.29      0.41        56
        lisa.bills@enron.com       0.00      0.00      0.00        23
- reagan.rorschach@enron.com       0.75      0.12      0.20        26
-roseann.engeldorf@enron.com       0.00      0.00      0.00        35
-     sheila.tweed@enron.com       0.50      0.02      0.05        42
+ reagan.rorschach@enron.com       1.00      0.04      0.07        26
+roseann.engeldorf@enron.com       0.20      0.03      0.05        35
+     sheila.tweed@enron.com       1.00      0.02      0.05        42
     suzanne.adams@enron.com       0.28      0.99      0.44        93
 
-                avg / total       0.49      0.32      0.23       408
+                avg / total       0.52      0.33      0.23       408
 
-Accuracy: 0.321078431373
+Accuracy: 0.325980392157
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1154,19 +1154,19 @@ Top 30 Features:
 29        net  4.465145287719677    0.004222411268449204 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                              precision    recall  f1-score   support
 
-cassandra.schultz@enron.com       0.50      0.05      0.09        20
-       chris.abel@enron.com       0.52      0.67      0.58        21
-       david.port@enron.com       0.49      0.82      0.61        22
-         rick.buy@enron.com       0.42      0.36      0.39        22
+cassandra.schultz@enron.com       0.00      0.00      0.00        21
+       chris.abel@enron.com       0.38      0.55      0.45        20
+       david.port@enron.com       0.45      0.86      0.59        22
+         rick.buy@enron.com       0.50      0.32      0.39        22
 
-                avg / total       0.48      0.48      0.42        85
+                avg / total       0.34      0.44      0.36        85
 
-Accuracy: 0.482352941176
+Accuracy: 0.435294117647
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1207,7 +1207,7 @@ Top 30 Features:
 29          az  3.1048049547286185   2.0681157012891055e-17 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                               precision    recall  f1-score   support
@@ -1241,7 +1241,7 @@ Prediction time: 0.0 m
         kay.threet@enron.com       0.00      0.00      0.00        32
         ken.powers@enron.com       0.00      0.00      0.00        30
        kent.miller@enron.com       0.00      0.00      0.00        34
-       kevin.hyatt@enron.com       0.02      0.59      0.04        51
+       kevin.hyatt@enron.com       0.02      0.61      0.03        51
    kimberly.watson@enron.com       0.00      0.00      0.00        38
       larry.pavlou@enron.com       0.00      0.00      0.00        34
        larry.swett@enron.com       0.00      0.00      0.00        31
@@ -1252,7 +1252,7 @@ Prediction time: 0.0 m
        lisa.valley@enron.com       0.00      0.00      0.00        31
        lon.stanton@enron.com       0.00      0.00      0.00        24
      loren.penkava@enron.com       0.00      0.00      0.00        31
- lorraine.lindberg@enron.com       0.01      0.10      0.02        51
+ lorraine.lindberg@enron.com       0.00      0.00      0.00        51
         lynn.blair@enron.com       0.00      0.00      0.00        21
    martha.janousek@enron.com       0.00      0.00      0.00        32
     michael.bodnar@enron.com       0.00      0.00      0.00        20
@@ -1282,14 +1282,14 @@ stephanie.korbelik@enron.com       0.00      0.00      0.00        30
     steven.january@enron.com       0.00      0.00      0.00        21
        sue.neville@enron.com       0.00      0.00      0.00        33
    theresa.branney@enron.com       0.00      0.00      0.00        27
-      tim.johanson@enron.com       1.00      0.03      0.06        33
+      tim.johanson@enron.com       0.00      0.00      0.00        33
          tk.lohman@enron.com       0.00      0.00      0.00        50
         tony.perry@enron.com       0.00      0.00      0.00        20
    vernon.mercaldo@enron.com       0.00      0.00      0.00        34
 
-                 avg / total       0.02      0.02      0.00      2245
+                 avg / total       0.00      0.01      0.00      2245
 
-Accuracy: 0.0160356347439
+Accuracy: 0.0138084632517
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1330,19 +1330,19 @@ Top 30 Features:
 29                 oper   4.911516825001444   0.0022272803955948584 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                           precision    recall  f1-score   support
 
-    ava.garcia@enron.com       1.00      0.05      0.09        22
- john.buchanan@enron.com       0.36      1.00      0.53        40
+    ava.garcia@enron.com       1.00      0.09      0.17        22
+ john.buchanan@enron.com       0.36      0.97      0.53        40
 shelley.corman@enron.com       0.00      0.00      0.00        23
- terry.kowalke@enron.com       0.57      0.11      0.19        35
+ terry.kowalke@enron.com       0.45      0.14      0.22        35
 
-             avg / total       0.47      0.38      0.25       120
+             avg / total       0.44      0.38      0.27       120
 
-Accuracy: 0.375
+Accuracy: 0.383333333333
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1383,17 +1383,17 @@ Top 30 Features:
 29        aol  17.836369553690588   3.419528404341828e-05 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
 
-sara.shackleton@enron.com       1.00      0.23      0.37        22
-     tana.jones@enron.com       0.61      1.00      0.76        27
+sara.shackleton@enron.com       1.00      0.18      0.31        22
+     tana.jones@enron.com       0.60      1.00      0.75        27
 
-              avg / total       0.79      0.65      0.59        49
+              avg / total       0.78      0.63      0.55        49
 
-Accuracy: 0.65306122449
+Accuracy: 0.632653061224
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1434,17 +1434,17 @@ Top 30 Features:
 29               provid   5.148113049227925   0.024058098502068165 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
 
-sara.shackleton@enron.com       0.58      1.00      0.74        31
-     tana.jones@enron.com       1.00      0.08      0.15        24
+sara.shackleton@enron.com       0.62      1.00      0.77        31
+     tana.jones@enron.com       1.00      0.21      0.34        24
 
-              avg / total       0.77      0.60      0.48        55
+              avg / total       0.79      0.65      0.58        55
 
-Accuracy: 0.6
+Accuracy: 0.654545454545
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1517,17 +1517,17 @@ Top 30 Features:
 29    0.057072622566918245   
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
 
-  james.steffes@enron.com       0.32      0.97      0.48        31
+  james.steffes@enron.com       0.32      1.00      0.48        31
 richard.sanders@enron.com       1.00      0.05      0.09        21
   sarah.novosel@enron.com       0.00      0.00      0.00        20
-     susan.mara@enron.com       0.50      0.04      0.07        26
+     susan.mara@enron.com       0.00      0.00      0.00        26
 
-              avg / total       0.45      0.33      0.19        98
+              avg / total       0.32      0.33      0.17        98
 
 Accuracy: 0.326530612245
 
@@ -1570,19 +1570,19 @@ Top 30 Features:
 29        how   3.672171449864487    0.012144881079956827 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                          precision    recall  f1-score   support
 
-   bryan.hull@enron.com       0.35      0.25      0.29        32
-  chad.landry@enron.com       0.43      0.10      0.17        29
-lisa.gillette@enron.com       0.37      0.92      0.53        36
+   bryan.hull@enron.com       0.39      0.41      0.40        32
+  chad.landry@enron.com       0.40      0.07      0.12        29
+lisa.gillette@enron.com       0.38      0.86      0.53        36
     luis.mena@enron.com       0.00      0.00      0.00        22
 
-            avg / total       0.31      0.37      0.28       119
+            avg / total       0.32      0.39      0.30       119
 
-Accuracy: 0.36974789916
+Accuracy: 0.386554621849
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1623,7 +1623,7 @@ Top 30 Features:
 29    babi   4.016800644602265    0.04553801474413494 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
@@ -1674,7 +1674,7 @@ Top 30 Features:
 29         aach   40.16436638200104    4.415065737211421e-43 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                          precision    recall  f1-score   support
@@ -1684,12 +1684,12 @@ craig.rickard@enron.com       0.00      0.00      0.00        21
  dirk.dimitry@enron.com       0.00      0.00      0.00        23
     e..carter@enron.com       0.92      1.00      0.96        34
   james.bryja@enron.com       0.00      0.00      0.00        21
-    r..conner@enron.com       1.00      0.95      0.98        21
-  t..robinson@enron.com       1.00      0.95      0.98        22
+    r..conner@enron.com       1.00      0.86      0.92        21
+  t..robinson@enron.com       1.00      1.00      1.00        22
 
             avg / total       0.48      0.59      0.51       170
 
-Accuracy: 0.594117647059
+Accuracy: 0.588235294118
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1730,17 +1730,17 @@ Top 30 Features:
 29                 futur   4.688388961373536  0.031317131761254356 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                           precision    recall  f1-score   support
 
-james.saunders@enron.com       1.00      0.12      0.22        24
-tracy.geaccone@enron.com       0.56      1.00      0.72        27
+james.saunders@enron.com       1.00      0.08      0.15        24
+tracy.geaccone@enron.com       0.55      1.00      0.71        27
 
-             avg / total       0.77      0.59      0.49        51
+             avg / total       0.76      0.57      0.45        51
 
-Accuracy: 0.588235294118
+Accuracy: 0.56862745098
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1781,17 +1781,17 @@ Top 30 Features:
 29                         do   1.944605155926469     0.16470111874997678 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                       precision    recall  f1-score   support
 
-tana.jones@enron.com       1.00      0.95      0.98        21
- tom.moran@enron.com       0.95      1.00      0.98        20
+tana.jones@enron.com       1.00      0.85      0.92        20
+ tom.moran@enron.com       0.88      1.00      0.93        21
 
-         avg / total       0.98      0.98      0.98        41
+         avg / total       0.94      0.93      0.93        41
 
-Accuracy: 0.975609756098
+Accuracy: 0.926829268293
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1832,27 +1832,27 @@ Top 30 Features:
 29                           fax  7.4681152061854785  1.0681781344380586e-12 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
 
-   brent.hendry@enron.com       0.67      0.32      0.43        38
-    carol.clair@enron.com       0.67      0.06      0.11        33
-     kaye.ellis@enron.com       0.55      0.43      0.48        42
+   brent.hendry@enron.com       0.79      0.29      0.42        38
+    carol.clair@enron.com       1.00      0.03      0.06        33
+     kaye.ellis@enron.com       0.55      0.55      0.55        42
     marie.heard@enron.com       0.00      0.00      0.00        29
-    mark.taylor@enron.com       0.45      0.12      0.20        40
-      mary.cook@enron.com       1.00      0.08      0.15        24
-  samantha.boyd@enron.com       0.50      0.16      0.24        31
-stephanie.panus@enron.com       0.28      0.25      0.26        36
-   susan.bailey@enron.com       0.14      0.86      0.24        49
+    mark.taylor@enron.com       0.29      0.05      0.09        40
+      mary.cook@enron.com       0.00      0.00      0.00        24
+  samantha.boyd@enron.com       0.62      0.26      0.36        31
+stephanie.panus@enron.com       0.27      0.25      0.26        36
+   susan.bailey@enron.com       0.14      0.82      0.24        49
     susan.flynn@enron.com       0.00      0.00      0.00        27
-     tana.jones@enron.com       0.67      0.06      0.11        32
-  tanya.rohauer@enron.com       1.00      0.24      0.39        33
+     tana.jones@enron.com       1.00      0.06      0.12        32
+  tanya.rohauer@enron.com       0.77      0.30      0.43        33
 
-              avg / total       0.48      0.25      0.23       414
+              avg / total       0.46      0.26      0.23       414
 
-Accuracy: 0.253623188406
+Accuracy: 0.256038647343
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1893,19 +1893,19 @@ Top 30 Features:
 29       januari   4.128336380550911    0.006592117675708279 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
 
    brent.hendry@enron.com       0.00      0.00      0.00        22
-sara.shackleton@enron.com       0.32      0.91      0.47        33
-   susan.bailey@enron.com       0.00      0.00      0.00        25
+sara.shackleton@enron.com       0.32      0.85      0.47        33
+   susan.bailey@enron.com       0.23      0.12      0.16        25
      tana.jones@enron.com       0.00      0.00      0.00        20
 
-              avg / total       0.11      0.30      0.16       100
+              avg / total       0.16      0.31      0.19       100
 
-Accuracy: 0.3
+Accuracy: 0.31
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -1946,7 +1946,7 @@ Top 30 Features:
 29  seasonrestructuringtodaycom   10.16306326047183    7.210407211686726e-40 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                             precision    recall  f1-score   support
@@ -1957,9 +1957,9 @@ Prediction time: 0.0 m
 dennis.benevides@enron.com       0.00      0.00      0.00        25
        don.black@enron.com       0.00      0.00      0.00        22
  harry.kingerski@enron.com       0.00      0.00      0.00        36
-   james.steffes@enron.com       0.25      0.02      0.04        48
+   james.steffes@enron.com       0.00      0.00      0.00        48
     james.wright@enron.com       0.00      0.00      0.00        32
-   jeff.dasovich@enron.com       0.16      0.74      0.26        91
+   jeff.dasovich@enron.com       0.16      0.81      0.27        91
  jeremy.blachman@enron.com       0.00      0.00      0.00        23
      joe.hartsoe@enron.com       0.00      0.00      0.00        24
     joseph.alamo@enron.com       0.00      0.00      0.00        20
@@ -1971,7 +1971,7 @@ michael.tribolet@enron.com       0.00      0.00      0.00        25
       mike.smith@enron.com       0.00      0.00      0.00        24
     paul.kaufman@enron.com       0.00      0.00      0.00        42
  richard.sanders@enron.com       0.00      0.00      0.00        24
- richard.shapiro@enron.com       0.08      0.52      0.14        63
+ richard.shapiro@enron.com       0.08      0.49      0.14        63
    robert.badeer@enron.com       0.00      0.00      0.00        24
  sandra.mccubbin@enron.com       0.00      0.00      0.00        35
    sarah.novosel@enron.com       0.00      0.00      0.00        25
@@ -1979,9 +1979,9 @@ michael.tribolet@enron.com       0.00      0.00      0.00        25
      vicki.sharp@enron.com       0.00      0.00      0.00        24
      wanda.curry@enron.com       0.00      0.00      0.00        22
 
-               avg / total       0.04      0.12      0.04       850
+               avg / total       0.02      0.12      0.04       850
 
-Accuracy: 0.118823529412
+Accuracy: 0.123529411765
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -2022,19 +2022,19 @@ Top 30 Features:
 29               reciev  1.2470122788676383      0.2920877241973943 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
 
-    mark.taylor@enron.com       1.00      0.08      0.15        25
-sara.shackleton@enron.com       1.00      0.05      0.10        20
-   susan.bailey@enron.com       1.00      0.08      0.15        25
-     tana.jones@enron.com       0.29      1.00      0.45        27
+    mark.taylor@enron.com       0.33      0.04      0.07        25
+sara.shackleton@enron.com       0.00      0.00      0.00        20
+   susan.bailey@enron.com       0.60      0.12      0.20        25
+     tana.jones@enron.com       0.28      0.93      0.43        27
 
-              avg / total       0.80      0.33      0.22        97
+              avg / total       0.32      0.30      0.19        97
 
-Accuracy: 0.329896907216
+Accuracy: 0.298969072165
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -2075,42 +2075,42 @@ Top 30 Features:
 29             respons  116.06459812559734   0.0 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                            precision    recall  f1-score   support
 
  alan.aronowitz@enron.com       0.00      0.00      0.00        76
-    andrea.calo@enron.com       0.07      0.26      0.10        31
-      bob.bowen@enron.com       0.00      0.00      0.00        22
+    andrea.calo@enron.com       0.06      0.19      0.09        31
+      bob.bowen@enron.com       0.25      0.05      0.08        22
    brent.hendry@enron.com       0.00      0.00      0.00        31
     carol.clair@enron.com       0.00      0.00      0.00        37
-    david.minns@enron.com       1.00      0.02      0.03        59
-    david.portz@enron.com       0.50      0.06      0.11        32
-elizabeth.sager@enron.com       0.14      0.33      0.19        33
-    frank.davis@enron.com       0.16      0.65      0.25        49
-  harry.collins@enron.com       0.43      0.22      0.29        85
-   jane.mcbride@enron.com       0.12      0.03      0.05        36
+    david.minns@enron.com       0.00      0.00      0.00        59
+    david.portz@enron.com       0.00      0.00      0.00        32
+elizabeth.sager@enron.com       0.10      0.24      0.15        33
+    frank.davis@enron.com       0.17      0.69      0.27        49
+  harry.collins@enron.com       0.38      0.20      0.26        85
+   jane.mcbride@enron.com       0.00      0.00      0.00        36
   jeffrey.hodge@enron.com       0.00      0.00      0.00        74
-  john.viverito@enron.com       0.50      0.03      0.05        40
-  leslie.hansen@enron.com       0.10      0.36      0.15        69
-      lisa.lees@enron.com       1.00      0.08      0.15        24
-    marie.heard@enron.com       0.11      0.03      0.04        78
-    mark.taylor@enron.com       0.15      0.59      0.24        63
+  john.viverito@enron.com       0.00      0.00      0.00        40
+  leslie.hansen@enron.com       0.09      0.36      0.14        69
+      lisa.lees@enron.com       1.00      0.04      0.08        24
+    marie.heard@enron.com       0.20      0.09      0.12        78
+    mark.taylor@enron.com       0.14      0.54      0.22        63
   peter.keohane@enron.com       0.00      0.00      0.00        38
-    robbi.rossi@enron.com       0.05      0.11      0.07        57
-sara.shackleton@enron.com       0.00      0.00      0.00        40
+    robbi.rossi@enron.com       0.06      0.14      0.09        57
+sara.shackleton@enron.com       0.07      0.05      0.06        40
     shari.stack@enron.com       0.00      0.00      0.00        41
    sheri.thomas@enron.com       0.00      0.00      0.00        22
   stacy.dickson@enron.com       0.00      0.00      0.00        54
-stephanie.sever@enron.com       0.22      0.11      0.15        37
+stephanie.sever@enron.com       0.32      0.16      0.21        37
    susan.bailey@enron.com       0.00      0.00      0.00        34
-  tanya.rohauer@enron.com       0.00      0.00      0.00        30
+  tanya.rohauer@enron.com       0.04      0.03      0.04        30
       tom.moran@enron.com       0.00      0.00      0.00        26
 
-              avg / total       0.17      0.12      0.08      1218
+              avg / total       0.10      0.12      0.08      1218
 
-Accuracy: 0.123973727422
+Accuracy: 0.12315270936
 
 ### PREPROCESSING DATA ###
 -- Vectorization
@@ -2151,7 +2151,7 @@ Top 30 Features:
 29                       spring  10.707617853097776   0.0011453388641150621 
 
 
-### CLASSIFICATION using MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True) ###
+### CLASSIFICATION using Naive Bayes ###
 Training time: 0.0 m
 Prediction time: 0.0 m
                             precision    recall  f1-score   support
@@ -2163,7 +2163,7 @@ shirley.crenshaw@enron.com       0.71      1.00      0.83        67
 
 Accuracy: 0.705263157895
 ##################################
-Mean Recipient Score: 0.7725047243183151
+Mean Recipient Score: 0.7282242051887818
 ##################################
-FINAL SCORE: 0.6408884473059365
+FINAL SCORE: 0.6006490727624056
 ##################################
